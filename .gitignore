@@ -1,10 +1,10 @@
+# All files:
 /*
 
 # Python:
 *.py[cod]
 *.so
-*.egg
-*.egg-info
+*.egg*
 dist
 build
 python/.ropeproject
@@ -20,8 +20,9 @@ tags
 !.vimrc
 !hosts
 !notes.org
+!vinote.txt
 
 !/python/
 !/cpp/
-!/lua
+!/lua/
 !/autoit/

@@ -1,0 +1,731 @@
+================================================================================
+技巧
+====================
+:h 	help
+# 关于帮助的帮助
+:h quickref		   	翻到VIM Quick Reference页(有用！)
+:h tips			   	Vim自己的tips
+:h visual<C-D><tab>	   	得到一个关于visual关键字的帮助列表
+			   	然后用tab键去选择
+:h ctrl<C-D>		   	显示所有关于Ctrl的帮助
+:h :r			   	:ex冒号命令
+:h CTRL-R		   	普通模式命令
+:h \r			   	\r在正则表达式中是什么意思呢？
+:h i_CTRL-R		   	insert模式下的Ctrl-R
+:h c_CTRL-R			命令行(command-line)模式下的Ctrl-R
+:h v_CTRL-V			visual模式下的Ctrl-V
+:h tutor			VIM 指南
+K				显示当前光标下词的帮助文件
+gvim -h				关于 VIM 命令的帮助
+vi/vim -h
+
+ctrl-s				不是在所有终端都可以使用，用ctrl-q退出
+
+insert mode时
+ctrl-p/ctrl-n			自动完成单词,没有给出单词时时，p从前一句话中提取，n从后一句中提取
+				如果给出了单词的一部分，怎匹配前/后的单词
+ctrl-x ctrl-l			自动完成一句话,给出该句的一部分，自动完成。
+ctrl-x ctrl-k			根据字典文件自动补全，字典文件在.vimrc中 set dictionary=dir
+
+:h regexp <C-D>			列出所有含有regexp的条目
+
+C-O				沿记录向后跳转
+C-I				沿记录向前跳转
+
+:history			显示历史记录
+:his c				命令记录
+:his s				搜索记录
+q/				搜索历史记录
+:e ftp://ip/dir/file		编辑ftp文件
+ls | gvim -			编辑一个数据流！
+gvim -o file1 file2		以分割窗口打开两个文件
+
+# 指出打开之后执行的命令
+gvim.exe -c "/main" joe.c  : 打开joe.c，然后跳转到'main'
+
+# 对一个文件执行多个命令
+vim -c "%s/ABC/DEF/ge | update" file1.c		
+
+:undate 与:write 类似，但是仅仅在buffer有变化时才保存	
+
+# 对一组文件执行多个命令
+vim -c "argdo %s/ABC/DEF/ge | update" *.c
+
+# 自动编辑文件 (编辑命令序列Ex commands已经包含在convert.vim中了)
+vim -s "convert.vim" file.c
+
+# 不要加载.vimrc和任何plugins (启动一个干净的VIM)
+gvim -u NONE -U NONE -N
+----------------------------------------
+# GVIM 不同的地方
+gvim -d file1 file2         	vimdiff (比较不同)
+dp                          	把光标处的不同放到另一个文件
+do                          	在光标处从另一个文件取得不同
+[c				查找前一个不同
+]c				查找后一个不同
+
+在vim下，可以用
+:diffthis	   		设定当前窗口进入diff状态，当再打开一个文件时
+				再敲入:diffthis就可以进行比较
+:diffsplit			在分开的窗口中比较，打开一个要比较的文件	
+
+----------------------------------------
+# Vim陷阱
+# 在vim的正则表达式中， + 和 | 都必须加转义符 \
+# 小心，这和perl不一样！
+/fred\+/      : 匹配fred或freddy但是不匹配free
+----------------------------------------
+----------------------------------------
+重新格式化文本
+
+gq<CR>
+gqq	格式化一句	
+gqap  (a是motion p是段落(visual模式))
+ggVGgq  重新格式化整个文章
+
+对于 c/c++文档
+gg=G 格式化整个文本
+----------------------------------------
+================================================================================
+基本配置
+====================
+1	vi 每次只能删除半个汉字，编辑.vimrc，加入 set encoding=prc
+2	gvimrc菜单显示中文，加入以下配置
+
+	source $vimruntime/delmenu.vim
+	set langmenu=zh_cn.gb2312
+	source $vimruntime/menu.vim
+	set imcmdline
+	set guifont=bitstream\ vera\ sans\ mono\ 11
+	Windows 下 set guifont=courier_new:h11
+或者	把/usr/share/vim/vim62/lang下的menu_zh_cn.gb2312.vim改成
+	menu_zh_cn.gb18030.vim或menu_zh_cn.gbk.vim,这个要根据locale设定
+	其他的就不用管了。
+3	ctrl+c=esc
+
+4	:syntax on		语法高亮
+	:set showmode		显示当前状态，如插入，编辑等
+	:set nu/nonu		显示/不显示行号
+	:set ls=2		一直显示底端状态栏ls=laststatus
+	:set ru/noru		显示目前光标所在位置
+	:set showcmd		在状态栏显示特殊命令
+	:set wrap		自动换行
+	:set au/noau		自动缩进/不缩
+	:set sm (showmatch)	显示匹配括号
+	:set incserach		敲入字符时搜索
+	:set hls(hlsearch)	高亮匹配项
+	:set ignorecase		忽略大小写
+	:set title/notitle	显示标题
+	:set tabstop=8		一个tab为8列
+	:color peachpuff	设置gvim的背景色 
+	:set list		显示控制字符
+	:set hidden		允许不保存就切换buffer
+	:set sw(shiftwidth)=4	自动缩进为4，默认为8
+	:set ts(tabstop)=4	设tab为4，默认为8
+	:set tw(textwidth)=80	页面宽度
+	:set dip=icase		vimdiff时忽略大小写
+	:set dip=iwhite		vimdiff时忽略空格
+	:set nobackup		取消备份功能，即取消编辑文件时出现的~结尾的文件
+	:set backupdir=....	也可以设定一个目录，存放所有的备份文件
+================================================================================
+文件操作
+==================
+	:set fileformat=unix   可以把dos下的文件转换为unix格式
+	:set fileencoding=utf-8	保存以后就可以转换为utf-8，也可以 :se enc=utf8
+	:set fileformats=	设置fileformats为空，可以禁止自动探测文件类型
+				这样dos格式的文档就会显示
+。
+	:e ++ff=unix		可以强制转换为Unix格式，并显示出
+之类
+	m,n TOhtml		把m-n行转换成html
+	
+	vi -o file1 file2	水平分割，同时打开
+	vi -r file		恢复崩溃的文档
+	 vi -R file		只读方式打开
+	 vi +5 example1.c	可以在编辑时直接从第5行开始编辑
+	 			如果不带行号则停留在末尾
+	 vi +"/int" example1.c	停在第一个int字符串上,这里不加""也可以，
+	 			如果含有特殊字符的话，要加引号
+	 
+	 vi *.cat		同时编辑以cat结尾的文件
+	
+	:Ex			开启目录浏览器，如果当前文件被修改，则在分割窗口打开，
+				未修改，则关掉目前的窗口，开启
+
+	:Sex			在分割窗口中开启目录浏览器
+
+	:ls			显示当前缓冲区所有文件状态，
+				%表示当前的窗口，#表示候选窗口，:e#编辑候选窗口
+				a	active,		
+				+	modified,
+				=	readonly
+	:buffer			编辑某个编号的buffer，可以通过:ls看到编号
+				也可以用:e#n打开，n为编号
+	:bn              	 跳转到下一个buffer
+			 	
+	:bp              	 跳转到上一个buffer
+	:wn              	 存盘当前文件并跳转到下一个(又是“超级……”,ft!)
+	:wp              	 存盘当前文件并跳转到上一个
+	:bd              	 把这个文件从buffer列表中做掉
+	:bun             	 卸掉buffer (关闭这个buffer的窗口但是不把它从列表中做掉)
+	:badd file.c     	 把文件file.c添加到buffer列表
+	:b 3             	 跳到第3个buffer
+	:b main		 	 调到名字含有main的buffer
+	:sav! %<.bak     	 换一个后缀保存
+
+	:bad			把某一个文件加入buffer中
+	:bd			把文件从缓冲区中删掉
+	:nsb			在分开的窗口中编辑编号为n的buffer文件
+	:cd dir			进入某一级目
+	:lcd %:p:h		更改到当前文件所在目录
+				%表示当前文件名,:p把文件扩展成全名，也
+				就是带上了路径,:h取出路径
+	:w /path/%		把文件存到path下
+				
+	:n			编辑下一个文件，这个在vi file1,file2时有用
+
+	:r file			把文件读入到当前文档
+	:r !<命令>		把<命令>的输出插入到当前文本中
+	:nr <文件>		把<文件>插入到第n行
+
+	:e file			不离开vi编辑器，编辑下一个文件，当前文件需要先保存。
+	:e!			重新编辑当前文件,忽略所有的修改
+	:e +n file		从第n行开始编辑<文件>,如果超过了末尾,就从末尾开始编辑
+	:e #			编辑上一个文件，(多文件时有用)
+	:map<F5> :ls<CR>:e # : 在normal模式下按F5键，则会显示所有含有一个
+				 : 可编辑文件的buffer，然后提示你输入buffer的序号，
+				 : 输入后回车，则编辑这个buffer
+
+	:vi file		关闭当前窗口，编辑下一个文件
+	:view			关闭当前窗口，只读打开
+	:vimdiff或vim -d	在垂直窗口中打开两个或三个文件,对比
+	:evim 或vim -y		简易模式,直接进入编辑状态,有模式,GUI下使用
+	:sp			把当前窗口分割成上下两块,如果接文件名,
+				就可以在另一个分窗口打开另一个文件，默认是平分
+				也可指定，:20sp
+				
+	:only/C-w C-o		关闭另一个窗口，使当前窗口最大化，这样可以用于
+				help时，最大化help。
+	:vs			打开垂直窗口
+	!!date			显示日期
+	:!<命令>		运行<命令>,然后返回
+	:!!			重复上一个命令
+	
+	:sh			退回到shell模式，要从shell返回，用 exit或ctrl+d返回
+
+	:args			显示所有要编辑的文件
+
+	:.w file		当前行写入
+	:n,m w file		把n-m行写入文件file中
+	:n,m w>>file		n-m行添加进file中
+	:w>>file		添加如file
+================================================================================
+移动操作
+=====================
+1.	b上一个单词头，		B上一个单词头，忽略标点
+	w下一个单词头，		W下一个单词头，忽略标点
+	e下一个单词尾  		E下一个单词头，忽略标点
+	ge上一个单词尾 		gE上一个单词尾，忽略标点
+	
+	fw 向右移动到"w" 	Fw 向左移动到"w"
+	tw 向右移动到"w"前	Tw 向左移动到"w"后	
+	;   重复上一个f,F,t,T	,  反向重复		
+	
+	10|		移动到第10列
+	30G/30gg	到30行
+	30%		移动到30%的位置
+	
+	aw		a word
+	d2aw		删除2个单词
+	iw		inner word
+	as		a sentence
+	is		inner sentence
+	ap		a paragraph
+	a( a) ab	a () block 
+	i( i) ib	inner block
+	
+	a} a{ aB	a {} block
+	a> a<		a <> block
+	i> i<		inner <> block
+	
+	
+	^E			下卷一行，前边可以加滚动行数
+	^D			下卷半页
+	^U			上卷半页
+	^F			下卷一页
+	^B 			上卷一页
+	^I			插入一个空格
+	gm			移动到该页中间列的
+	gk			wrap on时，用这个相当于k的功能
+	gj			wrap->j
+	gI			在第一列插入
+	g^			wrap on时,移动该改行第一列
+	g$			最后一列
+	gJ			合并两行，取消两行之间的空格	
+	ga			显示光标下字母的ascii值
+	gf			follow link，可以下载文件中的ftp,http地址
+	H			到本页顶部
+	M			到本页中部
+	L			到本页底部
+				
+	I			在行首插入
+	A			在行尾插入
+				
+	ctrl+g 			显示当前文件，并显示光标位置
+	z.			使当前行居中
+	5z.			把光标移动到第5行，且第5行居中	
+	z20			窗口20行高，在多窗口时有用
+	
+	nG到第n行,G到行尾，gg或1G到行首,dnG删除第n行
+	全选ggvG
+	0到行首包括空格，^到行首第一个非空格字符处，
+	$到行尾,g_到最后一个非空格字符处，g^，自动换行时，到屏幕的第一个非空字符处
+	nl到第n列
+	^ 			到行的第一个非空白字符
+  	)			到下一句,	(	 到上一句
+	}			到下一段,	{	 到上一段
+	]]			到下一节,	[[	 到上一节
+				
+	+			到下一行的开头的第一个非空白字符处	
+	-			到上一行的开头的第一个非空白字符处
+				
+	''或``			到上一个跳转点，比如从当前点跳到10G，然后''回到当前点，再''到10G
+	'.			到上次修改的一行
+	`.			到上一个编辑点
+	.			重复上一次操作
+	J			合并两行
+	nJ			合并n行
+
+	v			visual 按字选择
+	V			visual	按行选择
+	^v			visual 按块选择
+--------------------------------------------------------------------------------
+2.	区域平移，用v选中文本，然后用<或>就可以区块平移文本
+	<<或>>平移一句话
+	2> 2<
+	
+	 >%  shift until matching (, [, or { to the right 
+	 <%  shift until matching (, [, or { to the left
+	
+	gv 可以选取同上一个visual模式相同的区域，并进入v模式
+	# 在visual模式下缩进 (无限可重复)
+	:vnoremap < <gv
+	# 译释：:vnoremap 重定义了visual模式下 < 符号的含义
+	# 把它定义成 <gv,并且规定不要递归map
+	# 即：先<向外缩进，然后gv重新选择上一次选择了的区域
+	# 这样在visual模式下就可以实现连续按<而连续缩进了
+	:vnoremap > >gv	
+
+3	交换两行ddp,交换两个字母xp,
+
+4	v高亮一个区域，vy可以拷贝这个区域
+	ctrl+v	块状高亮
+
+5	格式化操作
+	!}fmt		格式化一个段落
+	!G fmt		格式化全文
+
+6	ctags
+	ctags file	生成file的tag
+	vi -t tag	直接跳转到"tag"所在位置
+	C-]		跳转到光标下的tag所在位置
+	或者在vi里输入　:ta fun_name
+
+================================================================================
+录制宏
+=================
+qa开始录制以a为名字的宏，即q进入录制模式，存放在寄存器a中，然后开始录制
+用@a调用
+
+例如：
+qa
+f(i<CR><ESC>
+q
+就完成了一段宏 f(i<CR><ESC>的录制，即找到下一个`(`，换行。
+
+20@a 可以重复该命令20次
+================================================================================
+读写操作
+===============
+	:set ff=unix	用来转换dos下的文件为unix格式
+
+	u撤销操作，u 撤销本行的操作,ctrl+r取消撤销操作
+
+	dj			删除两行
+	dvj			删除当前光标到当前光标下的内容
+	d<c-v>j			删除当前光标的字符和其下的字符
+	das			删除一句
+	dib			删除()中间内容
+	dab			删除包括()在内的内容
+	dap			删除一个段落
+	dib			删除{}的内容
+	dab			删除{}在内的内容
+	d/word			删除到word之前的内容
+	2d3w			删除6的单词
+	
+	cc或c			删除一行，切换到插入状态
+	cw			删除一个字，插入状态
+	ctrl-u			插入模式下，删除到行首	
+	crtl-w			插入模式下，向前删除一个 word,对中文似乎不行
+	crtl-h			插入模式下，向前删除一个字符
+	ctrl-u			插入模式下，删除到行首
+	ctrl-m			插入模式下，开始一个新行
+	ctrl-r  		插入模式下，插入register中的内容，如c-r 
+	ctrl-d			插入模式下，删除行前的一个indent
+	0 ctrl-d		删除所有的indent
+	
+	s			替换字符，进入插入模式
+	s			替换整行，相当于cc
+	#寄存器
+	:reg			显示寄存器中的数据
+	"<字母>dd		为删除的内容加一个为<字母>的标记，比如"add，寄存器a中的内容就是 xxxxx
+	"<字母>yy		类似 "m3yy,拷贝三行，记为m
+	"<字母>p		粘贴某一个编号的寄存器中的内容,比如"mp就可以把上边的m中的三行粘贴出来
+	
+	用大写字母表示附加，例如：
+	"a3yy			拷贝3行到a中
+	10j			下移10行
+	"a4yy			再附加4行
+	另外寄存器内部有1-9九个编号，dd的内容会存储在里边,"1p粘贴第一次删除的内容
+	
+	"=4+5			可以做简单计算,存在寄存器中，按p粘贴出来。
+				或者在insert mode中，<c-r>=5*5直接输出
+				
+				
+	# 标记			
+	m<字母>			标记当前行,如ma标记当前行为a
+	'<字母>			定位到<字母>行，如'a，就可以定位到记号为a的点
+	y/d'<字母>		拷贝/删除到#行，比如做标记后，移动到一个位置，d'<字母>，会删除
+				<字母>和当前位置之间的内容
+	:marks			会显示所有的标记
+	要删除mark，只要删掉标记的那行就可以了。
+
+	重复输入n个字符或者单词，n+i+单词或者字符+esc，比如下边的横线80i-esc
+--------------------------------------------------------------------------------
+	n%			到文档的n%处
+				
+	nfx			到下n个x字母处
+	dnfx			从当前位置删除到第n个x字母处
+	fx			后退x处
+	tx			到下n个x字母前
+	tx			后退。。。
+	;			重复上一个f,t,f,t n次
+	,			反向重复
+	d			从光标处删除到行尾
+	:md			删除第m行
+	:m,nd			删除从m-n的行
+	:1,$d			清空文本	
+	
+	:m co n			把m行拷贝到n行后
+	:m,n co t		m-n拷贝到t后
+	:.,n co t		当前位置到n行拷贝到t行后，.代表当前位置
+	
+	:m,n mo t	move
+
+	:c	把所在行或者选中行替换成:c后出现的内容，:c以后进入输入状态
+
+	# 大小写转换
+	guu                             : 行小写
+	gu3				: 下三行小写
+	guu                             : 行大写
+	g~~                             : 行翻转（当然指大小写啦）
+	g~3				: 下三行翻转	
+	g~fo				:一直转换大小写到下一个o字母处
+	# 译释： g
+	# 是全局命令(global),也就是指一行内的Ex命令，u/U/~是三种转换形式(小写/大写/翻转)，
+	# 最后一个重复则表示该转换是对于一行而言的
+
+	guw                             : 字小写(狭义字) 译注：建议对比iw
+	gUw                             : 字大写(狭义字)
+	g~w                             : 字翻转(狭义字)
+	# 译释：最后一个w 表示该转换是对于一个字而言的，由于是在normal模式下，
+	# 所以这个w 表示一个狭义字<cword>
+
+:[range]g/{pattern}/cmd			全局匹配，没有range时，默认为(1,$)
+:[range]g!/{pattern}/cmd		全局匹配, 对不匹配的项进行操作
+:[range]v/{pattern}/cmd			全局匹配, 对不匹配的项进行操作,相当于:g!
+:v/./d 或 :g/^$/d			删除所有空行
+
+
+	~				切换大小写
+	vEU                             : 字大写(广义字)
+	vE~                             : 字翻转(广义字)
+	# 译释：vE 这个指令组合会进入visual模式，然后选择一个广义字<CWORD>
+
+================================================================================
+查找替换操作
+=================
+:[range]s/pattern/string/[&][c][g][i][I][count] 用string替换pattern,
+	当range和count都没有指定时，只替换当前行的第一个匹配项
+	range为行数，如:3,10s/pattern/string,在3,10行之间替换
+	&			重复查找到的模式
+	如 :s/\<\a/\u&/g 把行内的所有单词首字母大写，\<\a 把匹配到首字母 
+	\u在替换位置时表示把其后部分的第一个字母大写，&代表了找到的单词
+ Hello World	
+	c			替换时确认
+	g			全行替换 :s/old/new/g,
+	i			忽略大小写
+	I			不忽略大小写
+	count			行数 如果没有range，则从当前行开始的到其下的count行之间替换提一个匹配
+				有range的话，就从range的最后一行开始计算
+	:s/dick/joe/igc		则对于这些满足条件的行进行替换
+	:s/old/new/g10		从当前行开始的10行内，全部替换掉old
+	:s/<Tab>//g10		删除当前行开始的10行内的Tab
+	:s/^<Tab>//g		删除当前行的第一个Tab
+
+	全文替换 :1,$s/old/new/g
+	或者	 :%s/old/new/g 
+	
+	:s/\//\\/g 把当前行的/符号都改成\
+	:g/foobar/s/bar/baz/g	查找有foobar的行，把bar替换为baz
+
+	:g/foo/s/^\([^ ]*\) \([^ ]*\)/\2 \1/
+	把含有foo的那一行的头两个单词交换位,置\1,\2分别为\( \)之间的第一个和第二个参数
+	
+/	向前查找，
+	//			重复上一次查找
+	3/new 			查找第三个new
+	3/new/5			查找第三个new后，再把光标定位在其下5行
+	3/			重复最后一次查找的patten，找当前位置下第3个。
+	
+	查找特殊字符
+	/<ctrl-v><crtl-seq> 	查找带ctrl符号的如ctrl+v,ctrl+m= 
+	windows下用<ctrl-q>+...
+	
+	/<ctrl-v> 9	可以查找ascii码为9的字符，也就是一个tab,
+			可以用:as来显示相应的键值，比如要查找^I，可以把光标停在^I上，
+			:as就可以得到相应的十,十六进制键值,对于十进制<ctrl-v>只能支持
+			到3位数字，大于3位的要用十六进制查找，比如查找│(43430,hex
+			a9a6)，就可以<ctrl-v> u a9a6
+			，u表示16进制，允许8位，U允许16位
+	
+	
+	/fred/e		    	查找fred，光标停在fred结尾
+	/fred/e+1	    	结尾移一个字符
+	/fred/s		    	at start
+	/fred\_s*joe/i      	中间可以有任何空白，包括换行符\n
+	/\<fred\>	    	单词匹配
+	/^[A-J]\+/              找一个以A~J中一个字母重复两次或以上开头的行
+	/forum\(\_.\)*pent      多行匹配
+
+	/fred\|joe	    	fred或joe
+	/\<\d\d\>	    	仅匹配数字
+	/\d\{3}		    	相当于3个\d
+	/\l		    	小写字母
+	/\L		    	非小写
+	/\u		    	大写字母
+	/\s		    	空格
+	/\S		    	非空格
+	/\w			word[0-9A-Za-z]
+	/\W			non-word
+	/\a			[A-Za-z]
+	/\A			[^A-Za-z]
+
+---------------
+Tab-White Space
+---------------
+:ret {num}			可以重新设定tab的宽度，如果不加参数就是
+				使用当前的tab宽度,如 :ret 4，设置为4
+
+:set expandtab			这个命令打开时，:ret会把所有的tab转变为空格
+:ret
+----------
+global
+----------
+# 全局(global)显示命令，就是用 :g＋正则表达式
+ # 译释： :g/{pattern}/{cmd} 就是全局找到匹配的行
+ # 然后对这些行执行命令{cmd}
+	 :g/\<fred\>/                : 显示所有能够为单词fred所匹配的行
+	 :g/<pattern>/z#.5           : 显示内容，还有行号，呵呵
+	 :g/<pattern>/z#.5|echo	     "=========="  : 漂亮的显示，ft!
+	 其中:z			     表示显示包围匹配patten的文字
+	     :z#.5		     表示显示出行数，这里显示5行
+	:g/^\s*$/d                  : 删除所有空行
+	:g!/^dd/d                   : 删除不含字串'dd'的行
+	:v/^dd/d                    : 同上
+	:g/pat/s//PAT/g		:%s/pat/PAT/g
+	# 译释：v == g!，就是不匹配！
+
+?	向后查找
+%	匹配括号
+*	向前查找当前光标下的词
+#	向后查找当前光标下的词
+g*	全文匹配
+g#	同上
+
+----------------------------------------
+# 把东西送到命令行/搜索行 (SUPER:偶不再翻译这种叹词了)
+<C-R><C-W>              	: 送一个狭义词
+<C-R><C-A>              	: 送一个广义词
+<C-R>-                  	: 送一个小型删除寄存器register
+<C-R>[0-9a-z]           	: 送一个命名寄存器register
+<C-R>%                  	: 送文件名过去 (#也行)
+----------------------------------------
+
+
+================================================================================
+折叠
+================
+:set foldmethod=indent		可以根据indent的层次折叠
+:set foldmethod=marker		可以根据marker的层次折叠
+:set foldmethod=expr		可以根据expr的层次折叠
+:set foldlevel=3		只有三个以上的indent才会折叠
+zf				创建折叠
+zo				打开折叠
+zc				关闭折叠
+zr				reduce fold level
+zm				more ...
+
+foldexpr用来计算层数
+
+"=~"				匹配正则表达式
+c ? a : b			如果a==0,就是a，否则为b
+>1,>2				以此为第1/2层的开始
+<1,<2				以此为第1/2层的结束
+
+vim:foldexpr=getline(v\:lnum)=~'\\s*$' && getline(v\:lnum+1)=~'\\S'?'<1':1
+如果某一行为空行，而且下一行不是空行时，那么这就是第一层
+
+vim:foldexpr=getline(v\:lnum-1)=~'-\\{80}'?'>2'\:getline(v\:lnum-1)=~'=\\{80}'?'>1'\:getline(v\:lnum)=~'=\\{80}'?'0'\:getline(v\:lnum)=~'-\\{80}'?'1'\:'='
+
+================================================================================
+正则表达式
+================
+1.正则表达式对大小写的区分
+
+	如果某个搜索模式里带有大写字母，那么就区分，如果没有大写，就不区分
+
+2.	 /,',"			都要用\前缀，\\,\',\"  其中\为逃逸符号
+				
+3. 	.			匹配任意一个字母
+   	^			首字母
+   	$			末尾字母
+	\(patten\)		全字匹配
+	\number			匹配前边第number个\(...\)内的内容
+				
+4.	[字母]			匹配任意一个括号内的字母,[abc]=a|b|c
+				
+5.	[a-b]			范围	[0-9]
+				
+6. 	?			最多出现一次
+ 	=			零或一，同上
+	+			至少一次
+   	*			0次以上
+   	&			模式匹配中出现的项，如 s/abc/&def 替换后 abcdef
+   	{n}			前置字母出现了n次, a{2}
+	{n,}			>=n
+	{,m}			<=m
+	{n,m}			n-m之间，越多越好
+	{-n,m}			n-m,越少越好
+
+7	VI中的一些正则表达式搜索
+	/^			开头
+	/\^			^
+	/$			结尾
+	/\$			$
+	/\_$			end of line
+	/.			单字符匹配
+	/\.			.
+	/\_.			单字符或结尾
+	/\<			单词的开始
+	/\>			单词的末尾		
+
+七	缩写和map
+
+:ab myemail abc@abc.com 	定义了一个缩写
+:ab m				列出含有m的缩写
+:una myemail			取消
+如果缩写文件比较多的话，可以专门写一个文件，形如
+:ab wd word
+:ab cd command
+之类，存成一个文件,如ab，然后在.vimrc中source ~/ab
+
+:map <S-F4> :x
+		定义
+:map<F7> f(i<CR><ESC>
+:map ,				显示以","开始的map 
+================================================================================
+Latex-Suite
+====================
+在preamble中按<F5>	会弹出package选项
+在body中按<F5>		提示环境
+输入一个命令<F5>		自动完成该环境，如 equation<F5>
+S-<F5>			改变环境	
+
+<F9>			自动完成环境，如\ref{}, \cite{}等，注意光标应该在{}内
+C-j			跳到下一个place-holder
+`a			alpha
+
+E->equation
+F->font
+S->Secton
+插入模式下E与visual环境下的 "," 相同
+如，ECE--->,ce		都可以产生center环境，如果在visual环境下，用v就会是centerline{}
+			用ctrl-v就是\begin{center} \end{center}
+
+
+EEA			equarray
+EEQ			equation
+EFI			插入图形	
+
+EFL			flush left
+EFR			flush right
+
+FEM			\emph{}
+
+SCH			\chapter
+SSE			\section
+SSS			\subsection
+
+^^			^{}
+__			_{}
+`y			\psi
+`6			\partial
+`8			\infty
+`/			\frac
+`%			也是\frac
+`.			\cdot
+`*			\times
+`,			\nonumber
+
+================================================================================
+	FAQ
+====================
+删除dos行尾的
+:%s/<ctrl-v><enter>//g  
+windows下
+:%s/ctrl-q enter//g
+
+:g/.*/m0
+This will reverse the order of the lines in the current file.
+m0 is the ex command to move the line to line 0.
+
+:v/./d or :g/^$/d 
+Removes all blank lines.
+
+:g/^[ <ctrl-v><tab>]*$/d
+Removes all lines that only have whitespace.
+:v/./$s/$/<ctrl-v><enter>./|'';/./-1j|$d
+Replaces multiple blank lines with
+just one blank line.
+
+显示控制字符
+set list
+
+
+----------------------------------------
+# 模式行(modeline)
+# 第二版新加，感谢tcpip
+vim:noai:ts=2:sw=4:readonly: #让文档只读
+# 译释：这一行必须以vim:开头，而且只能在文档的前5行或后5行之内
+# 后面是需要执行的命令，依次是：
+# noai       noautoindent 
+# ts=2       tabstop=2
+# sw=4       shiftwidth=4
+# readonly   readonly
+
+:h modeline #看看关于modeline的帮助先！
+----------------------------------------
+================================================================================
+vim:ft=help:fdm=expr:wrap
+vim:foldexpr=getline(v\:lnum-1)=~'-\\{80}'?'>2'\:getline(v\:lnum-1)=~'=\\{80}'?'>1'\:getline(v\:lnum)=~'=\\{80}'?'0'\:getline(v\:lnum)=~'-\\{80}'?'1'\:'='
