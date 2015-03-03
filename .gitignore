@@ -1,0 +1,27 @@
+/*
+
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+python/.ropeproject
+python/__pycache__
+
+# c/c++:
+cpp/**/*.exe
+cpp/**/*.[oa]
+tags
+
+
+!.gitignore
+!.vimrc
+!hosts
+!notes.org
+
+!/python/
+!/cpp/
+!/lua
+!/autoit/
