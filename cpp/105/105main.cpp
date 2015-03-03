@@ -11,7 +11,6 @@ int main()
     List l;
     char c;
     ITEM t;
-    /* double total = 0.0; */
 
     cout << "Input A to add, S to show, Q to quit.\n";
     while(cin >> c && toupper(c) != 'Q')
@@ -26,6 +25,7 @@ int main()
                     cout << "list is full.\n";
                 else
                 {
+                    cout << "Enter a number: ";
                     cin >> t;
                     l.additem(t);
                 }
@@ -49,5 +49,6 @@ int main()
 
 void show(ITEM &item)
 {
-
+    using namespace std;
+    cout << item << endl;
 }

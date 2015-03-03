@@ -15,11 +15,6 @@ bool List::isFull() const
 	return count == MAX;
 }
 
-/* int List::count() */
-/* { */
-/* 	return count; */
-/* } */
-
 bool List::additem(const ITEM &item)
 {
 	if (count == MAX)

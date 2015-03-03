@@ -21,7 +21,6 @@ class List
         bool isEmpty() const;
         bool isFull() const;
         bool additem(const ITEM &item);
-        /* int count(); */
         void visit(void (*pf)(ITEM &item));
 };
 
