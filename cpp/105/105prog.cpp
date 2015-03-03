@@ -1,38 +1,38 @@
 #include "105head.h"
 
-Stack::Stack()
+List::List()
 {
-	top = 0;
+	count = 0;
 }
 
-bool Stack::isEmpty() const
+bool List::isEmpty() const
 {
-	return top == 0;
+	return count == 0;
 }
 
-bool Stack::isFull() const
+bool List::isFull() const
 {
-	return top == MAX;
+	return count == MAX;
 }
 
-bool Stack::push(const ITEM &item)
+/* int List::count() */
+/* { */
+/* 	return count; */
+/* } */
+
+bool List::additem(const ITEM &item)
 {
-	if (top < MAX)
-	{
-		items[top++] = item;
-		return true;
-	}
-	else
+	if (count == MAX)
 		return false;
+	else
+		items[count++] = item;
+	return true;
 }
 
-bool Stack::pop(ITEM &item)
+void List::visit(void (*pf)(ITEM &item))
 {
-	if (top > 0)
-	{
-		item = items[--top];
-		return true;
-	}
-	else
-		return false;
+	for (int i = 0; i < count; ++i)
+		(*pf)(items[i]);
 }
+
+

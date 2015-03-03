@@ -7,21 +7,22 @@ struct customer
     double payment;
 };
 
-/* typedef unsigned long ITEM; */
-typedef customer ITEM;
+typedef unsigned long ITEM;
+/* typedef customer ITEM; */
 
-class Stack
+class List
 {
     private:
         static const int MAX = 10;
         ITEM items[MAX];
-        int top;
+        int count;
     public:
-        Stack();
+        List();
         bool isEmpty() const;
         bool isFull() const;
-        bool push(const ITEM &item);
-        bool pop(ITEM &item);
+        bool additem(const ITEM &item);
+        /* int count(); */
+        void visit(void (*pf)(ITEM &item));
 };
 
 #endif

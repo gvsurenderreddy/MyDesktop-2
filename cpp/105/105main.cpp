@@ -3,16 +3,17 @@
 #include "cctype"
 #include "105head.h"
 
-void GetItem(ITEM &t);
+void show(ITEM &item);
+
 int main()
 {
     using namespace std;
-    Stack s;
+    List l;
     char c;
     ITEM t;
-    double total = 0.0;
+    /* double total = 0.0; */
 
-    cout << "Input A to add, P to pop, Q to quit.\n";
+    cout << "Input A to add, S to show, Q to quit.\n";
     while(cin >> c && toupper(c) != 'Q')
     {
         while(cin.get() != '\n')
@@ -21,43 +22,32 @@ int main()
         {
             case 'A':
             case 'a':
-                if (s.isFull())
-                {
-                    cout << "stack is full.\n";
-                }
+                if (l.isFull())
+                    cout << "list is full.\n";
                 else
                 {
-                    GetItem(t);
-                    s.push(t);
+                    cin >> t;
+                    l.additem(t);
                 }
                 break;
-            case 'P':
-            case 'p':
-                if (s.isEmpty())
-                {
-                    cout << "stack is empty.\n";
-                }
+            case 'S':
+            case 's':
+                if (l.isEmpty())
+                    cout << "list is empty.\n";
                 else
                 {
-                    s.pop(t);
-                    total += t.payment;
-                    cout << "Now payment of " << t.fullname << " is: " << t.payment << endl;
-                    cout <<"Total payment are: " << total << endl;
+                    l.visit(show);
                 }
                 break;
         }
-        cout << "Input A to add, P to pop, Q to quit.\n";
+        cout << "Input A to add, S to show, Q to quit.\n";
     }
     cout << "Done!\n";
 
     return 0;
 }
 
-void GetItem(ITEM &t)
+void show(ITEM &item)
 {
-    using namespace std;
-    cout << "Enter name: " << endl;
-    cin.getline(t.fullname, 34);
-    cout << "Enter payment: " << endl;
-    cin >> t.payment;
+
 }
