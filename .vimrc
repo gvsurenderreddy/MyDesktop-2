@@ -51,10 +51,6 @@ Plug 'idanarye/vim-merginal'
 Plug 'itchyny/landscape.vim'
 " Plug 'itchyny/lightline.vim'
 Plug 'itchyny/screensaver.vim'
-Plug 'jlanzarotta/bufexplorer'
-        " <Leader>be                            Normal open
-        " <Leader>bs                            Force horizontal split open
-        " <Leader>bv                            Force vertical split open
 Plug 'junegunn/vim-easy-align', {'on': ['<Plug>(EasyAlign)', 'EasyAlign']}
         " :EasyAlign[!] [OPTIONS]               Interactive mode
         " :LiveEasyAlign[!] [...]               Live interactive mode
@@ -103,8 +99,6 @@ Plug 'mattn/calendar-vim'
         " :CalendarH [YYYY MM]                  Bring up a calendar in a horizontally split window
         " :CalendarVR [YYYY MM]                 Bring up a calendar in a right vertically split window
         " :CalendarT [YYYY MM]                  Bring up a calendar a full-screen
-Plug 'mattn/emmet-vim'
-    let g:user_emmet_mode='a'
 Plug 'mattn/gist-vim'
     let g:gist_post_private = 1
 Plug 'mattn/webapi-vim'
@@ -189,9 +183,7 @@ Plug 'vim-scripts/luarefvim'
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
 Plug 'vim-scripts/OmniCppComplete'
-" Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-voom/VOoM'
-" Plug 'vimim/vimim'
 Plug 'vimwiki/vimwiki'
         " <Leader>ww                            Open default wiki index file
         " <Leader>wt                            Open default wiki index file in a new tab
@@ -215,7 +207,6 @@ Plug 'xuhdev/SingleCompile'
 Plug 'yaroot/wowlua.vim'
 " Plug 'Yggdroot/indentLine'
 if has("python") || has("python3")
-    Plug 'carlobaldassi/ConqueTerm'
     Plug 'jceb/vim-orgmode'
     Plug 'joedicastro/vim-markdown-extra-preview'
             " :Me                               Preview the current buffer
@@ -237,13 +228,6 @@ if has("gui_running")
         let g:sunset_latitude = 30
         let g:sunset_longitude = 120
         let g:sunset_utc_offset = 8
-    " Plug 'itchyny/calendar.vim', {'on': 'Calendar'}
-        " let g:calendar_google_task = 1
-        " let g:calendar_google_calendar = 1
-            " E                                 View the event list
-            " T                                 View the task list
-            " < or >                            Switch between views
-    Plug 'itchyny/thumbnail.vim', {'on': 'Thumbnail'}
     Plug 'yonchu/accelerated-smooth-scroll'
 endif
 call plug#end()
@@ -339,7 +323,6 @@ endif
 " Keybindings {{{1
 nnoremap <silent> <f2>          :NERDTreeToggle<cr>
 nnoremap <silent> <f3>          :Dict<cr>
-nnoremap <silent> <f4>          :Thumbnail<cr>
 nnoremap <silent> <f5>          :SCCompileRun<cr>
 nnoremap <silent> <f8>          :TagbarToggle<cr>
 nnoremap <silent> <f9>          :UndotreeToggle<cr>
