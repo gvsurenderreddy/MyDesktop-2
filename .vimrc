@@ -132,6 +132,7 @@ Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
     let g:indent_guides_guide_size = 1
 Plug 'pelodelfuego/vim-swoop'
+    let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
 Plug 'reedes/vim-colors-pencil'
     let g:pencil_higher_contrast_ui = 1
@@ -182,7 +183,7 @@ Plug 'vim-scripts/CRefVim'
         " <Leader>cc:                           Jump to table of contents of the C-reference manual
 Plug 'vim-scripts/directionalWindowResizer'
         " <c-h/j/k/l>                           Resize windows
-Plug 'vim-scripts/DoxygenToolkit.vim'
+" Plug 'vim-scripts/DoxygenToolkit.vim'
 " Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/luarefvim'
         " <Leader>lr normal mode:               Get help for word under cursor
