@@ -47,3 +47,31 @@ void Time::Show() const
 
 Time::~Time()
 {}
+
+Time Time::operator * (double n) const
+{
+
+	Time result;
+	long total = hours * n * 60 + minutes * n;
+	result.hours = total / 60;
+	result.minutes = total % 60;
+
+	return result;
+}
+
+/* Time operator * (double m, const Time & t) */
+/* { */
+/* 	Time result; */
+/* 	long total = t.hours * m * 60 + t.minutes * m; */
+/* 	result.hours = total / 60; */
+/* 	result.minutes = total % 60; */
+
+/* 	return result; */
+/* } */
+
+std::ostream & operator << (std::ostream & os, const Time & t)
+{
+	os << t.hours << " hours, " << t.minutes << " minutes";
+	return os;
+}
+
