@@ -59,6 +59,7 @@ Time Time::operator * (double n) const
 	return result;
 }
 
+/* 友元函数不需要:: */
 /* Time operator * (double m, const Time & t) */
 /* { */
 /* 	Time result; */
