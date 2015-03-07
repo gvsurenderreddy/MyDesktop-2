@@ -61,9 +61,9 @@ namespace COMPLEX
 	std::istream & operator >> (std::istream & is, Complex & c)
 	{
 		/* TODO:check input if is a double */
-		std::cout << "real: ";
+		std::cout << "实数部分: ";
 		is >> c.r;
-		std::cout << "imaginary: ";
+		std::cout << "虚数部分: ";
 		is >> c.i;
 		return is;
 	}

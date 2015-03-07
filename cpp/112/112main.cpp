@@ -1,5 +1,6 @@
 #include "112head.h"
 #include "iostream"
+#include "fstream"
 #include "cstdlib"
 #include "ctime"
 
@@ -14,24 +15,27 @@ int main()
 	unsigned long steps = 0;
 	double target;
 	double dstep;
+	ofstream fout;
+	fout.open("112.txt");
 	cout << "Enter target distance (q to quit): ";
-	while(cin >> target)
+	while (cin >> target)
 	{
 		cout << "Enter step length: ";
 		if (!(cin >> dstep))
 			break;
-		while(result.rval() < target)
+		fout << "Target Distance: " << target << ", Step Size: " << dstep <<endl;
+		while (result.rval() < target)
 		{
 			direction = rand() % 360;
 			step.set(dstep, direction, 'p');
 			result = result + step;
-			steps++;
+			fout << ++steps << ":  " << result << endl;
 		}
-		cout << "After " << steps << " steps, the subject has the following location: \n";
-		cout << result << endl;
+		fout << "After " << steps << " steps, the subject has the following location: \n";
+		fout << result << endl;
 		result.polar_mode();
-		cout << " or\n" << result << endl;
-		cout << "Average outward distance per step = " << result.rval() / steps << endl << endl;
+		fout << " or\n" << result << endl;
+		fout << "Average outward distance per step = " << result.rval() / steps << endl << endl;
 		result.set(0, 0);
 		steps = 0;
 		cout << "Enter target distance (q to quit): ";

@@ -46,17 +46,17 @@ namespace VECTOR
 	Vector::Vector(double n1, double n2, char form)
 	{
 		mode = form;
-		if (form = 'r')
+		if (form == 'r')
 		{
 			x = n1;
 			y = n2;
 			set_r();
 			set_a();
 		}
-		else if (form = 'p')
+		else if (form == 'p')
 		{
 			r = n1;
-			a = n2;
+			a = n2 / Rad2Deg;
 			set_x();
 			set_y();
 		}
@@ -72,17 +72,17 @@ namespace VECTOR
 	void Vector::set (double n1, double n2, char form)
 	{
 		mode = form;
-		if (form = 'r')
+		if (form == 'r')
 		{
 			x = n1;
 			y = n2;
 			set_r();
 			set_a();
 		}
-		else if (form = 'p')
+		else if (form == 'p')
 		{
 			r = n1;
-			a = n2;
+			a = n2 / Rad2Deg;
 			set_x();
 			set_y();
 		}
@@ -116,7 +116,7 @@ namespace VECTOR
 
 	Vector Vector::operator - (const Vector & b) const
 	{
-		return Vector(x - b.x, y + b.y);
+		return Vector(x - b.x, y - b.y);
 	}
 
 	Vector Vector::operator - () const
