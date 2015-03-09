@@ -3,19 +3,18 @@
 #include "ctime"
 #include "cmath"
 
-void addint(int x, int y);
-void subint(int x, int y);
-void mulint(int x, int y);
-void divint(int x, int y);
-void calculate(int x, int y, void (*pf)(int x, int y));
+bool addint(int x, int y);
+bool subint(int x, int y);
+bool mulint(int x, int y);
+bool divint(int x, int y);
+bool calculate(int x, int y, bool (*pf)(int x, int y));
 int randint(int min, int max){return min + rand() % max;};
-static int err = 0;
-void counting(int err, int total);
+void counting(int ok, int total);
 
 int main()
 {
-    int m, n, l, x, y;
-    void (*op[])(int, int) = {addint, subint, mulint, divint};
+    int m, n, o, x, y, ok;
+    bool (*op[])(int, int) = {addint, subint, mulint, divint};
     srand((int) time(0));
     std::cout << "输入最大位数：";
     std::cin >> m;
@@ -26,15 +25,16 @@ int main()
         std::cout << "第" << i << "题：  ";
         x = randint(1, pow(10, m) - 1);
         y = randint(1, pow(10, m) - 1);
-        l = randint(0, 3);
-        calculate(x, y, op[l]);
+        o = rand() % 4;
+        if (calculate(x, y, op[o]))
+            ok++;
     }
-    counting(err, n);
+    counting(ok, n);
 
     return 0;
 }
 
-void addint(int x, int y)
+bool addint(int x, int y)
 {
     std::cout << x << " + " << y << " = ";
     int z;
@@ -42,15 +42,17 @@ void addint(int x, int y)
     if (z == x + y)
     {
         std::cout << "正确！" << std::endl;
+        return true;
     }
     else
     {
         std::cout << "错误！" << std::endl;
-        err++;
+        /* TODO: error expression */
+        return false;
     }
 }
 
-void subint(int x, int y)
+bool subint(int x, int y)
 {
     if (x < y)
     {
@@ -65,15 +67,17 @@ void subint(int x, int y)
     if (z == x - y)
     {
         std::cout << "正确！" << std::endl;
+        return true;
     }
     else
     {
         std::cout << "错误！" << std::endl;
-        err++;
+        /* TODO: error expression */
+        return false;
     }
 }
 
-void mulint(int x, int y)
+bool mulint(int x, int y)
 {
     std::cout << x << " * " << y << " = ";
     int z;
@@ -81,16 +85,17 @@ void mulint(int x, int y)
     if (z == x * y)
     {
         std::cout << "正确！" << std::endl;
+        return true;
     }
     else
     {
         std::cout << "错误！" << std::endl;
-        err++;
         /* TODO: error expression */
+        return false;
     }
 }
 
-void divint(int x, int y)
+bool divint(int x, int y)
 {
     std::cout << x << " / " << y << " = ";
     int z;
@@ -98,21 +103,24 @@ void divint(int x, int y)
     if (z == x / y)
     {
         std::cout << "正确！" << std::endl;
+        return true;
     }
     else
     {
         std::cout << "错误！" << std::endl;
-        err++;
+        /* TODO: error expression */
+        /* TODO: deal with redudence */
+        return false;
     }
 }
 
-void calculate(int x, int y, void (*pf)(int x, int y))
+bool calculate(int x, int y, bool (*pf)(int x, int y))
 {
-    (*pf)(x, y);
+    return (*pf)(x, y);
 }
 
-void counting(int err, int total)
+void counting(int ok, int total)
 {
-    std::cout << std::endl << "答对" << total - err << "题" << std::endl;
-    std::cout << "正确率" << (int) ((total - err) * 100 / total) << "%"<< std::endl;
+    std::cout << std::endl << "答对" << ok << "题" << std::endl;
+    std::cout << "正确率" << (int) (ok / total * 100) << "%"<< std::endl;
 }
