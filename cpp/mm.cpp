@@ -16,19 +16,26 @@ int main(int argc, char *argv[])
     bool (*op[])(int, int) = {addint, subint, mulint, divint};
     srand((int) time(0));
 
-    if (argc == 3)
+    switch (argc)
     {
-        m = *argv[1] - '0';
-        n = *argv[2] - '0';
-        std::cout << "最大位数为" << m << "位" << std::endl;
-        std::cout << "答题次数为" << n << "次" << std::endl;
-    }
-    else
-    {
-        std::cout << "输入最大位数：";
-        std::cin >> m;
-        std::cout << "输入答题次数：";
-        std::cin >> n;
+        case 3:
+            m = *argv[1] - '0';
+            n = *argv[2] - '0';
+            std::cout << "最大位数为" << m << "位" << std::endl;
+            std::cout << "答题次数为" << n << "次" << std::endl;
+            break;
+        case 1:
+            std::cout << "输入最大位数：";
+            std::cin >> m;
+            std::cout << "输入答题次数：";
+            std::cin >> n;
+            break;
+        default:
+            std::cout << "参数错误！请输入：" << std::endl;
+            std::cout << "\t命令 最大位数 答题次数<回车>" << std::endl;
+            std::cout << "或直接输入：" << std::endl;
+            std::cout << "\t命令<回车>" << std::endl;
+            return 0;
     }
 
     for (int i = 1; i <= n; ++i)
