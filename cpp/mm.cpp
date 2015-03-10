@@ -10,15 +10,27 @@ bool divint(int x, int y);
 bool calculate(int x, int y, bool (*pf)(int x, int y));
 int randint(int min, int max){return min + rand() % max;};
 
-int main()
+int main(int argc, char *argv[])
 {
     int m, n, o, x, y, ok = 0;
     bool (*op[])(int, int) = {addint, subint, mulint, divint};
     srand((int) time(0));
-    std::cout << "输入最大位数：";
-    std::cin >> m;
-    std::cout << "输入答题次数：";
-    std::cin >> n;
+
+    if (argc == 3)
+    {
+        m = *argv[1] - '0';
+        n = *argv[2] - '0';
+        std::cout << "最大位数为" << m << "位" << std::endl;
+        std::cout << "答题次数为" << n << "次" << std::endl;
+    }
+    else
+    {
+        std::cout << "输入最大位数：";
+        std::cin >> m;
+        std::cout << "输入答题次数：";
+        std::cin >> n;
+    }
+
     for (int i = 1; i <= n; ++i)
     {
         std::cout << "第" << i << "题：  ";
