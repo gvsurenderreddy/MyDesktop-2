@@ -2,7 +2,9 @@
 #include "cstdlib"
 #include "ctime"
 #include "cmath"
+#include "string"
 
+bool isint(std::string s);
 bool addint(int x, int y);
 bool subint(int x, int y);
 bool mulint(int x, int y);
@@ -19,10 +21,18 @@ int main(int argc, char *argv[])
     switch (argc)
     {
         case 3:
-            m = *argv[1] - '0';
-            n = *argv[2] - '0';
-            std::cout << "最大位数为" << m << "位" << std::endl;
-            std::cout << "答题次数为" << n << "次" << std::endl;
+            if(isint(argv[1]) && isint(argv[2]))
+            {
+                m = atoi(argv[1]);
+                n = atoi(argv[2]);
+                std::cout << "最大位数为" << m << "位" << std::endl;
+                std::cout << "答题次数为" << n << "次" << std::endl;
+            }
+            else
+            {
+                std::cout << "Err" << std::endl;
+                return 1;
+            }
             break;
         case 1:
             std::cout << "输入最大位数：";
@@ -35,7 +45,7 @@ int main(int argc, char *argv[])
             std::cout << "\t命令 最大位数 答题次数<回车>" << std::endl;
             std::cout << "或直接输入：" << std::endl;
             std::cout << "\t命令<回车>" << std::endl;
-            return 0;
+            return 1;
     }
 
     for (int i = 1; i <= n; ++i)
@@ -105,3 +115,12 @@ bool calculate(int x, int y, bool (*pf)(int x, int y))
     return (*pf)(x, y);
 }
 
+bool isint(std::string s)
+{
+    for(int i=0; i<s.length(); i++)
+    {
+        if(s[i]>=57 || s[i]<=48)
+            return false;
+    }
+    return true;
+}
