@@ -51,7 +51,6 @@ Plug 'idanarye/vim-merginal'
 Plug 'itchyny/landscape.vim'
 " Plug 'itchyny/lightline.vim'
 Plug 'itchyny/screensaver.vim'
-Plug 'jnurmine/Zenburn'
 Plug 'junegunn/vim-easy-align', {'on': ['<Plug>(EasyAlign)', 'EasyAlign']}
         " :EasyAlign[!] [OPTIONS]               Interactive mode
         " :LiveEasyAlign[!] [...]               Live interactive mode
