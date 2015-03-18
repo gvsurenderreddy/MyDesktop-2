@@ -1,4 +1,4 @@
-#include "iostream"
+#include <iostream>
 const int Size = 8;
 int sum_arr(const int* begin, const int* end);
 

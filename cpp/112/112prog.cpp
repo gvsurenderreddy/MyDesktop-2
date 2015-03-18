@@ -1,5 +1,6 @@
 #include "112head.h"
-#include "cmath"
+#include <cmath>
+
 using std::sin;
 using std::cos;
 using std::atan2;

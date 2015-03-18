@@ -1,6 +1,6 @@
-#include "iostream"
-#include "cstring"
-#include "string"
+#include <iostream>
+#include <cstring>
+#include <string>
 
 int main()
 {

@@ -1,5 +1,5 @@
-#include "iostream"
-#include "new"
+#include <iostream>
+#include <new>
 
 const int BUF = 512;
 const int N = 5;

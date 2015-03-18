@@ -1,8 +1,8 @@
 #include "112head.h"
-#include "iostream"
-#include "fstream"
-#include "cstdlib"
-#include "ctime"
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
 
 int main()
 {

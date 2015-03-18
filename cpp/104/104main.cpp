@@ -1,6 +1,6 @@
-#include "iostream"
-#include "string"
-#include "cctype"
+#include <iostream>
+#include <string>
+#include <cctype>
 #include "104head.h"
 
 void GetItem(ITEM &t);

@@ -1,7 +1,7 @@
-#include "iostream"
-#include "cstring"
-#include "string"
-#include "cctype"
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <cctype>
 
 using namespace std;
 int main()

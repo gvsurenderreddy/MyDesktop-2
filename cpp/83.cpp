@@ -1,4 +1,4 @@
-#include "iostream"
+#include <iostream>
 
 const int Size = 80;
 char* left(const char* str, int n = 1);

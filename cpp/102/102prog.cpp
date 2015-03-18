@@ -1,6 +1,6 @@
 #include "102head.h"
-#include "iostream"
-#include "cstring"
+#include <iostream>
+#include <cstring>
 
 Stock::Stock()
 {

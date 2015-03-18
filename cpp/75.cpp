@@ -1,4 +1,4 @@
-#include "iostream"
+#include <iostream>
 
 double average(double x, double y);
 

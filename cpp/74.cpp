@@ -1,4 +1,4 @@
-#include "iostream"
+#include <iostream>
 const int LEN = 66;
 const int DIV = 6;
 

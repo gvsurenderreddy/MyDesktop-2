@@ -1,6 +1,6 @@
-#include "iostream"
-#include "cstring"
-#include "cctype"
+#include <iostream>
+#include <cstring>
+#include <cctype>
 
 using namespace std;
 string &Upper(string &str);

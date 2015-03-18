@@ -1,6 +1,6 @@
-#include "iostream"
-#include "string"
-#include "cctype"
+#include <iostream>
+#include <string>
+#include <cctype>
 #include "105head.h"
 
 void show(ITEM &item);
