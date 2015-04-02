@@ -225,7 +225,7 @@ else
     Plug 'tomtom/tlib_vim'
 endif
 if has("gui_running")
-    Plug 'amdt/sunset'
+    Plug 'vim-scripts/sunset'
         let g:sunset_latitude = 30
         let g:sunset_longitude = 120
         let g:sunset_utc_offset = 8
