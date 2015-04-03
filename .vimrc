@@ -327,10 +327,10 @@ endif
 " Keybindings {{{1
 nnoremap <silent> <f2>          :NERDTreeToggle<cr>
 nnoremap <silent> <f3>          :Dict<cr>
-nnoremap <silent> <f5>          :SCCompileRun<cr>
-nnoremap <silent> <f8>          :TagbarToggle<cr>
-nnoremap <silent> <f9>          :UndotreeToggle<cr>
-nnoremap <silent> <f10>         :CalendarVR<cr>
+nnoremap <silent> <f4>          :UndotreeToggle<cr>
+nnoremap <silent> <f7>          :CalendarVR<cr>
+nnoremap <silent> <f9>          :SCCompileRun<cr>
+nnoremap <silent> <f10>         :TagbarToggle<cr>
 nnoremap <silent> <f11>         :call FullScreenToggle()<cr>
 nnoremap <silent> <f12>         :marks<cr>
 nnoremap <silent> <m-q>         :Commentary<cr>
