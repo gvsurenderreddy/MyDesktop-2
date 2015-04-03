@@ -45,6 +45,9 @@ Plug 'eshock/vim-matchit'
 " Plug 'godlygeek/csapprox'
 " Plug 'godlygeek/tabular', {'on': 'Tabularize'}
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
+Plug 'hsitz/VimOrganizer'
+    autocmd! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+    autocmd BufEnter *.org call org#SetOrgFileType()
 Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
 " Plug 'itchyny/vim-cursorword'
@@ -207,7 +210,6 @@ Plug 'xuhdev/SingleCompile'
 Plug 'yaroot/wowlua.vim'
 " Plug 'Yggdroot/indentLine'
 if has("python") || has("python3")
-    Plug 'jceb/vim-orgmode'
     Plug 'joedicastro/vim-markdown-extra-preview'
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
