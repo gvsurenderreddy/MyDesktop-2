@@ -186,6 +186,7 @@ Plug 'vim-scripts/luarefvim'
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
 Plug 'vim-scripts/OmniCppComplete'
+Plug 'vim-scripts/utl.vim'
 Plug 'vim-voom/VOoM'
 Plug 'vimwiki/vimwiki'
         " <Leader>ww                            Open default wiki index file
