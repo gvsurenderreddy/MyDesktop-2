@@ -70,6 +70,7 @@ Plug 'KabbAmine/vCoolor.vim'
 Plug 'kien/ctrlp.vim'
     let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cmd = 'CtrlPMixed'
+    let g:ctrlp_reuse_window  = 'startify'
     let g:ctrlp_custom_ignore = {
                               \ 'dir':  '\v[\/]\.(git|hg|svn)$',
                               \ 'file': '\v\.(exe|so|dll)$',
