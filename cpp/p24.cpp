@@ -1,11 +1,11 @@
 #include <iostream>
 #include <cmath>
-#include <stdlib.h>
+#include <cstdlib>
 using namespace std;
 const double PRECISION=1E-6;
 const int COUNT=4;
 const int RESULT=24;
-double number[COUNT]; //这里一定要用double,看看第一题的答案就知道为什么了
+double number[COUNT]; //这里一定要用double
 string expression[COUNT]; //保存表达式
 bool Test(int n)
 {
@@ -74,6 +74,7 @@ bool Test(int n)
     }
     return false;
 }
+
 int main(void)
 {
     for(int i=0;i<COUNT;i++)
