@@ -1,19 +1,41 @@
+#include <windows.h>
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
+
 using namespace std;
 const double PRECISION = 1E-6;
 const int COUNT = 4;
 const int RESULT = 24;
 double number[COUNT];
 string expression[COUNT];
+
+bool Test(int n);
+
+int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow)
+{
+    for (int i = 0; i < COUNT; i++)
+    {
+        char buffer[20];
+        int x;
+        cin >> x;
+        number[i] = x;
+        itoa(x, buffer, 10);
+        expression[i] = buffer;
+    }
+    if (!Test(COUNT))
+        MessageBox(NULL, TEXT("Fail"), TEXT("Fail"), 0) ;
+    system("pause");
+    return 0;
+}
+
 bool Test(int n)
 {
     if (n == 1)
     {
         if (fabs(number[0] - RESULT) < PRECISION)
         {
-            cout << expression[0] << endl;
+            MessageBox(NULL, TEXT(expression[0].data()), TEXT("Success"),0);
             return true;
         }
         else
@@ -68,23 +90,4 @@ bool Test(int n)
         }
     }
     return false;
-}
-
-int main(void)
-{
-    for (int i = 0; i < COUNT; i++)
-    {
-        char buffer[20];
-        int x;
-        cin >> x;
-        number[i] = x;
-        itoa(x, buffer, 10);
-        expression[i] = buffer;
-    }
-    if (Test(COUNT))
-        cout << "Success" << endl;
-    else
-        cout << "Fail" << endl;
-    system("pause");
-    return 0;
 }
