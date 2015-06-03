@@ -1,0 +1,2773 @@
+cscope 16 $HOME\Desktop\Tetris"               0000013380
+	@C:\Users\Admin\Desktop\Tetris\Board.cpp
+
+1 
+	~"Bﬂrd.h
+"
+
+3 
+	gBﬂrd
+::
+	$Bﬂrd
+(
+wxFøme
+* 
+∑ª¡
+)
+
+4 : 
+	$wxP™ñ
+(
+∑ª¡
+, 
+wxID_ANY
+, 
+wxDeÁu…Posôi⁄
+,
+
+5 
+wxDeÁu…Size
+, 
+wxBORDER_NONE
+)
+
+7 
+timî
+ = 
+√w
+ 
+	`wxTimî
+(
+this
+, 1);
+
+8 
+m_°sb¨
+ = 
+∑ª¡
+->
+	`GëSètusB¨
+();
+
+9 
+isFÆlögFöished
+ = 
+Ál£
+;
+
+10 
+isSèπed
+ = 
+Ál£
+;
+
+11 
+isPau£d
+ = 
+Ál£
+;
+
+12 
+numLöesRemoved
+ = 0;
+
+13 
+curX
+ = 0;
+
+14 
+curY
+ = 0;
+
+15 
+	`CÀ¨Bﬂrd
+();
+
+16 
+	`C⁄√˘
+(
+wxEVT_PAINT
+, 
+	`wxPaötEvítH™dÀr
+(
+Bﬂrd
+::
+OnPaöt
+));
+
+17 
+	`C⁄√˘
+(
+wxEVT_KEY_DOWN
+, 
+	`wxKeyEvítH™dÀr
+(
+Bﬂrd
+::
+OnKeyDown
+));
+
+18 
+	`C⁄√˘
+(
+wxEVT_TIMER
+, 
+	`wxComm™dEvítH™dÀr
+(
+Bﬂrd
+::
+OnTimî
+));
+
+19 
+	}
+}
+
+22 
+	gBﬂrd
+::
+	$Sèπ
+()
+
+24 i‡(
+isPau£d
+)
+
+28 
+isSèπed
+ = 
+åue
+;
+
+29 
+isFÆlögFöished
+ = 
+Ál£
+;
+
+30 
+numLöesRemoved
+ = 0;
+
+31 
+	`CÀ¨Bﬂrd
+();
+
+32 
+	`NewPõ˚
+();
+
+33 
+timî
+->
+	`Sèπ
+(300);
+
+34 
+	}
+}
+
+36 
+	gBﬂrd
+::
+	$Pau£
+()
+
+38 i‡(!
+isSèπed
+)
+
+42 
+isPau£d
+ = !isPaused;
+
+43 i‡(
+isPau£d
+)
+
+45 
+timî
+->
+	`St›
+();
+
+46 
+m_°sb¨
+->
+	`SëSètusText
+(
+	`wxT
+("paused"));
+
+50 
+timî
+->
+	`Sèπ
+(300);
+
+51 
+wxSåög
+ 
+°r
+;
+
+52 
+°r
+.
+	`Prötf
+(
+	`wxT
+("%d"), 
+numLöesRemoved
+);
+
+53 
+m_°sb¨
+->
+	`SëSètusText
+(
+°r
+);
+
+55 
+	`Re‰esh
+();
+
+56 
+	}
+}
+
+58 
+	gBﬂrd
+::
+	$OnPaöt
+(
+wxPaötEvít
+& 
+evít
+)
+
+60 
+wxPaötDC
+ 
+	`dc
+(
+this
+);
+
+61 
+wxSize
+ 
+size
+ = 
+	`GëClõ¡Size
+();
+
+62 
+bﬂrdT›
+ = 
+size
+.
+	`GëHeight
+(Ë- 
+BﬂrdHeight
+ * 
+	`Squ¨eHeight
+();
+
+63 
+i
+ = 0; i < 
+BﬂrdHeight
+; ++i)
+
+65 
+j
+ = 0; j < 
+BﬂrdWidth
+; ++j)
+
+67 
+Tëromö€s
+ 
+sh≠e
+ = 
+	`Sh≠eAt
+(
+j
+, 
+BﬂrdHeight
+ - 
+i
+ - 1);
+
+68 i‡(
+sh≠e
+ !
+NoSh≠e
+)
+
+69 
+	`DøwSqu¨e
+(
+dc
+, 0 + 
+j
+ * 
+	`Squ¨eWidth
+(),
+
+70 
+bﬂrdT›
+ + 
+i
+ * 
+	`Squ¨eHeight
+(), 
+sh≠e
+);
+
+73 i‡(
+curPõ˚
+.
+	`GëSh≠e
+(Ë!
+NoSh≠e
+)
+
+75 
+i
+ = 0; i < 4; ++i)
+
+77 
+x
+ = 
+curX
+ + 
+curPõ˚
+.
+	`x
+(
+i
+);
+
+78 
+y
+ = 
+curY
+ - 
+curPõ˚
+.
+	`y
+(
+i
+);
+
+79 
+	`DøwSqu¨e
+(
+dc
+, 0 + 
+x
+ * 
+	`Squ¨eWidth
+(),
+
+80 
+bﬂrdT›
+ + (
+BﬂrdHeight
+ - 
+y
+ - 1Ë* 
+	`Squ¨eHeight
+(),
+
+81 
+curPõ˚
+.
+	`GëSh≠e
+());
+
+84 
+	}
+}
+
+86 
+	gBﬂrd
+::
+	$OnKeyDown
+(
+wxKeyEvít
+& 
+evít
+)
+
+88 i‡(!
+isSèπed
+ || 
+curPõ˚
+.
+	`GëSh≠e
+(Ë=
+NoSh≠e
+)
+
+90 
+evít
+.
+	`Skù
+();
+
+93 
+keycode
+ = 
+evít
+.
+	`GëKeyCode
+();
+
+94 i‡(
+keycode
+ == 'p' || keycode == 'P')
+
+96 
+	`Pau£
+();
+
+99 i‡(
+isPau£d
+)
+
+103 
+keycode
+)
+
+105 
+WXK_LEFT
+:
+
+106 
+	`TryMove
+(
+curPõ˚
+, 
+curX
+ - 1, 
+curY
+);
+
+108 
+WXK_RIGHT
+:
+
+109 
+	`TryMove
+(
+curPõ˚
+, 
+curX
+ + 1, 
+curY
+);
+
+111 
+WXK_DOWN
+:
+
+112 
+	`TryMove
+(
+curPõ˚
+.
+	`RŸ©eRight
+(), 
+curX
+, 
+curY
+);
+
+114 
+WXK_UP
+:
+
+115 
+	`TryMove
+(
+curPõ˚
+.
+	`RŸ©eLe·
+(), 
+curX
+, 
+curY
+);
+
+117 
+WXK_SPACE
+:
+
+118 
+	`Dr›Down
+();
+
+121 
+	`O√LöeDown
+();
+
+124 
+	`O√LöeDown
+();
+
+127 
+evít
+.
+	`Skù
+();
+
+129 
+	}
+}
+
+131 
+	gBﬂrd
+::
+	$OnTimî
+(
+wxComm™dEvít
+& 
+evít
+)
+
+133 i‡(
+isFÆlögFöished
+)
+
+135 
+isFÆlögFöished
+ = 
+Ál£
+;
+
+136 
+	`NewPõ˚
+();
+
+140 
+	`O√LöeDown
+();
+
+142 
+	}
+}
+
+144 
+	gBﬂrd
+::
+	$CÀ¨Bﬂrd
+()
+
+146 
+i
+ = 0; i < 
+BﬂrdHeight
+ * 
+BﬂrdWidth
+; ++i)
+
+148 
+bﬂrd
+[
+i
+] = 
+NoSh≠e
+;
+
+150 
+	}
+}
+
+152 
+	gBﬂrd
+::
+	$Dr›Down
+()
+
+154 
+√wY
+ = 
+curY
+;
+
+155 
+√wY
+ > 0)
+
+157 i‡(!
+	`TryMove
+(
+curPõ˚
+, 
+curX
+, 
+√wY
+ - 1))
+
+161 --
+√wY
+;
+
+163 
+	`Põ˚Dr›≥d
+();
+
+164 
+	}
+}
+
+166 
+	gBﬂrd
+::
+	$O√LöeDown
+()
+
+168 i‡(!
+	`TryMove
+(
+curPõ˚
+, 
+curX
+, 
+curY
+ - 1))
+
+170 
+	`Põ˚Dr›≥d
+();
+
+172 
+	}
+}
+
+174 
+	gBﬂrd
+::
+	$Põ˚Dr›≥d
+()
+
+176 
+i
+ = 0; i < 4; ++i)
+
+178 
+x
+ = 
+curX
+ + 
+curPõ˚
+.
+	`x
+(
+i
+);
+
+179 
+y
+ = 
+curY
+ - 
+curPõ˚
+.
+	`y
+(
+i
+);
+
+180 
+	`Sh≠eAt
+(
+x
+, 
+y
+Ë
+curPõ˚
+.
+	`GëSh≠e
+();
+
+182 
+	`RemoveFuŒLöes
+();
+
+183 i‡(!
+isFÆlögFöished
+)
+
+185 
+	`NewPõ˚
+();
+
+187 
+	}
+}
+
+189 
+	gBﬂrd
+::
+	$RemoveFuŒLöes
+()
+
+191 
+numFuŒLöes
+ = 0;
+
+192 
+i
+ = 
+BﬂrdHeight
+ - 1; i >= 0; --i)
+
+194 
+boﬁ
+ 
+löeIsFuŒ
+ = 
+åue
+;
+
+195 
+j
+ = 0; j < 
+BﬂrdWidth
+; ++j)
+
+197 i‡(
+	`Sh≠eAt
+(
+j
+, 
+i
+Ë=
+NoSh≠e
+)
+
+199 
+löeIsFuŒ
+ = 
+Ál£
+;
+
+203 i‡(
+löeIsFuŒ
+)
+
+205 ++
+numFuŒLöes
+;
+
+206 
+k
+ = 
+i
+; k < 
+BﬂrdHeight
+ - 1; ++k)
+
+208 
+j
+ = 0; j < 
+BﬂrdWidth
+; ++j)
+
+210 
+	`Sh≠eAt
+(
+j
+, 
+k
+) = ShapeAt(j, k + 1);
+
+215 i‡(
+numFuŒLöes
+ > 0)
+
+217 
+numLöesRemoved
+ +
+numFuŒLöes
+;
+
+218 
+wxSåög
+ 
+°r
+;
+
+219 
+°r
+.
+	`Prötf
+(
+	`wxT
+("%d"), 
+numLöesRemoved
+);
+
+220 
+m_°sb¨
+->
+	`SëSètusText
+(
+°r
+);
+
+221 
+isFÆlögFöished
+ = 
+åue
+;
+
+222 
+curPõ˚
+.
+	`SëSh≠e
+(
+NoSh≠e
+);
+
+223 
+	`Re‰esh
+();
+
+225 
+	}
+}
+
+227 
+	gBﬂrd
+::
+	$NewPõ˚
+()
+
+229 
+curPõ˚
+.
+	`SëR™domSh≠e
+();
+
+230 
+curX
+ = 
+BﬂrdWidth
+ / 2 + 1;
+
+231 
+curY
+ = 
+BﬂrdHeight
+ - 1 + 
+curPõ˚
+.
+	`MöY
+();
+
+232 i‡(!
+	`TryMove
+(
+curPõ˚
+, 
+curX
+, 
+curY
+))
+
+234 
+curPõ˚
+.
+	`SëSh≠e
+(
+NoSh≠e
+);
+
+235 
+timî
+->
+	`St›
+();
+
+236 
+isSèπed
+ = 
+Ál£
+;
+
+237 
+m_°sb¨
+->
+	`SëSètusText
+(
+	`wxT
+("game over"));
+
+239 
+	}
+}
+
+241 
+boﬁ
+ 
+	gBﬂrd
+::
+	$TryMove
+(c⁄° 
+Sh≠e
+& 
+√wPõ˚
+, 
+√wX
+, 
+√wY
+)
+
+243 
+i
+ = 0; i < 4; ++i)
+
+245 
+x
+ = 
+√wX
+ + 
+√wPõ˚
+.
+	`x
+(
+i
+);
+
+246 
+y
+ = 
+√wY
+ - 
+√wPõ˚
+.
+	`y
+(
+i
+);
+
+247 i‡(
+x
+ < 0 || x >
+BﬂrdWidth
+ || 
+y
+ < 0 || y >
+BﬂrdHeight
+)
+
+249  
+Ál£
+;
+
+251 i‡(
+	`Sh≠eAt
+(
+x
+, 
+y
+Ë!
+NoSh≠e
+)
+
+253  
+Ál£
+;
+
+256 
+curPõ˚
+ = 
+√wPõ˚
+;
+
+257 
+curX
+ = 
+√wX
+;
+
+258 
+curY
+ = 
+√wY
+;
+
+259 
+	`Re‰esh
+();
+
+260  
+åue
+;
+
+261 
+	}
+}
+
+263 
+	gBﬂrd
+::
+	$DøwSqu¨e
+(
+wxPaötDC
+& 
+dc
+, 
+x
+, 
+y
+, 
+Tëromö€s
+ 
+sh≠e
+)
+
+265 
+wxCﬁour
+ 
+cﬁ‹s
+[] = { 
+	`wxCﬁour
+(0, 0, 0), wxColour(204, 102, 102),
+
+266 
+	`wxCﬁour
+(102, 204, 102), wxColour(102, 102, 204),
+
+267 
+	`wxCﬁour
+(204, 204, 102), wxColour(204, 102, 204),
+
+268 
+	`wxCﬁour
+(102, 204, 204), wxColour(218, 170, 0)
+
+270 
+wxCﬁour
+ 
+light
+[] = { 
+	`wxCﬁour
+(0, 0, 0), wxColour(248, 159, 171),
+
+271 
+	`wxCﬁour
+(121, 252, 121), wxColour(121, 121, 252),
+
+272 
+	`wxCﬁour
+(252, 252, 121), wxColour(252, 121, 252),
+
+273 
+	`wxCﬁour
+(121, 252, 252), wxColour(252, 198, 0)
+
+275 
+wxCﬁour
+ 
+d¨k
+[] = { 
+	`wxCﬁour
+(0, 0, 0), wxColour(128, 59, 59),
+
+276 
+	`wxCﬁour
+(59, 128, 59), wxColour(59, 59, 128),
+
+277 
+	`wxCﬁour
+(128, 128, 59), wxColour(128, 59, 128),
+
+278 
+	`wxCﬁour
+(59, 128, 128), wxColour(128, 98, 0)
+
+280 
+wxPí
+ 
+	`≥n
+(
+light
+[(
+sh≠e
+)]);
+
+281 
+≥n
+.
+	`SëC≠
+(
+wxCAP_PROJECTING
+);
+
+282 
+dc
+.
+	`SëPí
+(
+≥n
+);
+
+283 
+dc
+.
+	`DøwLöe
+(
+x
+, 
+y
+ + 
+	`Squ¨eHeight
+() - 1, x, y);
+
+284 
+dc
+.
+	`DøwLöe
+(
+x
+, 
+y
+, x + 
+	`Squ¨eWidth
+() - 1, y);
+
+285 
+wxPí
+ 
+	`d¨k≥n
+(
+d¨k
+[(
+sh≠e
+)]);
+
+286 
+d¨k≥n
+.
+	`SëC≠
+(
+wxCAP_PROJECTING
+);
+
+287 
+dc
+.
+	`SëPí
+(
+d¨k≥n
+);
+
+288 
+dc
+.
+	`DøwLöe
+(
+x
+ + 1, 
+y
+ + 
+	`Squ¨eHeight
+() - 1,
+
+289 
+x
+ + 
+	`Squ¨eWidth
+(Ë- 1, 
+y
+ + 
+	`Squ¨eHeight
+() - 1);
+
+290 
+dc
+.
+	`DøwLöe
+(
+x
+ + 
+	`Squ¨eWidth
+() - 1,
+
+291 
+y
+ + 
+	`Squ¨eHeight
+(Ë- 1, 
+x
+ + 
+	`Squ¨eWidth
+() - 1, y + 1);
+
+292 
+dc
+.
+	`SëPí
+(*
+wxTRANSPARENT_PEN
+);
+
+293 
+dc
+.
+	`SëBrush
+(
+	`wxBrush
+(
+cﬁ‹s
+[(
+sh≠e
+)]));
+
+294 
+dc
+.
+	`DøwRe˘™gÀ
+(
+x
+ + 1, 
+y
+ + 1, 
+	`Squ¨eWidth
+() - 2,
+
+295 
+	`Squ¨eHeight
+() - 2);
+
+296 
+	}
+}
+
+	@C:\Users\Admin\Desktop\Tetris\Board.h
+
+1 #i‚de‡
+BOARD_H
+
+
+2 
+	#BOARD_H
+
+
+	)
+
+4 
+	~"Sh≠e.h
+"
+
+5 
+	~<wx/wx.h
+>
+
+7 ˛as†
+	cBﬂrd
+ : 
+public
+ 
+wxP™ñ
+
+
+10 
+public
+:
+
+11 
+Bﬂrd
+(
+wxFøme
+* 
+∑ª¡
+);
+
+12 
+Sèπ
+();
+
+13 
+Pau£
+();
+
+14 
+löesRemovedCh™ged
+(
+numLöes
+);
+
+16 
+	m¥Ÿe˘ed
+:
+
+17 
+OnPaöt
+(
+wxPaötEvít
+& 
+evít
+);
+
+18 
+OnKeyDown
+(
+wxKeyEvít
+& 
+evít
+);
+
+19 
+OnTimî
+(
+wxComm™dEvít
+& 
+evít
+);
+
+21 
+	m¥iv©e
+:
+
+22 íum { 
+BﬂrdWidth
+ = 10, 
+	mBﬂrdHeight
+ = 22 };
+
+24 
+	gTëromö€s
+& 
+	$Sh≠eAt
+(
+x
+, 
+y
+)
+
+26  
+bﬂrd
+[(
+y
+ * 
+BﬂrdWidth
+Ë+ 
+x
+];
+
+27 
+	}
+}
+
+29 
+	$Squ¨eWidth
+()
+
+31  
+	`GëClõ¡Size
+().
+	`GëWidth
+(Ë/ 
+BﬂrdWidth
+;
+
+32 
+	}
+}
+
+33 
+	$Squ¨eHeight
+()
+
+35  
+	`GëClõ¡Size
+().
+	`GëHeight
+(Ë/ 
+BﬂrdHeight
+;
+
+36 
+	}
+}
+
+37 
+CÀ¨Bﬂrd
+();
+
+38 
+Dr›Down
+();
+
+39 
+O√LöeDown
+();
+
+40 
+Põ˚Dr›≥d
+();
+
+41 
+RemoveFuŒLöes
+();
+
+42 
+NewPõ˚
+();
+
+43 
+boﬁ
+ 
+TryMove
+(c⁄° 
+Sh≠e
+& 
+√wPõ˚
+, 
+√wX
+, 
+√wY
+);
+
+44 
+DøwSqu¨e
+(
+wxPaötDC
+& 
+dc
+, 
+x
+, 
+y
+, 
+Tëromö€s
+ 
+sh≠e
+);
+
+46 
+wxTimî
+* 
+	gtimî
+;
+
+47 
+boﬁ
+ 
+	gisSèπed
+;
+
+48 
+boﬁ
+ 
+	gisPau£d
+;
+
+49 
+boﬁ
+ 
+	gisFÆlögFöished
+;
+
+50 
+Sh≠e
+ 
+	gcurPõ˚
+;
+
+51 
+	gcurX
+;
+
+52 
+	gcurY
+;
+
+53 
+	gnumLöesRemoved
+;
+
+54 
+Tëromö€s
+ 
+	gbﬂrd
+[
+BﬂrdWidth
+ * 
+BﬂrdHeight
+];
+
+55 
+wxSètusB¨
+* 
+	gm_°sb¨
+;
+
+	@C:\Users\Admin\Desktop\Tetris\Shape.cpp
+
+1 
+	~<°dlib.h
+>
+
+2 
+	~<Æg‹ôhm
+>
+
+3 
+	~"Sh≠e.h
+"
+
+5 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+7 
+	gSh≠e
+::
+	$SëSh≠e
+(
+Tëromö€s
+ 
+sh≠e
+)
+
+9 c⁄° 
+co‹dsTabÀ
+[8][4][2] =
+
+20 
+i
+ = 0; i < 4 ; i++)
+
+22 
+j
+ = 0; j < 2; ++j)
+
+24 
+co‹ds
+[
+i
+][
+j
+] = 
+co‹dsTabÀ
+[
+sh≠e
+][i][j];
+
+27 
+põ˚Sh≠e
+ = 
+sh≠e
+;
+
+28 
+	}
+}
+
+31 
+	gSh≠e
+::
+	$SëR™domSh≠e
+()
+
+33 
+x
+ = 
+	`ønd
+() % 7 + 1;
+
+34 
+	`SëSh≠e
+(
+	`Tëromö€s
+(
+x
+));
+
+35 
+	}
+}
+
+37 
+	gSh≠e
+::
+	$MöX
+() const
+
+39 
+m
+ = 
+co‹ds
+[0][0];
+
+40 
+i
+ = 0; i < 4; i++)
+
+42 
+m
+ = 
+	`mö
+(m, 
+co‹ds
+[
+i
+][0]);
+
+44  
+m
+;
+
+45 
+	}
+}
+
+47 
+	gSh≠e
+::
+	$MaxX
+() const
+
+49 
+m
+ = 
+co‹ds
+[0][0];
+
+50 
+i
+ = 0; i < 4; i++)
+
+52 
+m
+ = 
+	`max
+(m, 
+co‹ds
+[
+i
+][0]);
+
+54  
+m
+;
+
+55 
+	}
+}
+
+57 
+	gSh≠e
+::
+	$MöY
+() const
+
+59 
+m
+ = 
+co‹ds
+[0][1];
+
+60 
+i
+ = 0; i < 4; i++)
+
+62 
+m
+ = 
+	`mö
+(m, 
+co‹ds
+[
+i
+][1]);
+
+64  
+m
+;
+
+65 
+	}
+}
+
+67 
+	gSh≠e
+::
+	$MaxY
+() const
+
+69 
+m
+ = 
+co‹ds
+[0][1];
+
+70 
+i
+ = 0; i < 4; i++)
+
+72 
+m
+ = 
+	`max
+(m, 
+co‹ds
+[
+i
+][1]);
+
+74  
+m
+;
+
+75 
+	}
+}
+
+77 
+Sh≠e
+ 
+	gSh≠e
+::
+	$RŸ©eLe·
+() const
+
+79 i‡(
+põ˚Sh≠e
+ =
+Squ¨eSh≠e
+)
+
+81  *
+this
+;
+
+83 
+Sh≠e
+ 
+ªsu…
+;
+
+84 
+ªsu…
+.
+põ˚Sh≠e
+ =ÖieceShape;
+
+85 
+i
+ = 0; i < 4; ++i)
+
+87 
+ªsu…
+.
+	`SëX
+(
+i
+, 
+	`y
+(i));
+
+88 
+ªsu…
+.
+	`SëY
+(
+i
+, -
+	`x
+(i));
+
+90  
+ªsu…
+;
+
+91 
+	}
+}
+
+93 
+Sh≠e
+ 
+	gSh≠e
+::
+	$RŸ©eRight
+() const
+
+95 i‡(
+põ˚Sh≠e
+ =
+Squ¨eSh≠e
+)
+
+97  *
+this
+;
+
+99 
+Sh≠e
+ 
+ªsu…
+;
+
+100 
+ªsu…
+.
+põ˚Sh≠e
+ =ÖieceShape;
+
+101 
+i
+ = 0; i < 4; ++i)
+
+103 
+ªsu…
+.
+	`SëX
+(
+i
+, -
+	`y
+(i));
+
+104 
+ªsu…
+.
+	`SëY
+(
+i
+, 
+	`x
+(i));
+
+106  
+ªsu…
+;
+
+107 
+	}
+}
+
+	@C:\Users\Admin\Desktop\Tetris\Shape.h
+
+1 #i‚de‡
+SHAPE_H
+
+
+2 
+	#SHAPE_H
+
+
+	)
+
+4 
+	eTëromö€s
+ { 
+	mNoSh≠e
+, 
+	mZSh≠e
+, 
+	mSSh≠e
+, 
+	mLöeSh≠e
+,
+
+5 
+	mTSh≠e
+, 
+	mSqu¨eSh≠e
+, 
+	mLSh≠e
+, 
+	mMúr‹edLSh≠e
+
+
+8 ˛as†
+	cSh≠e
+
+
+10 
+	mpublic
+:
+
+11 
+	$Sh≠e
+()
+
+13 
+	`SëSh≠e
+(
+NoSh≠e
+);
+
+15 
+	`SëSh≠e
+(
+Tëromö€s
+ 
+sh≠e
+);
+
+16 
+	`SëR™domSh≠e
+();
+
+18 
+Tëromö€s
+ 
+	$GëSh≠e
+() const
+
+20  
+põ˚Sh≠e
+;
+
+21 
+	}
+}
+
+22 
+	$x
+(
+ödex
+) const
+
+24  
+co‹ds
+[
+ödex
+][0];
+
+25 
+	}
+}
+
+26 
+	$y
+(
+ödex
+) const
+
+28  
+co‹ds
+[
+ödex
+][1];
+
+29 
+	}
+}
+
+31 
+	$MöX
+() const;
+
+32 
+	$MaxX
+() const;
+
+33 
+	$MöY
+() const;
+
+34 
+	$MaxY
+() const;
+
+36 
+Sh≠e
+ 
+	$RŸ©eLe·
+() const;
+
+37 
+Sh≠e
+ 
+	$RŸ©eRight
+() const;
+
+39 
+¥iv©e
+:
+
+40 
+	$SëX
+(
+ödex
+, 
+x
+)
+
+42 
+co‹ds
+[
+ödex
+][0] = 
+x
+;
+
+43 
+	}
+}
+
+44 
+	$SëY
+(
+ödex
+, 
+y
+)
+
+46 
+co‹ds
+[
+ödex
+][1] = 
+y
+;
+
+47 
+	}
+}
+
+48 
+Tëromö€s
+ 
+	gpõ˚Sh≠e
+;
+
+49 
+	gco‹ds
+[4][2];
+
+	@C:\Users\Admin\Desktop\Tetris\Tetris.cpp
+
+1 
+	~"Tëris.h
+"
+
+2 
+	~"Bﬂrd.h
+"
+
+4 
+	gTëris
+::
+	$Tëris
+(c⁄° 
+wxSåög
+& 
+tôÀ
+)
+
+5 : 
+	`wxFøme
+(
+NULL
+, 
+wxID_ANY
+, 
+tôÀ
+, 
+wxDeÁu…Posôi⁄
+, 
+	`wxSize
+(180, 380))
+
+7 
+wxSètusB¨
+* 
+sb
+ = 
+	`Cª©eSètusB¨
+();
+
+8 
+sb
+->
+	`SëSètusText
+(
+	`wxT
+("0"));
+
+9 
+Bﬂrd
+* 
+bﬂrd
+ = 
+√w
+ 
+	`Bﬂrd
+(
+this
+);
+
+10 
+bﬂrd
+->
+	`SëFocus
+();
+
+11 
+bﬂrd
+->
+	`Sèπ
+();
+
+12 
+	}
+}
+
+	@C:\Users\Admin\Desktop\Tetris\Tetris.h
+
+1 
+	~<wx/wx.h
+>
+
+3 ˛as†
+	cTëris
+ : 
+public
+ 
+wxFøme
+
+
+5 
+public
+:
+
+6 
+Tëris
+(c⁄° 
+wxSåög
+& 
+tôÀ
+);
+
+	@C:\Users\Admin\Desktop\Tetris\main.cpp
+
+1 
+	~"maö.h
+"
+
+2 
+	~"Tëris.h
+"
+
+5 
+	$IMPLEMENT_APP
+(
+MyAµ
+)
+
+7 
+boﬁ
+ 
+MyAµ
+::
+	$OnInô
+()
+
+9 
+	`§™d
+(
+	`time
+(
+NULL
+));
+
+10 
+Tëris
+* 
+ãåis
+ = 
+√w
+ 
+	`Tëris
+(
+	`wxT
+("Tetris"));
+
+11 
+ãåis
+->
+	`Cíåe
+();
+
+12 
+ãåis
+->
+	`Show
+(
+åue
+);
+
+13  
+åue
+;
+
+14 
+	}
+}
+
+	@C:\Users\Admin\Desktop\Tetris\main.h
+
+1 
+	~<wx/wx.h
+>
+
+3 ˛as†
+	cMyAµ
+ : 
+public
+ 
+wxAµ
+
+
+5 
+public
+:
+
+6 
+vútuÆ
+ 
+boﬁ
+ 
+OnInô
+();
+
+	@Board.h
+
+1 #i‚de‡
+BOARD_H
+
+
+2 
+	#BOARD_H
+
+
+	)
+
+4 
+	~"Sh≠e.h
+"
+
+5 
+	~<wx/wx.h
+>
+
+7 ˛as†
+	cBﬂrd
+ : 
+public
+ 
+wxP™ñ
+
+
+10 
+public
+:
+
+11 
+Bﬂrd
+(
+wxFøme
+* 
+∑ª¡
+);
+
+12 
+Sèπ
+();
+
+13 
+Pau£
+();
+
+14 
+löesRemovedCh™ged
+(
+numLöes
+);
+
+16 
+	m¥Ÿe˘ed
+:
+
+17 
+OnPaöt
+(
+wxPaötEvít
+& 
+evít
+);
+
+18 
+OnKeyDown
+(
+wxKeyEvít
+& 
+evít
+);
+
+19 
+OnTimî
+(
+wxComm™dEvít
+& 
+evít
+);
+
+21 
+	m¥iv©e
+:
+
+22 íum { 
+BﬂrdWidth
+ = 10, 
+	mBﬂrdHeight
+ = 22 };
+
+24 
+	gTëromö€s
+& 
+	$Sh≠eAt
+(
+x
+, 
+y
+)
+
+26  
+bﬂrd
+[(
+y
+ * 
+BﬂrdWidth
+Ë+ 
+x
+];
+
+27 
+	}
+}
+
+29 
+	$Squ¨eWidth
+()
+
+31  
+	`GëClõ¡Size
+().
+	`GëWidth
+(Ë/ 
+BﬂrdWidth
+;
+
+32 
+	}
+}
+
+33 
+	$Squ¨eHeight
+()
+
+35  
+	`GëClõ¡Size
+().
+	`GëHeight
+(Ë/ 
+BﬂrdHeight
+;
+
+36 
+	}
+}
+
+37 
+CÀ¨Bﬂrd
+();
+
+38 
+Dr›Down
+();
+
+39 
+O√LöeDown
+();
+
+40 
+Põ˚Dr›≥d
+();
+
+41 
+RemoveFuŒLöes
+();
+
+42 
+NewPõ˚
+();
+
+43 
+boﬁ
+ 
+TryMove
+(c⁄° 
+Sh≠e
+& 
+√wPõ˚
+, 
+√wX
+, 
+√wY
+);
+
+44 
+DøwSqu¨e
+(
+wxPaötDC
+& 
+dc
+, 
+x
+, 
+y
+, 
+Tëromö€s
+ 
+sh≠e
+);
+
+46 
+wxTimî
+* 
+	gtimî
+;
+
+47 
+boﬁ
+ 
+	gisSèπed
+;
+
+48 
+boﬁ
+ 
+	gisPau£d
+;
+
+49 
+boﬁ
+ 
+	gisFÆlögFöished
+;
+
+50 
+Sh≠e
+ 
+	gcurPõ˚
+;
+
+51 
+	gcurX
+;
+
+52 
+	gcurY
+;
+
+53 
+	gnumLöesRemoved
+;
+
+54 
+Tëromö€s
+ 
+	gbﬂrd
+[
+BﬂrdWidth
+ * 
+BﬂrdHeight
+];
+
+55 
+wxSètusB¨
+* 
+	gm_°sb¨
+;
+
+	@Shape.h
+
+1 #i‚de‡
+SHAPE_H
+
+
+2 
+	#SHAPE_H
+
+
+	)
+
+4 
+	eTëromö€s
+ { 
+	mNoSh≠e
+, 
+	mZSh≠e
+, 
+	mSSh≠e
+, 
+	mLöeSh≠e
+,
+
+5 
+	mTSh≠e
+, 
+	mSqu¨eSh≠e
+, 
+	mLSh≠e
+, 
+	mMúr‹edLSh≠e
+
+
+8 ˛as†
+	cSh≠e
+
+
+10 
+	mpublic
+:
+
+11 
+	$Sh≠e
+()
+
+13 
+	`SëSh≠e
+(
+NoSh≠e
+);
+
+15 
+	`SëSh≠e
+(
+Tëromö€s
+ 
+sh≠e
+);
+
+16 
+	`SëR™domSh≠e
+();
+
+18 
+Tëromö€s
+ 
+	$GëSh≠e
+() const
+
+20  
+põ˚Sh≠e
+;
+
+21 
+	}
+}
+
+22 
+	$x
+(
+ödex
+) const
+
+24  
+co‹ds
+[
+ödex
+][0];
+
+25 
+	}
+}
+
+26 
+	$y
+(
+ödex
+) const
+
+28  
+co‹ds
+[
+ödex
+][1];
+
+29 
+	}
+}
+
+31 
+	$MöX
+() const;
+
+32 
+	$MaxX
+() const;
+
+33 
+	$MöY
+() const;
+
+34 
+	$MaxY
+() const;
+
+36 
+Sh≠e
+ 
+	$RŸ©eLe·
+() const;
+
+37 
+Sh≠e
+ 
+	$RŸ©eRight
+() const;
+
+39 
+¥iv©e
+:
+
+40 
+	$SëX
+(
+ödex
+, 
+x
+)
+
+42 
+co‹ds
+[
+ödex
+][0] = 
+x
+;
+
+43 
+	}
+}
+
+44 
+	$SëY
+(
+ödex
+, 
+y
+)
+
+46 
+co‹ds
+[
+ödex
+][1] = 
+y
+;
+
+47 
+	}
+}
+
+48 
+Tëromö€s
+ 
+	gpõ˚Sh≠e
+;
+
+49 
+	gco‹ds
+[4][2];
+
+	@Tetris.h
+
+1 
+	~<wx/wx.h
+>
+
+3 ˛as†
+	cTëris
+ : 
+public
+ 
+wxFøme
+
+
+5 
+public
+:
+
+6 
+Tëris
+(c⁄° 
+wxSåög
+& 
+tôÀ
+);
+
+	@main.h
+
+1 
+	~<wx/wx.h
+>
+
+3 ˛as†
+	cMyAµ
+ : 
+public
+ 
+wxAµ
+
+
+5 
+public
+:
+
+6 
+vútuÆ
+ 
+boﬁ
+ 
+OnInô
+();
+
+	@
+1
+.
+0
+12
+344
+C:\Users\Admin\Desktop\Tetris\Board.cpp
+C:\Users\Admin\Desktop\Tetris\Board.h
+C:\Users\Admin\Desktop\Tetris\Shape.cpp
+C:\Users\Admin\Desktop\Tetris\Shape.h
+C:\Users\Admin\Desktop\Tetris\Tetris.cpp
+C:\Users\Admin\Desktop\Tetris\Tetris.h
+C:\Users\Admin\Desktop\Tetris\main.cpp
+C:\Users\Admin\Desktop\Tetris\main.h
+Board.h
+Shape.h
+Tetris.h
+main.h
