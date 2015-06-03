@@ -23,7 +23,9 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine
         itoa(x, buffer, 10);
         expression[i] = buffer;
     }
-    if (!Test(COUNT))
+    if (Test(COUNT))
+        MessageBox(NULL, TEXT(expression[0].data()), TEXT("Success"),0);
+    else
         MessageBox(NULL, TEXT("Fail"), TEXT("Fail"), 0) ;
     system("pause");
     return 0;
@@ -34,10 +36,7 @@ bool Test(int n)
     if (n == 1)
     {
         if (fabs(number[0] - RESULT) < PRECISION)
-        {
-            MessageBox(NULL, TEXT(expression[0].data()), TEXT("Success"),0);
             return true;
-        }
         else
             return false;
     }
