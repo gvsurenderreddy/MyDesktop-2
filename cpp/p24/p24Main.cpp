@@ -15,8 +15,9 @@ const double PRECISION = 1E-6;
 const int COUNT = 4;
 const int RESULT = 24;
 double number[COUNT];
-wxString expression[COUNT];
+std::string expression[COUNT];
 int digit = 0;
+int newflag = 1;
 
 bool Test(int n)
 {
@@ -32,7 +33,7 @@ bool Test(int n)
         for (int j = i + 1; j < n; j++)
         {
             double a, b;
-            wxString expa, expb;
+            std::string expa, expb;
             a = number[i];
             b = number[j];
             number[j] = number[n - 1];
@@ -205,9 +206,24 @@ void p24Frame::OnAbout(wxCommandEvent& event)
 
 void p24Frame::OnNew(wxCommandEvent& event)
 {
-    digit = 0;
-    TextCtrl1->SetLabel(wxString(""));
-    ButtonNew->SetLabel(wxString("New"));
+    if (newflag)
+    {
+        digit = 0;
+        TextCtrl1->SetLabel(wxString(""));
+    }
+    else
+    {
+        newflag=1;
+        ButtonNew->SetLabel(wxString("New"));
+        if (Test(COUNT))
+        {
+            TextCtrl1->SetLabel(wxString(expression[0].data()));
+        }
+        else
+        {
+            TextCtrl1->SetLabel(wxString(wxT("ERROR!")));
+        }
+    }
 }
 
 void p24Frame::OnDigitClick(wxCommandEvent& event)
@@ -222,14 +238,13 @@ void p24Frame::OnButton1Click(wxCommandEvent& event)
 {
     if (digit < COUNT)
     {
+        TextCtrl1->SetLabel(TextCtrl1->GetLabel() + Button1->GetLabel());
         number[digit] = 1;
-        digit++;
-        wxString str = Button1->GetLabel();
-        TextCtrl1->SetLabel(TextCtrl1->GetLabel() + str);
-    }
-    else
-    {
-        ButtonNew->SetLabel(wxString("Calc"));
+        if (++digit == COUNT)
+        {
+            newflag = 0;
+            ButtonNew->SetLabel(wxString("Calc"));
+        }
     }
 }
 
@@ -237,14 +252,13 @@ void p24Frame::OnButton2Click(wxCommandEvent& event)
 {
     if (digit < COUNT)
     {
+        TextCtrl1->SetLabel(TextCtrl1->GetLabel() + Button2->GetLabel());
         number[digit] = 2;
-        digit++;
-        wxString str = Button2->GetLabel();
-        TextCtrl1->SetLabel(TextCtrl1->GetLabel() + str);
-    }
-    else
-    {
-        ButtonNew->SetLabel(wxString("Calc"));
+        if (++digit == COUNT)
+        {
+            newflag = 0;
+            ButtonNew->SetLabel(wxString("Calc"));
+        }
     }
 }
 
@@ -252,14 +266,13 @@ void p24Frame::OnButton3Click(wxCommandEvent& event)
 {
     if (digit < COUNT)
     {
+        TextCtrl1->SetLabel(TextCtrl1->GetLabel() + Button3->GetLabel());
         number[digit] = 3;
-        digit++;
-        wxString str = Button3->GetLabel();
-        TextCtrl1->SetLabel(TextCtrl1->GetLabel() + str);
-    }
-    else
-    {
-        ButtonNew->SetLabel(wxString("Calc"));
+        if (++digit == COUNT)
+        {
+            newflag = 0;
+            ButtonNew->SetLabel(wxString("Calc"));
+        }
     }
 }
 
@@ -267,13 +280,12 @@ void p24Frame::OnButton4Click(wxCommandEvent& event)
 {
     if (digit < COUNT)
     {
+        TextCtrl1->SetLabel(TextCtrl1->GetLabel() + Button4->GetLabel());
         number[digit] = 4;
-        digit++;
-        wxString str = Button4->GetLabel();
-        TextCtrl1->SetLabel(TextCtrl1->GetLabel() + str);
-    }
-    else
-    {
-        ButtonNew->SetLabel(wxString("Calc"));
+        if (++digit == COUNT)
+        {
+            newflag = 0;
+            ButtonNew->SetLabel(wxString("Calc"));
+        }
     }
 }
