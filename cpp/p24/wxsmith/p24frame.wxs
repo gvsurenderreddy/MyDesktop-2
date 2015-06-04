@@ -37,7 +37,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
 							<label>2</label>
-							<handler function="OnDigitClick" entry="EVT_BUTTON" />
+							<handler function="OnButton2Click" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
@@ -46,7 +46,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON3" variable="Button3" member="yes">
 							<label>3</label>
-							<handler function="OnDigitClick" entry="EVT_BUTTON" />
+							<handler function="OnButton3Click" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
@@ -55,7 +55,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON4" variable="Button4" member="yes">
 							<label>4</label>
-							<handler function="OnDigitClick" entry="EVT_BUTTON" />
+							<handler function="OnButton4Click" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>

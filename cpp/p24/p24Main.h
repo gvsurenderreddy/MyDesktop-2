@@ -32,6 +32,9 @@ private:
     void OnDigitClick(wxCommandEvent& event);
     void OnNew(wxCommandEvent& event);
     void OnButton1Click(wxCommandEvent& event);
+    void OnButton2Click(wxCommandEvent& event);
+    void OnButton3Click(wxCommandEvent& event);
+    void OnButton4Click(wxCommandEvent& event);
     //*)
 
     //(*Identifiers(p24Frame)
