@@ -3666,7 +3666,7 @@
 1412631243 c:\wxwidgets\include\wx\univ\theme.h
 	"wx/string.h"
 
-1433404160 c:\users\admin\desktop\cpp\p24\p24main.h
+1433481042 c:\users\admin\desktop\cpp\p24\p24main.h
 	<wx/sizer.h>
 	<wx/textctrl.h>
 	<wx/button.h>
@@ -3784,7 +3784,7 @@
 
 1412631243 c:\wxwidgets\include\wx\os2\textctrl.h
 
-1433422146 source:c:\users\admin\desktop\cpp\p24\p24main.cpp
+1433478830 source:c:\users\admin\desktop\cpp\p24\p24main.cpp
 	"p24Main.h"
 	<wx/msgdlg.h>
 	<wx/math.h>

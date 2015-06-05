@@ -29,12 +29,16 @@ private:
     //(*Handlers(p24Frame)
     void OnQuit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
-    void OnDigitClick(wxCommandEvent& event);
     void OnNew(wxCommandEvent& event);
     void OnButton1Click(wxCommandEvent& event);
     void OnButton2Click(wxCommandEvent& event);
     void OnButton3Click(wxCommandEvent& event);
     void OnButton4Click(wxCommandEvent& event);
+    void OnButton5Click(wxCommandEvent& event);
+    void OnButton6Click(wxCommandEvent& event);
+    void OnButton7Click(wxCommandEvent& event);
+    void OnButton8Click(wxCommandEvent& event);
+    void OnButton9Click(wxCommandEvent& event);
     //*)
 
     //(*Identifiers(p24Frame)

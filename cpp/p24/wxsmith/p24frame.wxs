@@ -15,7 +15,7 @@
 						<family>swiss</family>
 						<face>Monaco</face>
 					</font>
-					<style>wxTE_RIGHT</style>
+					<style>wxTE_READONLY|wxTE_RIGHT</style>
 				</object>
 				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL</flag>
 				<border>5</border>
@@ -64,7 +64,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON5" variable="Button5" member="yes">
 							<label>5</label>
-							<handler function="OnDigitClick" entry="EVT_BUTTON" />
+							<handler function="OnButton5Click" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
@@ -73,7 +73,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON6" variable="Button6" member="yes">
 							<label>6</label>
-							<handler function="OnDigitClick" entry="EVT_BUTTON" />
+							<handler function="OnButton6Click" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
@@ -82,7 +82,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON7" variable="Button7" member="yes">
 							<label>7</label>
-							<handler function="OnDigitClick" entry="EVT_BUTTON" />
+							<handler function="OnButton7Click" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
@@ -91,7 +91,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON8" variable="Button8" member="yes">
 							<label>8</label>
-							<handler function="OnDigitClick" entry="EVT_BUTTON" />
+							<handler function="OnButton8Click" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
@@ -100,7 +100,7 @@
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON9" variable="Button9" member="yes">
 							<label>9</label>
-							<handler function="OnDigitClick" entry="EVT_BUTTON" />
+							<handler function="OnButton9Click" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
