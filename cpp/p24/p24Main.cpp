@@ -213,7 +213,7 @@ void p24Frame::OnNew(wxCommandEvent& event)
     }
     else
     {
-        newflag=1;
+        newflag = 1;
         ButtonNew->SetLabel(wxString("New"));
         if (Test(COUNT))
         {
@@ -240,6 +240,9 @@ void p24Frame::OnButton1Click(wxCommandEvent& event)
     {
         TextCtrl1->SetLabel(TextCtrl1->GetLabel() + Button1->GetLabel());
         number[digit] = 1;
+        char buffer[20];
+        itoa(1, buffer, 10);
+        expression[digit] = buffer;
         if (++digit == COUNT)
         {
             newflag = 0;
@@ -254,6 +257,9 @@ void p24Frame::OnButton2Click(wxCommandEvent& event)
     {
         TextCtrl1->SetLabel(TextCtrl1->GetLabel() + Button2->GetLabel());
         number[digit] = 2;
+        char buffer[20];
+        itoa(2, buffer, 10);
+        expression[digit] = buffer;
         if (++digit == COUNT)
         {
             newflag = 0;
@@ -268,6 +274,9 @@ void p24Frame::OnButton3Click(wxCommandEvent& event)
     {
         TextCtrl1->SetLabel(TextCtrl1->GetLabel() + Button3->GetLabel());
         number[digit] = 3;
+        char buffer[20];
+        itoa(3, buffer, 10);
+        expression[digit] = buffer;
         if (++digit == COUNT)
         {
             newflag = 0;
@@ -282,6 +291,9 @@ void p24Frame::OnButton4Click(wxCommandEvent& event)
     {
         TextCtrl1->SetLabel(TextCtrl1->GetLabel() + Button4->GetLabel());
         number[digit] = 4;
+        char buffer[20];
+        itoa(4, buffer, 10);
+        expression[digit] = buffer;
         if (++digit == COUNT)
         {
             newflag = 0;
