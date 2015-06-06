@@ -1955,7 +1955,7 @@
 
 1412631243 c:\windows\wxwidgets\lib\gcc_lib\mswud\wx\setup.h
 
-1433376873 source:c:\users\admin\desktop\cpp\p24\resource.rc
+1383686511 source:c:\users\admin\desktop\cpp\p24\resource.rc
 	"wx/msw/wx.rc"
 
 1412631243 c:\wxwidgets\include\wx\msw\wx.rc
@@ -1975,12 +1975,12 @@
 
 1412631243 c:\wxwidgets\include\wx\msw\rcdefs.h
 
-1433376873 source:c:\users\admin\desktop\cpp\p24\p24app.cpp
+1433334963 source:c:\users\admin\desktop\cpp\p24\p24app.cpp
 	"p24App.h"
 	"p24Main.h"
 	<wx/image.h>
 
-1433376873 c:\users\admin\desktop\cpp\p24\p24app.h
+1433334963 c:\users\admin\desktop\cpp\p24\p24app.h
 	<wx/app.h>
 
 1412631242 c:\wxwidgets\include\wx\app.h
@@ -3666,7 +3666,7 @@
 1412631243 c:\wxwidgets\include\wx\univ\theme.h
 	"wx/string.h"
 
-1433481042 c:\users\admin\desktop\cpp\p24\p24main.h
+1433500544 c:\users\admin\desktop\cpp\p24\p24main.h
 	<wx/sizer.h>
 	<wx/textctrl.h>
 	<wx/button.h>

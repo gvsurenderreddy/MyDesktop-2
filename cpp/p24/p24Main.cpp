@@ -162,11 +162,11 @@ p24Frame::p24Frame(wxWindow* parent, wxWindowID id)
     GridSizer1->Add(Button8, 1, wxALL | wxALIGN_CENTER_VERTICAL, 5);
     Button9 = new wxButton(this, ID_BUTTON9, _("9"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON9"));
     GridSizer1->Add(Button9, 1, wxALL | wxALIGN_CENTER_VERTICAL, 5);
-    ButtonNew = new wxButton(this, ID_BUTTON_NEW, _("New"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_NEW"));
+    ButtonNew = new wxButton(this, ID_BUTTON_NEW, _("开始"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_NEW"));
     GridSizer1->Add(ButtonNew, 1, wxALL | wxALIGN_CENTER_VERTICAL, 5);
-    ButtonHelp = new wxButton(this, ID_BUTTON_HELP, _("Help"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_HELP"));
+    ButtonHelp = new wxButton(this, ID_BUTTON_HELP, _("说明"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_HELP"));
     GridSizer1->Add(ButtonHelp, 1, wxALL | wxALIGN_CENTER_VERTICAL, 5);
-    ButtonQuit = new wxButton(this, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_QUIT"));
+    ButtonQuit = new wxButton(this, ID_BUTTON_QUIT, _("离开"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_QUIT"));
     GridSizer1->Add(ButtonQuit, 1, wxALL | wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(GridSizer1, 3, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
     SetSizer(BoxSizer1);
@@ -200,8 +200,8 @@ void p24Frame::OnQuit(wxCommandEvent& event)
 
 void p24Frame::OnAbout(wxCommandEvent& event)
 {
-    wxString msg = "Select 4 digits to get 24 points.";
-    wxMessageBox(msg, _("Welcome"));
+    wxString msg = "选择4个数字，计算24点。";
+    wxMessageBox(msg, _("欢迎"));
 }
 
 void p24Frame::OnNew(wxCommandEvent& event)
@@ -210,19 +210,19 @@ void p24Frame::OnNew(wxCommandEvent& event)
     {
         digit = 0;
         TextCtrl1->SetLabel(wxString(""));
-        ButtonNew->SetLabel(wxString("New"));
+        ButtonNew->SetLabel(wxString(_("开始")));
     }
     else
     {
         newflag = 1;
-        ButtonNew->SetLabel(wxString("Clear"));
+        ButtonNew->SetLabel(wxString(_("清除")));
         if (Test(COUNT))
         {
             TextCtrl1->SetLabel(wxString(expression[0].data()));
         }
         else
         {
-            TextCtrl1->SetLabel(wxString(wxT("ERROR!")));
+            TextCtrl1->SetLabel(wxString(_("无解!")));
         }
     }
 }
@@ -241,7 +241,7 @@ void p24Frame::OnButton1Click(wxCommandEvent& event)
         {
             newflag = 0;
             ButtonNew->Enable();
-            ButtonNew->SetLabel(wxString("Calc"));
+            ButtonNew->SetLabel(wxString(_("计算")));
         }
         else
         {
@@ -263,7 +263,7 @@ void p24Frame::OnButton2Click(wxCommandEvent& event)
         {
             newflag = 0;
             ButtonNew->Enable();
-            ButtonNew->SetLabel(wxString("Calc"));
+            ButtonNew->SetLabel(wxString(_("计算")));
         }
         else
         {
@@ -285,7 +285,7 @@ void p24Frame::OnButton3Click(wxCommandEvent& event)
         {
             newflag = 0;
             ButtonNew->Enable();
-            ButtonNew->SetLabel(wxString("Calc"));
+            ButtonNew->SetLabel(wxString(_("计算")));
         }
         else
         {
@@ -307,7 +307,7 @@ void p24Frame::OnButton4Click(wxCommandEvent& event)
         {
             newflag = 0;
             ButtonNew->Enable();
-            ButtonNew->SetLabel(wxString("Calc"));
+            ButtonNew->SetLabel(wxString(_("计算")));
         }
         else
         {
@@ -329,7 +329,7 @@ void p24Frame::OnButton5Click(wxCommandEvent& event)
         {
             newflag = 0;
             ButtonNew->Enable();
-            ButtonNew->SetLabel(wxString("Calc"));
+            ButtonNew->SetLabel(wxString(_("计算")));
         }
         else
         {
@@ -351,7 +351,7 @@ void p24Frame::OnButton6Click(wxCommandEvent& event)
         {
             newflag = 0;
             ButtonNew->Enable();
-            ButtonNew->SetLabel(wxString("Calc"));
+            ButtonNew->SetLabel(wxString(_("计算")));
         }
         else
         {
@@ -373,7 +373,7 @@ void p24Frame::OnButton7Click(wxCommandEvent& event)
         {
             newflag = 0;
             ButtonNew->Enable();
-            ButtonNew->SetLabel(wxString("Calc"));
+            ButtonNew->SetLabel(wxString(_("计算")));
         }
         else
         {
@@ -395,7 +395,7 @@ void p24Frame::OnButton8Click(wxCommandEvent& event)
         {
             newflag = 0;
             ButtonNew->Enable();
-            ButtonNew->SetLabel(wxString("Calc"));
+            ButtonNew->SetLabel(wxString(_("计算")));
         }
         else
         {
@@ -417,7 +417,7 @@ void p24Frame::OnButton9Click(wxCommandEvent& event)
         {
             newflag = 0;
             ButtonNew->Enable();
-            ButtonNew->SetLabel(wxString("Calc"));
+            ButtonNew->SetLabel(wxString(_("计算")));
         }
         else
         {
