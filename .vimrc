@@ -15,9 +15,7 @@ Plug 'arecarn/crunch'
         " :[range]Crunch[!]                     Evaluates the current visual selection
         " :Crunch [expr]                        Where [expr] is some mathematical expression
 Plug 'bling/vim-airline'
-    let g:airline_left_sep = ''
-    let g:airline_right_sep = ''
-    " let g:airline_powerline_fonts = 1
+    let g:airline_powerline_fonts = 1
 Plug 'chrisbra/Colorizer'
     let g:colorizer_auto_color = 1
     let g:colorizer_skip_comments = 1
