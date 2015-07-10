@@ -205,6 +205,7 @@ Plug 'vimwiki/vimwiki'
         " :VimwikiAll2HTML                      Convert all your wiki links to HTML
         " <Leader>wh  or :Vimwiki2HTML          Convert current wiki link to HTML
         " <Leader>whh or :Vimwiki2HTMLBrowse    Convert current wiki link to HTML and open it in a webbrowser
+Plug 'vitalk/vim-simple-todo'
 Plug 'xuhdev/SingleCompile'
     let g:SingleCompile_menumode = 0
 Plug 'yaroot/wowlua.vim'
