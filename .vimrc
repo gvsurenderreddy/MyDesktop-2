@@ -286,7 +286,7 @@ if has("gui_running")
     if has("win16") || has("win32") || has("win64")
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "EnableMaximize", 1)
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 245)
-        set guifont=Monaco:h11,Consolas:h12
+        set guifont=Fantasque_Sans_Mono:h13,Monaco:h11
         " set guifontwide=Fixedsys:h12
         colorscheme solarized
     elseif has("unix")
