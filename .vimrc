@@ -15,6 +15,7 @@ Plug 'arecarn/crunch'
         " :[range]Crunch[!]                     Evaluates the current visual selection
         " :Crunch [expr]                        Where [expr] is some mathematical expression
 Plug 'bling/vim-airline'
+    let g:airline_crypt_symbol = ''
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
 Plug 'chrisbra/Colorizer'
@@ -287,13 +288,12 @@ if has("gui_running")
     if has("win16") || has("win32") || has("win64")
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "EnableMaximize", 1)
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 245)
-        set guifont=Fantasque_Sans_Mono:h13,Monaco:h11
-        " set guifontwide=Fixedsys:h12
+        set guifont=Fantasque_Sans_Mono:h13
         colorscheme solarized
     elseif has("unix")
         autocmd GUIEnter * winpos 0 0
         set lines=999 columns=999
-        set guifont=monaco\ 11
+        set guifont=Fantasque\ Sans\ Mono\ 13
         colorscheme solarized
     elseif has("mac")
         " reserved
