@@ -16,6 +16,7 @@ Plug 'arecarn/crunch'
         " :Crunch [expr]                        Where [expr] is some mathematical expression
 Plug 'bling/vim-airline'
     let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
 Plug 'chrisbra/Colorizer'
     let g:colorizer_auto_color = 1
     let g:colorizer_skip_comments = 1
@@ -262,8 +263,8 @@ set autoindent smartindent
 set cursorline cursorcolumn
 set laststatus=2
 set scrolloff=3
-set linespace=3
 set tabstop=4
+set linespace=4
 set shiftwidth=4
 set softtabstop=4
 set guioptions=acgmt
