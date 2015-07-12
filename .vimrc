@@ -17,7 +17,7 @@ Plug 'arecarn/crunch'
 Plug 'bling/vim-airline'
     let g:airline_crypt_symbol = ''
     let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#enabled = 1
+    " let g:airline#extensions#tabline#enabled = 1
 Plug 'chrisbra/Colorizer'
     let g:colorizer_auto_color = 1
     let g:colorizer_skip_comments = 1
