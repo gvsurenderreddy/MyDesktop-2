@@ -295,6 +295,7 @@ if has("gui_running")
         autocmd GUIEnter * winpos 0 0
         set lines=999 columns=999
         set guifont=Fantasque\ Sans\ Mono\ 13
+        set guifontwide=VeraSansYuanTi\ 12
         colorscheme solarized
     elseif has("mac")
         " reserved
