@@ -1,0 +1,12 @@
+StatusLine="Each command status is specified by a special symbol (\e[32m\e(0d\e(B\e[0m or \e[31m\e(0e\e(B\e[0m)    "
+
+builtin echo -e "     \E(0lqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk\E(B
+     \E(0x\E(B                  \033[32m\E(0\`\E(B MobaXterm Professional v7.7 \E(0\`\E(B\033[0m                   \E(0x\E(B
+     \E(0x\E(B            \033[33m(X server, SSH client and GNU/Cygwin tools)\033[0m             \E(0x\E(B
+     \E(0x\E(B                                                                    \E(0x\E(B
+     \E(0x\E(B \e(0b\e(B Your computer drives are accessible through the \033[35m/drives\033[0m path     \E(0x\E(B
+     \E(0x\E(B \e(0b\e(B Your DISPLAY is set to \033[35m${EXPORTED_DISPLAY}\033[0m                       \E(0x\E(B
+     \E(0x\E(B \e(0b\e(B When using \033[35mSSH\033[0m, your remote DISPLAY is automatically forwarded   \E(0x\E(B
+     \E(0x\E(B \e(0b\e(B ${StatusLine}\E(0x\E(B
+     \E(0x\E(B                                                                    \E(0x\E(B
+     \E(0mqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj\E(B"

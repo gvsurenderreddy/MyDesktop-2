@@ -14,6 +14,7 @@ def main():
                      for j in os.listdir(os.path.join(myPath, i))
                      if j != "desc"]
             if len(Files) > 1:
+                print(Files)
                 os.remove(os.path.join(myPath, i, Files[0]))
     except WindowsError as err:
         print(str(err))
