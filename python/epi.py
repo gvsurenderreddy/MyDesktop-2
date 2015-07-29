@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
+#-*- coding: utf-8 -*-
 
 from random import random
 from math import sqrt
@@ -7,10 +7,9 @@ from sys import stdout
 
 x = y = inn = out = 0.0
 
-for i in range(30000):
+for i in range(300000):
     x = random()
     y = random()
-    # print(x, y)
     stdout.write(str(i) + ": (" +
                  str(x) + ", " +
                  str(y) + ")" +
