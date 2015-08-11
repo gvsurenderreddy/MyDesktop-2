@@ -37,7 +37,7 @@ For $j = 1 To $DirList[0]
 	EndIf
 Next
 
-                                    |
+|
 If $Mode == "TRUE" Then
 	Local $newDirList = _FileListToArray($Path, "*", 2)
 	If @error = 1 And $newDirList <> "dictionaries" Then

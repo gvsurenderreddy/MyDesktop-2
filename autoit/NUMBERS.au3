@@ -1,9 +1,9 @@
 #cs ----------------------------------------------------------------------------
 
- AutoIt Version:
+	AutoIt Version:
 	3.3.12.0
 
- Script Function:
+	Script Function:
 	To query IMSI/BAOC/4G of an MSISDN.
 	Input file: NUMBER.txt in the same dir;
 	Output file: outfile.csv in the same dir;
