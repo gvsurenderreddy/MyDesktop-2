@@ -208,6 +208,12 @@ Plug 'vimwiki/vimwiki'
         " <Leader>wh  or :Vimwiki2HTML          Convert current wiki link to HTML
         " <Leader>whh or :Vimwiki2HTMLBrowse    Convert current wiki link to HTML and open it in a webbrowser
 Plug 'vitalk/vim-simple-todo'
+        " <Leader>i	Create a new todo under cursor
+        " <Leader>I	Create a new todo for current line
+        " <Leader>o	Create a new todo below current line
+        " <Leader>O	Create a new todo above current line
+        " <Leader>x	Mark todo under cursor as done
+        " <Leader>X	Mark todo as undone
 Plug 'xuhdev/SingleCompile'
     let g:SingleCompile_menumode = 0
 Plug 'yaroot/wowlua.vim'
