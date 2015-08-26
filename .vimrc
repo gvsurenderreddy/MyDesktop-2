@@ -324,12 +324,12 @@ endif
 if has("autocmd")
     autocmd FileType startify setlocal nocursorline nocursorcolumn
     autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
-    autocmd BufNewFile *.sh,*.py call AutoSetFileHead()
+    autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
     autocmd BufReadPost * DetectIndent
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
     autocmd BufWritePre * silent! %s/\s\+$//e
     autocmd BufWritePost .vimrc source ~/.vimrc
-    autocmd BufWritePost *.h,*.c,*.cpp,*.java,*.js,*.py,*.lua silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
+    autocmd BufWritePost *.h,*.c,*.cpp,*.java,*.js,*.py,*.rb,*.lua silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
 endif
 
 
@@ -352,16 +352,17 @@ nnoremap <silent> <esc><esc>    :nohlsearch<cr>
 
 " Functions {{{1
 " Auto set file head {{{2
-function! AutoSetFileHead()
+function! SetFileHead()
     if &filetype == 'sh'
-        call setline(1, "\#!/bin/bash")
+        call setline(1, ["\#!/bin/bash", ""])
     endif
     if &filetype == 'python'
-        call setline(1, "\#!/usr/bin/env python")
-        call append(1, "\# -*- coding:utf-8 -*-")
+        call setline(1, ["\#!/usr/bin/env python", "\# -*- coding:utf-8 -*-", ""])
+    endif
+    if &filetype == 'ruby'
+        call setline(1, ["\#!/usr/bin/env ruby", ""])
     endif
     normal G
-    normal o
     normal o
 endfunction
 
