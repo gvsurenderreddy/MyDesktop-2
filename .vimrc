@@ -329,7 +329,7 @@ if has("autocmd")
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
     autocmd BufWritePre * silent! %s/\s\+$//e
     autocmd BufWritePost .vimrc source ~/.vimrc
-    autocmd BufWritePost *.h,*.c,*.cpp,*.java,*.js,*.py,*.rb,*.lua silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
+    autocmd BufWritePost *.h,*.c,*.hpp,*.cpp,*.java,*.js,*.py,*.rb,*.lua silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
 endif
 
 
