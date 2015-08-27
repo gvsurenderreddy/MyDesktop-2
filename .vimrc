@@ -357,7 +357,7 @@ function! SetFileHead()
         call setline(1, ["\#!/bin/bash", ""])
     endif
     if &filetype == 'python'
-        call setline(1, ["\#!/usr/bin/env python", "\# -*- coding:utf-8 -*-", ""])
+        call setline(1, ["\#!/usr/bin/env python", "\#-*- coding:utf-8 -*-", ""])
     endif
     if &filetype == 'ruby'
         call setline(1, ["\#!/usr/bin/env ruby", ""])
