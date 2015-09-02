@@ -174,6 +174,7 @@ Plug 'tpope/vim-surround'
         " ys                                    Add a surrounding
         " cs                                    Change a surrounding
         " ds                                    Delete a surrounding
+Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/AutoComplPop'
 Plug 'vim-scripts/CRefVim'
         " <Leader>cr normal mode:               Get help for word under cursor
@@ -188,6 +189,9 @@ Plug 'vim-scripts/luarefvim'
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
 Plug 'vim-scripts/OmniCppComplete'
+Plug 'vim-scripts/stlrefvim'
+        " <Leader>tr normal mode:               Go to documentation for this function
+        " <Leader>te normal mode:               Go to an example that uses this function
 Plug 'vim-scripts/utl.vim'
 Plug 'vim-voom/VOoM'
 Plug 'vimwiki/vimwiki'
