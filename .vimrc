@@ -100,6 +100,7 @@ Plug 'majutsushi/tagbar'
     let g:tagbar_autofocus = 1
 Plug 'mattn/calendar-vim'
     let g:calendar_weeknm = 5
+    let g:calendar_mark = 'right'
         " :Calendar [YYYY MM]                   Bring up a calendar
         " :CalendarH [YYYY MM]                  Bring up a calendar in a horizontally split window
         " :CalendarVR [YYYY MM]                 Bring up a calendar in a right vertically split window
