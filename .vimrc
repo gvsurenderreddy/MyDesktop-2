@@ -333,9 +333,8 @@ if has("autocmd")
     autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
     autocmd BufReadPost * DetectIndent
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
-    autocmd BufWritePre * silent! %s/\s\+$//e
+    autocmd BufWritePre * call FormatCodeFile()
     autocmd BufWritePost .vimrc source ~/.vimrc
-    autocmd BufWritePost *.h,*.c,*.hpp,*.cpp,*.java,*.js,*.py,*.rb,*.lua silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
 endif
 
 
@@ -383,6 +382,19 @@ function! FullScreenToggle()
             " reserved
         endif
     endif
+endfunction
+
+" Format Code File {{{2
+function! FormatCodeFile()
+    silent! %s/\s\+$//e
+    let curPos = getpos(".")
+    if &filetype == 'c' || &filetype == 'cpp'
+        silent! execute "%!astyle -A1fpjxdk3LUNSKY"
+        silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
+    elseif &filetype == 'java'
+        " reserved
+    endif
+    call setpos('.', curPos)
 endfunction
 
 
