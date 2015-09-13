@@ -4,9 +4,9 @@
 class Brass
 {
 public:
-    Brass(const char* s = "NoName", long an = -1, double bal = 0.0);
-    void Deposit(double amt);
-    virtual void Withdraw(double amt);
+    Brass (const char *s = "NoName", long an = -1, double bal = 0.0);
+    void Deposit (double amt);
+    virtual void Withdraw (double amt);
     double Balance() const;
     virtual void ViewAcct() const;
     virtual ~Brass() {}
@@ -20,15 +20,15 @@ private:
 class BrassPlus: public Brass
 {
 public:
-    BrassPlus(const char* s = "NoName", long an = -1, double bal = 0.0, double ml = 500, double r = .1);
-    BrassPlus(const Brass& b, double ml = 500, double r = .1);
+    BrassPlus (const char *s = "NoName", long an = -1, double bal = 0.0, double ml = 500, double r = .1);
+    BrassPlus (const Brass &b, double ml = 500, double r = .1);
     virtual void ViewAcct() const;
-    virtual void Withdraw(double amt);
-    void ResetMax(double m)
+    virtual void Withdraw (double amt);
+    void ResetMax (double m)
     {
         maxLoan = m;
     };
-    void ResetRate(double r)
+    void ResetRate (double r)
     {
         rate = r;
     };

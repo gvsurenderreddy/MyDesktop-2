@@ -12,16 +12,16 @@ typedef unsigned long ITEM;
 
 class List
 {
-    private:
-        static const int MAX = 10;
-        ITEM items[MAX];
-        int count;
-    public:
-        List();
-        bool isEmpty() const;
-        bool isFull() const;
-        bool additem(const ITEM &item);
-        void visit(void (*pf)(ITEM &item));
+private:
+    static const int MAX = 10;
+    ITEM items[MAX];
+    int count;
+public:
+    List();
+    bool isEmpty() const;
+    bool isFull() const;
+    bool additem (const ITEM &item);
+    void visit (void (*pf) (ITEM &item));
 };
 
 #endif

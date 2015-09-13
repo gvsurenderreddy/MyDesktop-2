@@ -8,7 +8,7 @@ int main()
 
     cout << "How many carrots do you have?" << endl;
     cin >> carrots;
-    cout << "I have " << carrots <<" carrots." << endl;
+    cout << "I have " << carrots << " carrots." << endl;
 
     return 0;
 }

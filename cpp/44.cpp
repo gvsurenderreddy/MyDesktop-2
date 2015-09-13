@@ -10,10 +10,10 @@ struct ini
 int main()
 {
     using namespace std;
-    ini* ps =new ini;
+    ini *ps = new ini;
 
     cout << "enter name: ";
-    cin.get(ps->name, 20);
+    cin.get (ps->name, 20);
     cout << "enter volume: ";
     cin >> (*ps).volume;
     cout << (*ps).name << endl;

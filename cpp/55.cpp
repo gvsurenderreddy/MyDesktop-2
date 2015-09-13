@@ -11,6 +11,7 @@ int main()
     std::cin >> max;
 
     int sum;
+
     for (int i = min; i <= max; ++i)
     {
         sum += i;

@@ -26,7 +26,7 @@ int main()
         1.23
     };
 
-    cout << name1.name <<endl;
+    cout << name1.name << endl;
 
     return 0;
 }

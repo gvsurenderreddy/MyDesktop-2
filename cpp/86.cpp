@@ -9,7 +9,7 @@ struct op
     int count;
 };
 
-op &repeat(op &str, int n = 0);
+op &repeat (op &str, int n = 0);
 
 int main()
 {
@@ -19,15 +19,15 @@ int main()
         0
     };
 
-    repeat(MyString);
-    repeat(MyString, 2);
-    repeat(MyString, 1);
-    repeat(MyString, 1000);
+    repeat (MyString);
+    repeat (MyString, 2);
+    repeat (MyString, 1);
+    repeat (MyString, 1000);
 
     return 0;
 }
 
-op &repeat(op &str, int n)
+op &repeat (op &str, int n)
 {
     if (n == 0)
     {
@@ -40,6 +40,7 @@ op &repeat(op &str, int n)
             std::cout << str.str << std::endl;
         }
     }
+
     str.count++;
     return str;
 }

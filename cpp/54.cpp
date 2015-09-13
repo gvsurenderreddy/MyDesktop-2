@@ -11,8 +11,10 @@ int main()
     cout << "Starting\a\n";
     /* something strange that 'starting' does not show right now. Why? */
     clock_t start = clock();
-    while(clock() - start < delay)
+
+    while (clock() - start < delay)
         ;
+
     cout << "Done!\a\n";
 
     return 0;

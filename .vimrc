@@ -389,7 +389,7 @@ function! FormatCodeFile()
     silent! %s/\s\+$//e
     let curPos = getpos(".")
     if &filetype == 'c' || &filetype == 'cpp'
-        silent! execute "%!astyle -A1fpjk3LUNSKY"
+        silent! execute "%!astyle -A1fpjk3xdLUNSKY"
         silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
     elseif &filetype == 'java'
         " reserved

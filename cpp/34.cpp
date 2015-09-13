@@ -13,14 +13,14 @@ int main()
 
     cout << "Enter a number of seconds: ";
     cin >> number;
-    n_seconds = int(number) % MIN2SEC;
-    n_minutes = int(number / MIN2SEC) % MIN2SEC;
-    n_days = int(number / MIN2SEC / HOUR2MIN / DAY2HOURS);
+    n_seconds = int (number) % MIN2SEC;
+    n_minutes = int (number / MIN2SEC) % MIN2SEC;
+    n_days = int (number / MIN2SEC / HOUR2MIN / DAY2HOURS);
 
     cout << number << " seconds = "
-        << n_days << " days, "
-        << n_minutes << " minutes and "
-        << n_seconds << " seconds.\n";
+         << n_days << " days, "
+         << n_minutes << " minutes and "
+         << n_seconds << " seconds.\n";
 
     return 0;
 }

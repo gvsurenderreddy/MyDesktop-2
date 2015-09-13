@@ -3,5 +3,5 @@
 class Tetris : public wxFrame
 {
 public:
-    Tetris(const wxString& title);
+    Tetris (const wxString &title);
 };

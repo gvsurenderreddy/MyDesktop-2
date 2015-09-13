@@ -15,10 +15,10 @@ int main()
     cin >> n_second;
 
     cout << n_degree << " degrees, "
-        << n_minute << " minutes,"
-        << n_second << " seconds = "
-        << n_degree + n_minute / 60 + n_second / 3600
-        << " degrees.\n";
+         << n_minute << " minutes,"
+         << n_second << " seconds = "
+         << n_degree + n_minute / 60 + n_second / 3600
+         << " degrees.\n";
 
     return 0;
 }

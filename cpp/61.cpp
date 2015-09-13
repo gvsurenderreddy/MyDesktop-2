@@ -5,7 +5,8 @@ int main()
     using namespace std;
     char ch;
     cout << "Type, then repeat.\n";
-    while((ch = cin.get()) != '.')
+
+    while ((ch = cin.get()) != '.')
     {
         if (ch == '\n')
         {
@@ -16,6 +17,7 @@ int main()
             cout << ++ch;
         }
     }
+
     cout << endl;
     return 0;
 }

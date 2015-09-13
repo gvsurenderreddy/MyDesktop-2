@@ -13,7 +13,7 @@ struct rect
     double y;
 };
 
-polar rect_to_polar(rect xy);
-void show_polar(polar p);
+polar rect_to_polar (rect xy);
+void show_polar (polar p);
 
 #endif

@@ -19,16 +19,16 @@ int main()
     cout << "Now updates = " << updates << endl;
 
     /* 强制类型转换 */
-    int* pt;
-    pt=(int*)0xb8000000;
+    int *pt;
+    pt = (int *)0xb8000000;
 
     /* new and delete */
-    double* pd = new double;
+    double *pd = new double;
     *pd = 1.1;
     delete pd;
 
     /* 动态数组 */
-    int* ps = new int [100];
+    int *ps = new int [100];
     delete [] ps;
 
     return 0;

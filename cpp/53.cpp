@@ -9,10 +9,12 @@ int main()
     cout << "Enter a word: ";
     cin >> name;
     int i = 0;
+
     while (name[i] != '\0')
     {
         cout << name[i] << endl;
         ++i;
     }
+
     return 0;
 }

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void fuck(int);
+void fuck (int);
 
 int main()
 {
@@ -10,12 +10,12 @@ int main()
     cout << "Input a number: ";
     int counts;
     cin >> counts;
-    fuck(counts);
+    fuck (counts);
 
     return 0;
 }
 
-void fuck(int n)
+void fuck (int n)
 {
     /* using namespace std; */
     cout << "Fuck " << n << " times." << endl;

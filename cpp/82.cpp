@@ -7,7 +7,7 @@ struct sysop
     int used;
 };
 
-const sysop & use(sysop & sysopref);
+const sysop &use (sysop &sysopref);
 
 int main()
 {
@@ -17,18 +17,18 @@ int main()
         "I'm a goto kind of guy.",
         0
     };
-    use(looper);
+    use (looper);
     cout << "Looper: " << looper.used << " use(s)\n";
     sysop copycat;
-    copycat = use(looper);
+    copycat = use (looper);
     cout << "Looper: " << looper.used << " use(s)\n";
     cout << "Copycat: " << copycat.used << " use(s)\n";
-    cout << "use(looper): " << use(looper).used << " use(s)\n";
+    cout << "use(looper): " << use (looper).used << " use(s)\n";
 
     return 0;
 }
 
-const sysop & use(sysop & sysopref)
+const sysop &use (sysop &sysopref)
 {
     cout << sysopref.name << " says:\n";
     cout << sysopref.quote << endl;

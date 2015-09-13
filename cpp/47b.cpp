@@ -13,10 +13,10 @@ struct Pizza
 
 int main()
 {
-    Pizza* pizza = new Pizza;
+    Pizza *pizza = new Pizza;
 
     cout << "Input company: ";
-    getline(cin, pizza->company);
+    getline (cin, pizza->company);
     cout << "Input diameter: ";
     cin >> pizza->diameter;
     cout << "Input weight: ";

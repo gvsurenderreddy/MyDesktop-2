@@ -9,7 +9,7 @@ int main()
     cout << "Input a number: ";
     cin >> area;
     double side;
-    side = sqrt(area);
+    side = sqrt (area);
     cout << "Square root is " << side << "." << endl;
 
     return 0;

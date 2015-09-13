@@ -10,20 +10,20 @@ class Shape
 public:
     Shape()
     {
-        SetShape(NoShape);
+        SetShape (NoShape);
     }
-    void SetShape(Tetrominoes shape);
+    void SetShape (Tetrominoes shape);
     void SetRandomShape();
 
     Tetrominoes GetShape() const
     {
         return pieceShape;
     }
-    int x(int index) const
+    int x (int index) const
     {
         return coords[index][0];
     }
-    int y(int index) const
+    int y (int index) const
     {
         return coords[index][1];
     }
@@ -37,11 +37,11 @@ public:
     Shape RotateRight() const;
 
 private:
-    void SetX(int index, int x)
+    void SetX (int index, int x)
     {
         coords[index][0] = x;
     }
-    void SetY(int index, int y)
+    void SetY (int index, int y)
     {
         coords[index][1] = y;
     }

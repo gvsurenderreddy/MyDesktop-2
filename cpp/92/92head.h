@@ -9,8 +9,8 @@ namespace pers
         char fname[LEN];
         char lname[LEN];
     };
-    void getPerson(Person &);
-    void showPerson(const Person &);
+    void getPerson (Person &);
+    void showPerson (const Person &);
 } /* pers */
 
 namespace debts
@@ -21,9 +21,9 @@ namespace debts
         Person name;
         double amount;
     };
-    void getDebt(Debt &);
-    void showDebt(const Debt &);
-    double sumDebts(const Debt ar[], int n);
+    void getDebt (Debt &);
+    void showDebt (const Debt &);
+    double sumDebts (const Debt ar[], int n);
 } /* debts;
  */
 

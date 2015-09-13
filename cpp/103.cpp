@@ -27,10 +27,10 @@ Person::Person()
     fname = "";
 }
 
-Person::Person(const string &in, const char *fn)
+Person::Person (const string &in, const char *fn)
 {
     fname = in;
-    strncpy(lname, fn, LIMIT - 1);
+    strncpy (lname, fn, LIMIT - 1);
     lname[LIMIT] = '\0';
 }
 
@@ -50,11 +50,11 @@ int main()
     p0.Show();
     p0.FormShow();
 
-    Person p1 = Person("AAA");
+    Person p1 = Person ("AAA");
     p1.Show();
     p1.FormShow();
 
-    Person p2 = Person("BBB", "CCC");
+    Person p2 = Person ("BBB", "CCC");
     p2.Show();
     p2.FormShow();
 
