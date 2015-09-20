@@ -393,7 +393,7 @@ function! FormatCodeFile()
         silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
     elseif &filetype == 'java'
         silent! execute "%!astyle -A2fpjk3xdLUSKY"
-        silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
+        silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     endif
     call setpos('.', curPos)
 endfunction
