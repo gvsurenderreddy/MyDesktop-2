@@ -340,7 +340,7 @@ if has("autocmd")
     autocmd BufReadPost * DetectIndent
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
     autocmd BufWritePre * call FormatCodeFile()
-    autocmd BufWritePost .vimrc source ~/.vimrc
+    autocmd BufWritePost .vimrc source $MYVIMRC
 endif
 
 
