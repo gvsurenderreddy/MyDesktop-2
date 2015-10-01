@@ -53,7 +53,7 @@ Plug 'idanarye/vim-merginal'
 " Plug 'itchyny/vim-cursorword'
 Plug 'itchyny/landscape.vim'
 " Plug 'itchyny/lightline.vim'
-Plug 'itchyny/screensaver.vim'
+Plug 'itchyny/screensaver.vim', {'on': 'ScreenSaver'}
 Plug 'junegunn/vim-easy-align', {'on': ['<Plug>(EasyAlign)', 'EasyAlign']}
         " :EasyAlign[!] [OPTIONS]               Interactive mode
         " :LiveEasyAlign[!] [...]               Live interactive mode
@@ -134,24 +134,20 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
-Plug 'reedes/vim-colors-pencil'
-    let g:pencil_higher_contrast_ui = 1
+" Plug 'reedes/vim-colors-pencil'
+    " let g:pencil_higher_contrast_ui = 1
 " Plug 'reedes/vim-lexical'
 " Plug 'reedes/vim-litecorrect'
 " Plug 'reedes/vim-pencil'
 " Plug 'reedes/vim-textobj-quote'
 " Plug 'reedes/vim-textobj-sentence'
 " Plug 'reedes/vim-wordy'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
     let g:NERDTreeQuitOnOpen = 1
     let g:NERDTreeShowHidden = 1
     let g:NERDTreeShowBookmarks = 1
 Plug 'scrooloose/syntastic'
-" Plug 'Shougo/neocomplcache.vim'
-    " let g:neocomplcache_enable_at_startup = 1
-    " let g:neocomplcache_enable_smart_case = 1
-    " let g:neocomplcache_min_syntax_length = 3
-Plug 'szw/vim-dict'
+Plug 'szw/vim-dict', {'on': 'Dict'}
     let g:dict_hosts = [["dict.org", ["wn"]]]
 Plug 'terryma/vim-expand-region'
     " let g:expand_region_use_select_mode = 1
@@ -163,11 +159,11 @@ Plug 'terryma/vim-multiple-cursors'
         " <c-x>                                 Remove the current virtual cursor and skip to the next
 Plug 'tomasr/molokai'
     let g:molokai_original = 1
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary', {'on': 'Commentary'}
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
-Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
         " <c-a>/<c-x>                           +/- dates, times, and more
@@ -175,9 +171,9 @@ Plug 'tpope/vim-surround'
         " ys                                    Add a surrounding
         " cs                                    Change a surrounding
         " ds                                    Delete a surrounding
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 " Plug 'vim-scripts/AutoComplPop'
-Plug 'vim-scripts/CRefVim'
+Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
         " <Leader>cr normal mode:               Get help for word under cursor
         " <Leader>cr visual mode:               Get help for visually selected text
         " <Leader>cw:                           Prompt for word CRefVim should search for
@@ -186,11 +182,11 @@ Plug 'vim-scripts/directionalWindowResizer'
         " <c-h/j/k/l>                           Resize windows
 " Plug 'vim-scripts/DoxygenToolkit.vim'
 " Plug 'vim-scripts/DrawIt'
-Plug 'vim-scripts/luarefvim'
+Plug 'vim-scripts/luarefvim', {'for': 'lua'}
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
-Plug 'vim-scripts/OmniCppComplete'
-Plug 'vim-scripts/stlrefvim'
+Plug 'vim-scripts/OmniCppComplete', {'for': ['c', 'cpp']}
+Plug 'vim-scripts/stlrefvim', {'for': ['c', 'cpp']}
         " <Leader>tr normal mode:               Go to documentation for this function
         " <Leader>te normal mode:               Go to an example that uses this function
 Plug 'vim-scripts/utl.vim'
@@ -220,15 +216,14 @@ Plug 'vitalk/vim-simple-todo'
         " <Leader>O	Create a new todo above current line
         " <Leader>x	Mark todo under cursor as done
         " <Leader>X	Mark todo as undone
-Plug 'xuhdev/SingleCompile'
+Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
     let g:SingleCompile_menumode = 0
-Plug 'yaroot/wowlua.vim'
 " Plug 'Yggdroot/indentLine'
 if has("python") || has("python3")
-    Plug 'joedicastro/vim-markdown-extra-preview'
+    Plug 'joedicastro/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
-    Plug 'klen/python-mode'
+    Plug 'klen/python-mode', {'for': 'python'}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
     Plug 'SirVer/ultisnips'
         let g:UltiSnipsExpandTrigger = '<tab>'
@@ -241,6 +236,17 @@ else
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
 endif
+" if has("lua")
+    " Plug 'Shougo/neocomplete.vim'
+        " let g:neocomplete#enable_at_startup = 1
+        " let g:neocomplete#enable_smart_case = 1
+        " let g:neocomplete#sources#syntax#min_keyword_length = 3
+" else
+    " Plug 'Shougo/neocomplcache.vim'
+        " let g:neocomplcache_enable_at_startup = 1
+        " let g:neocomplcache_enable_smart_case = 1
+        " let g:neocomplcache_min_syntax_length = 3
+" endif
 if has("gui_running")
     Plug 'vim-scripts/sunset'
         let g:sunset_latitude = 30
