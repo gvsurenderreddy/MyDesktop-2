@@ -120,6 +120,7 @@ Plug 'mbbill/fencview'
     let g:fencview_autodetect = 1
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
     let g:undotree_SetFocusWhenToggle = 1
+    let g:undotree_WindowLayout = 2
 Plug 'mbbill/VimExplorer', {'on': 'VE'}
 Plug 'mhinz/vim-hugefile'
 Plug 'mhinz/vim-signify'
@@ -149,7 +150,7 @@ Plug 'Raimondi/delimitMate'
 " Plug 'reedes/vim-textobj-quote'
 " Plug 'reedes/vim-textobj-sentence'
 " Plug 'reedes/vim-wordy'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree'
     let g:NERDTreeQuitOnOpen = 1
     let g:NERDTreeShowHidden = 1
     let g:NERDTreeShowBookmarks = 1
