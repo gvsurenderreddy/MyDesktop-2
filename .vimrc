@@ -192,7 +192,6 @@ Plug 'vim-scripts/directionalWindowResizer'
 Plug 'vim-scripts/luarefvim', {'for': 'lua'}
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
-Plug 'vim-scripts/OmniCppComplete', {'for': ['c', 'cpp']}
 Plug 'vim-scripts/stlrefvim', {'for': ['c', 'cpp']}
         " <Leader>tr normal mode:               Go to documentation for this function
         " <Leader>te normal mode:               Go to an example that uses this function
@@ -231,6 +230,7 @@ if has("python") || has("python3")
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
     Plug 'klen/python-mode', {'for': 'python'}
+    Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
     Plug 'SirVer/ultisnips'
         let g:UltiSnipsExpandTrigger = '<tab>'
@@ -242,6 +242,7 @@ else
     Plug 'garbas/vim-snipmate'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
+    Plug 'vim-scripts/OmniCppComplete', {'for': ['c', 'cpp']}
 endif
 " if has("lua")
     " Plug 'Shougo/neocomplete.vim'
