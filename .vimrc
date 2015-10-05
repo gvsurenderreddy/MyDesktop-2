@@ -95,7 +95,7 @@ Plug 'easymotion/vim-easymotion'
     map f <Plug>(easymotion-s)
     map s <Plug>(easymotion-s2)
     map / <Plug>(easymotion-sn)
-    map . <Plug>(easymotion-repeat)
+    map .. <Plug>(easymotion-repeat)
     map jj <Plug>(easymotion-j)
     map kk <Plug>(easymotion-k)
     map ww <Plug>(easymotion-w)
@@ -137,8 +137,6 @@ Plug 'mhinz/vim-startify'
                             \ 'plugged/.*/doc',
                             \ '/\.git/',
                             \ ]
-Plug 'nathanaelkane/vim-indent-guides'
-    let g:indent_guides_guide_size = 1
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
@@ -225,7 +223,7 @@ Plug 'vitalk/vim-simple-todo'
         " <Leader>X	Mark todo as undone
 Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
     let g:SingleCompile_menumode = 0
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 if has("python") || has("python3")
     Plug 'joedicastro/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
@@ -354,7 +352,8 @@ endif
 
 
 " Keybindings {{{1
-nnoremap <silent> <f2>          :NERDTreeToggle<cr>
+let mapleader = ' '
+nnoremap <silent> <f2>          :call AutoNERDTreeToggle()<cr>
 nnoremap <silent> <f3>          :Dict<cr>
 nnoremap <silent> <f4>          :UndotreeToggle<cr>
 nnoremap <silent> <f7>          :CalendarVR<cr>
@@ -366,7 +365,6 @@ nnoremap <silent> <m-q>         :Commentary<cr>
 vnoremap <silent> <m-q>         :Commentary<cr>
 nnoremap <silent> <m-l>         :ScreenSaver<cr>
 nnoremap <silent> <c-tab>       :ls<cr>:confirm:b!
-nnoremap <silent> <tab><tab>    :IndentGuidesToggle<cr>
 nnoremap <silent> <esc><esc>    :nohlsearch<cr>
 
 
@@ -411,6 +409,19 @@ function! FormatCodeFile()
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     endif
     call setpos('.', curPos)
+endfunction
+
+" Toggle NERDTree automatically {{{2
+function! AutoNERDTreeToggle()
+    if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+        exe ":NERDTreeClose"
+    else
+        if (expand("%:t") != '')
+            exe ":NERDTreeFind"
+        else
+            exe ":NERDTreeToggle"
+        endif
+    endif
 endfunction
 
 
