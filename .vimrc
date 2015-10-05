@@ -414,12 +414,12 @@ endfunction
 " Toggle NERDTree automatically {{{2
 function! AutoNERDTreeToggle()
     if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-        exe ":NERDTreeClose"
+        NERDTreeClose
     else
         if (expand("%:t") != '')
-            exe ":NERDTreeFind"
+            NERDTreeFind
         else
-            exe ":NERDTreeToggle"
+            NERDTreeToggle
         endif
     endif
 endfunction
