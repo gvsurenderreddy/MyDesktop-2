@@ -33,7 +33,6 @@ Plug 'chrisbra/NrrwRgn'
         " :NRS                                  Enable Syncing the buffer content back (default on)
         " :NRN                                  Disable Syncing the buffer content back
         " :NRL                                  Reselect the last selected region and open it again in a narrowed window
-Plug 'ciaranm/detectindent'
 Plug 'dimasg/vim-mark'
         " <Leader>m                             Mark the word under the cursor, or clear the mark
         " <Leader>n                             Clear the mark, or clear all marks if not on a mark
@@ -103,6 +102,8 @@ Plug 'easymotion/vim-easymotion'
     map ee <Plug>(easymotion-e)
 Plug 'luochen1990/rainbow'
     let g:rainbow_active = 1
+Plug 'luochen1990/select-and-search'
+    let g:select_and_search_active = 1
 Plug 'majutsushi/tagbar'
     let g:tagbar_autofocus = 1
 Plug 'mattn/calendar-vim'
@@ -344,7 +345,6 @@ if has("autocmd")
     autocmd FileType startify setlocal nocursorline nocursorcolumn
     autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
     autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
-    autocmd BufReadPost * DetectIndent
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
     autocmd BufWritePre * call FormatCodeFile()
     autocmd BufWritePost .vimrc source $MYVIMRC
