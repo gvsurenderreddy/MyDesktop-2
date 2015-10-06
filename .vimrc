@@ -58,9 +58,6 @@ Plug 'junegunn/vim-easy-align', {'on': ['<Plug>(EasyAlign)', 'EasyAlign']}
         " :LiveEasyAlign[!] [...]               Live interactive mode
         " :EasyAlign[!] [N] DELIMITER [OPTIONS] Non-interactive mode
         " :EasyAlign[!] [N] /REGEXP/ [OPTIONS]  Non-interactive mode
-" Plug 'justinmk/vim-sneak'
-    " let g:sneak#streak = 1
-    " let g:sneak#s_next = 1
 Plug 'KabbAmine/vCoolor.vim'
         " :VCoolor                              Insert an HEX color
         " :VCoolIns r                           Insert an rgb color
@@ -91,15 +88,7 @@ Plug 'kshenoy/vim-signature'
         " m<BS>                                 Remove all markers
 Plug 'easymotion/vim-easymotion'
     let g:EasyMotion_smartcase = 1
-    map f <Plug>(easymotion-s)
-    map s <Plug>(easymotion-s2)
-    map / <Plug>(easymotion-sn)
-    map .. <Plug>(easymotion-repeat)
-    map jj <Plug>(easymotion-j)
-    map kk <Plug>(easymotion-k)
-    map ww <Plug>(easymotion-w)
-    map bb <Plug>(easymotion-b)
-    map ee <Plug>(easymotion-e)
+    map <space> <Plug>(easymotion-s)
 Plug 'luochen1990/rainbow'
     let g:rainbow_active = 1
 Plug 'luochen1990/select-and-search'
