@@ -128,8 +128,8 @@ Plug 'Mizuchi/STL-Syntax', {'for': 'cpp'}
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
-" Plug 'reedes/vim-colors-pencil'
-    " let g:pencil_higher_contrast_ui = 1
+Plug 'reedes/vim-colors-pencil'
+    let g:pencil_higher_contrast_ui = 1
 " Plug 'reedes/vim-lexical'
 " Plug 'reedes/vim-litecorrect'
 " Plug 'reedes/vim-pencil'
@@ -166,7 +166,6 @@ Plug 'tpope/vim-surround'
         " cs                                    Change a surrounding
         " ds                                    Delete a surrounding
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-" Plug 'vim-scripts/AutoComplPop'
 Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
         " <Leader>cr normal mode:               Get help for word under cursor
         " <Leader>cr visual mode:               Get help for visually selected text
@@ -175,7 +174,7 @@ Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
 Plug 'vim-scripts/directionalWindowResizer'
         " <c-h/j/k/l>                           Resize windows
 " Plug 'vim-scripts/DoxygenToolkit.vim'
-" Plug 'vim-scripts/DrawIt'
+Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/luarefvim', {'for': 'lua'}
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
