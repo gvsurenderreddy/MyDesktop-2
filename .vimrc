@@ -48,9 +48,7 @@ Plug 'hsitz/VimOrganizer'
     autocmd BufEnter *.org call org#SetOrgFileType()
 Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
-" Plug 'itchyny/vim-cursorword'
 Plug 'itchyny/landscape.vim'
-" Plug 'itchyny/lightline.vim'
 Plug 'itchyny/screensaver.vim', {'on': 'ScreenSaver'}
 Plug 'junegunn/vim-easy-align', {'on': ['<Plug>(EasyAlign)', 'EasyAlign']}
         " :EasyAlign[!] [OPTIONS]               Interactive mode
@@ -126,7 +124,7 @@ Plug 'mhinz/vim-startify'
                             \ 'plugged/.*/doc',
                             \ '/\.git/',
                             \ ]
-Plug 'Mizuchi/STL-Syntax', {'for': ['c', 'cpp']}
+Plug 'Mizuchi/STL-Syntax', {'for': 'cpp'}
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
@@ -181,7 +179,7 @@ Plug 'vim-scripts/directionalWindowResizer'
 Plug 'vim-scripts/luarefvim', {'for': 'lua'}
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
-Plug 'vim-scripts/stlrefvim', {'for': ['c', 'cpp']}
+Plug 'vim-scripts/stlrefvim', {'for': 'cpp'}
         " <Leader>tr normal mode:               Go to documentation for this function
         " <Leader>te normal mode:               Go to an example that uses this function
 Plug 'vim-scripts/utl.vim'
