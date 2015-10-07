@@ -125,6 +125,8 @@ Plug 'mhinz/vim-startify'
                             \ '/\.git/',
                             \ ]
 Plug 'Mizuchi/STL-Syntax', {'for': 'cpp'}
+Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
+    let g:indent_guides_guide_size = 1
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
@@ -203,7 +205,7 @@ Plug 'vimwiki/vimwiki'
         " <Leader>whh or :Vimwiki2HTMLBrowse    Convert current wiki link to HTML and open it in a webbrowser
 Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
     let g:SingleCompile_menumode = 0
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 if has("python") || has("python3")
     Plug 'joedicastro/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
@@ -343,6 +345,7 @@ nnoremap <silent> <m-q>         :Commentary<cr>
 vnoremap <silent> <m-q>         :Commentary<cr>
 nnoremap <silent> <m-l>         :ScreenSaver<cr>
 nnoremap <silent> <c-tab>       :ls<cr>:confirm:b!
+nnoremap <silent> <tab><tab>    :IndentGuidesToggle<cr>
 nnoremap <silent> <esc><esc>    :nohlsearch<cr>
 
 
