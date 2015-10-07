@@ -130,8 +130,8 @@ Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
-Plug 'reedes/vim-colors-pencil'
-    let g:pencil_higher_contrast_ui = 1
+" Plug 'reedes/vim-colors-pencil'
+    " let g:pencil_higher_contrast_ui = 1
 " Plug 'reedes/vim-lexical'
 " Plug 'reedes/vim-litecorrect'
 " Plug 'reedes/vim-pencil'
@@ -176,7 +176,7 @@ Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
 Plug 'vim-scripts/directionalWindowResizer'
         " <c-h/j/k/l>                           Resize windows
 " Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'vim-scripts/DrawIt'
+" Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/luarefvim', {'for': 'lua'}
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
