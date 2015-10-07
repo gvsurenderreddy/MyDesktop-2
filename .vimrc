@@ -337,12 +337,10 @@ if has("autocmd")
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
     autocmd BufWritePre * call FormatCodeFile()
     autocmd BufWritePost .vimrc source $MYVIMRC
-    autocmd InsertLeave * if pumvisible() == 0 | silent! pclose | endif
 endif
 
 
 " Keybindings {{{1
-let mapleader = ' '
 nnoremap <silent> <f2>          :call AutoNERDTreeToggle()<cr>
 nnoremap <silent> <f3>          :Dict<cr>
 nnoremap <silent> <f4>          :UndotreeToggle<cr>
