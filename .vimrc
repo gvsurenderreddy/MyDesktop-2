@@ -42,7 +42,6 @@ Plug 'ervandew/supertab'
     let g:SuperTabLongestEnhanced = 1
 Plug 'eshock/vim-matchit'
 " Plug 'godlygeek/csapprox'
-" Plug 'godlygeek/tabular', {'on': 'Tabularize'}
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
 Plug 'hsitz/VimOrganizer'
     autocmd! BufRead,BufWrite,BufWritePost,BufNewFile *.org
@@ -127,6 +126,7 @@ Plug 'mhinz/vim-startify'
                             \ 'plugged/.*/doc',
                             \ '/\.git/',
                             \ ]
+Plug 'Mizuchi/STL-Syntax', {'for': ['c', 'cpp']}
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
@@ -204,13 +204,6 @@ Plug 'vimwiki/vimwiki'
         " :VimwikiAll2HTML                      Convert all your wiki links to HTML
         " <Leader>wh  or :Vimwiki2HTML          Convert current wiki link to HTML
         " <Leader>whh or :Vimwiki2HTMLBrowse    Convert current wiki link to HTML and open it in a webbrowser
-Plug 'vitalk/vim-simple-todo'
-        " <Leader>i	Create a new todo under cursor
-        " <Leader>I	Create a new todo for current line
-        " <Leader>o	Create a new todo below current line
-        " <Leader>O	Create a new todo above current line
-        " <Leader>x	Mark todo under cursor as done
-        " <Leader>X	Mark todo as undone
 Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
     let g:SingleCompile_menumode = 0
 Plug 'Yggdroot/indentLine'
@@ -378,7 +371,7 @@ function! FullScreenToggle()
         if has("win16") || has("win32") || has("win64")
             call libcallnr('fullscreen.dll', 'ToggleFullScreen', 0)
         elseif has("unix")
-            " reserved
+            call system("wmctrl -ir " . v:windowid . " -b toggle, fullscreen")
         elseif has("mac")
             " reserved
         endif
