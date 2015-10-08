@@ -173,9 +173,7 @@ Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
         " <Leader>cr visual mode:               Get help for visually selected text
         " <Leader>cw:                           Prompt for word CRefVim should search for
         " <Leader>cc:                           Jump to table of contents of the C-reference manual
-Plug 'vim-scripts/directionalWindowResizer'
-        " <c-h/j/k/l>                           Resize windows
-" Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 " Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/luarefvim', {'for': 'lua'}
         " <Leader>lr normal mode:               Get help for word under cursor
