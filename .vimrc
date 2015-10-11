@@ -285,7 +285,7 @@ set fileencodings=ucs-bom,utf-8,euc-cn,euc-tw,euc-jp,euc-kr,latin1
 if has("gui_running")
     if has("win16") || has("win32") || has("win64")
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "EnableMaximize", 1)
-        autocmd GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 245)
+        autocmd GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 248)
         set guifont=Fantasque_Sans_Mono:h13
         set guifontwide=SimHei:h12
         colorscheme solarized
