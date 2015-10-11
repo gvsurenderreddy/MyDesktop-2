@@ -173,6 +173,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vim-scripts/luarefvim', {'for': 'lua'}
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
+" Plug 'vim-scripts/PaperColor.vim'
 Plug 'vim-scripts/stlrefvim', {'for': 'cpp'}
         " <Leader>tr normal mode:               Go to documentation for this function
         " <Leader>te normal mode:               Go to an example that uses this function
