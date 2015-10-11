@@ -23,6 +23,7 @@ tags
 
 !/python/
 !/cpp/
+!/c/
 !/lua/
 !/ruby/
 !/prolog/
