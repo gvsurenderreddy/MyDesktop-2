@@ -38,6 +38,9 @@ Plug 'ervandew/supertab'
 Plug 'eshock/vim-matchit'
 " Plug 'godlygeek/csapprox'
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
+Plug 'hsitz/VimOrganizer'
+    autocmd! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+    autocmd BufEnter *.org call org#SetOrgFileType()
 Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
 Plug 'itchyny/landscape.vim'
@@ -197,7 +200,6 @@ Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
     let g:SingleCompile_menumode = 0
 " Plug 'Yggdroot/indentLine'
 if has("python") || has("python3")
-    Plug 'jceb/vim-orgmode', {'for': 'org'}
     Plug 'joedicastro/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
