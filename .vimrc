@@ -197,6 +197,7 @@ Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
     let g:SingleCompile_menumode = 0
 " Plug 'Yggdroot/indentLine'
 if has("python") || has("python3")
+    Plug 'jceb/vim-orgmode', {'for': 'org'}
     Plug 'joedicastro/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer

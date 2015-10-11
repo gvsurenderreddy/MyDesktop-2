@@ -18,7 +18,7 @@ tags
 
 !.gitignore
 !.vimrc
-!notes
+!notes.org
 !vinote.txt
 
 !/python/
