@@ -9,11 +9,6 @@ Plug 'altercation/vim-colors-solarized'
     let g:solarized_underline = 1
     let g:solarized_contrast = "normal"
     let g:solarized_visibility = "normal"
-Plug 'arecarn/crunch'
-        " g={motion}                            Evaluate the text that {motion} moves over
-        " g==                                   Evalue the current line appending the result
-        " :[range]Crunch[!]                     Evaluates the current visual selection
-        " :Crunch [expr]                        Where [expr] is some mathematical expression
 Plug 'bling/vim-airline'
     let g:airline_crypt_symbol = ''
     let g:airline_powerline_fonts = 1
@@ -43,9 +38,6 @@ Plug 'ervandew/supertab'
 Plug 'eshock/vim-matchit'
 " Plug 'godlygeek/csapprox'
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
-" Plug 'hsitz/VimOrganizer'
-    " autocmd! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-    " autocmd BufEnter *.org call org#SetOrgFileType()
 Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
 Plug 'itchyny/landscape.vim'
