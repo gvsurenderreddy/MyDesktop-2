@@ -122,6 +122,7 @@ Plug 'mhinz/vim-startify'
 Plug 'Mizuchi/STL-Syntax', {'for': 'cpp'}
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
     let g:indent_guides_guide_size = 1
+" Plug 'NLKNguyen/papercolor-theme'
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
@@ -173,7 +174,6 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vim-scripts/luarefvim', {'for': 'lua'}
         " <Leader>lr normal mode:               Get help for word under cursor
         " <Leader>lr visual mode:               Get help for visually selected text
-" Plug 'vim-scripts/PaperColor.vim'
 Plug 'vim-scripts/stlrefvim', {'for': 'cpp'}
         " <Leader>tr normal mode:               Go to documentation for this function
         " <Leader>te normal mode:               Go to an example that uses this function
