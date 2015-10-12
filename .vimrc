@@ -119,7 +119,6 @@ Plug 'mhinz/vim-startify'
 Plug 'Mizuchi/STL-Syntax', {'for': 'cpp'}
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
     let g:indent_guides_guide_size = 1
-" Plug 'NLKNguyen/papercolor-theme'
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
@@ -346,7 +345,7 @@ nnoremap <silent> <esc><esc>    :nohlsearch<cr>
 " Auto set file head {{{2
 function! SetFileHead()
     if &filetype == 'sh'
-        call setline(1, ["\#!/bin/bash", ""])
+        call setline(1, ["\#!/usr/bin/env bash", ""])
     endif
     if &filetype == 'python'
         call setline(1, ["\#!/usr/bin/env python", "\# -*- coding:utf-8 -*-", ""])
