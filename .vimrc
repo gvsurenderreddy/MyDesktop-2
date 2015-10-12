@@ -38,9 +38,6 @@ Plug 'ervandew/supertab'
 Plug 'eshock/vim-matchit'
 " Plug 'godlygeek/csapprox'
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
-Plug 'hsitz/VimOrganizer'
-    autocmd! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-    autocmd BufEnter *.org call org#SetOrgFileType()
 Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
 Plug 'itchyny/landscape.vim'
