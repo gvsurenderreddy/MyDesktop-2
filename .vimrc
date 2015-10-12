@@ -177,6 +177,7 @@ Plug 'vim-scripts/stlrefvim', {'for': 'cpp'}
 Plug 'vim-scripts/utl.vim'
 Plug 'vim-voom/VOoM'
 Plug 'vimwiki/vimwiki'
+    let g:vimwiki_menu=''
         " <Leader>ww                            Open default wiki index file
         " <Leader>wt                            Open default wiki index file in a new tab
         " <Leader>ws                            Select and open wiki index file
