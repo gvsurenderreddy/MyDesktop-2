@@ -62,7 +62,8 @@
    - [X] <2015-10-11 Sun>  SXHLR2升级
    - [X] <2015-10-13 Tue>  SXMGW3 OMU1故障
    - [X] <2015-10-13 Tue>  SXHLR2升级
-   - [ ] <2015-10-15 Thu>  SXHLR2升级
+   - [X] <2015-10-15 Thu>  SXHLR2升级
+   - [ ] <2015-10-20 Tue>  UMG扩容
 
 
 = NOTES =
