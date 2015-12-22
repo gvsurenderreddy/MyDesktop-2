@@ -146,7 +146,7 @@ Plug 'terryma/vim-multiple-cursors'
         " <c-p>                                 Go back to the previous virtual cursor
         " <c-x>                                 Remove the current virtual cursor and skip to the next
 Plug 'tomasr/molokai'
-    let g:molokai_original = 0
+    let g:molokai_original = 1
 Plug 'tpope/vim-commentary', {'on': 'Commentary'}
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
@@ -203,17 +203,14 @@ if has("python") || has("python3")
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
     Plug 'klen/python-mode', {'for': 'python'}
+    Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
     Plug 'SirVer/ultisnips'
         let g:UltiSnipsExpandTrigger = '<tab>'
         let g:UltiSnipsListSnippets = '<c-tab>'
         let g:UltiSnipsJumpForwardTrigger = '<tab>'
         let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    if has("win16") || has("win32") || has("win64")
-        Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
-    elseif has("unix") || has("mac")
-        Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-    endif
+    " Plug 'Valloric/YouCompleteMe'
 else
     Plug 'garbas/vim-snipmate'
     Plug 'MarcWeber/vim-addon-mw-utils'
