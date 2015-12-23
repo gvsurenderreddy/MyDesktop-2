@@ -210,7 +210,7 @@ if has("python") || has("python3")
         let g:UltiSnipsListSnippets = '<c-tab>'
         let g:UltiSnipsJumpForwardTrigger = '<tab>'
         let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    " Plug 'Valloric/YouCompleteMe'
+    " Plug 'Valloric/YouCompleteMe' {'do': './install.py'}
 else
     Plug 'garbas/vim-snipmate'
     Plug 'MarcWeber/vim-addon-mw-utils'
