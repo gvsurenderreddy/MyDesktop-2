@@ -263,7 +263,6 @@ set autoindent smartindent
 set cursorline cursorcolumn
 set laststatus=2
 set scrolloff=3
-set linespace=3
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
