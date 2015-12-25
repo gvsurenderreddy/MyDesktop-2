@@ -146,7 +146,7 @@ Plug 'terryma/vim-multiple-cursors'
         " <c-p>                                 Go back to the previous virtual cursor
         " <c-x>                                 Remove the current virtual cursor and skip to the next
 Plug 'tomasr/molokai'
-    let g:molokai_original = 1
+    let g:molokai_original = 0
 Plug 'tpope/vim-commentary', {'on': 'Commentary'}
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
@@ -263,8 +263,8 @@ set autoindent smartindent
 set cursorline cursorcolumn
 set laststatus=2
 set scrolloff=3
+set linespace=3
 set tabstop=4
-set linespace=4
 set shiftwidth=4
 set softtabstop=4
 set guioptions=acgmt
@@ -287,15 +287,14 @@ if has("gui_running")
     if has("win16") || has("win32") || has("win64")
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "EnableMaximize", 1)
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 245)
-        set guifont=Fantasque_Sans_Mono:h13
-        set guifontwide=SimHei:h12
+        set guifont=Source_Code_Pro:h12
         colorscheme solarized
     elseif has("unix")
         autocmd GUIEnter * winpos 0 0
         set lines=999 columns=999
-        set guifont=Fantasque\ Sans\ Mono\ 13
-        set guifontwide=VeraSansYuanTi\ 12
-        colorscheme solarized
+        set guifont=SourceCodePro\ 12
+        set guifontwide=SourceHanSans\ 12
+        colorscheme molokai
     elseif has("mac")
         " reserved
     endif
