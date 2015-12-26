@@ -359,8 +359,18 @@ endfunction
 function! FullScreenToggle()
     if has("gui_running")
         if has("win16") || has("win32") || has("win64")
+            if &guioptions =~ 'm'
+                set guioptions-=gmt
+            else
+                set guioptions+=gmt
+            endif
             call libcallnr('fullscreen.dll', 'ToggleFullScreen', 0)
         elseif has("unix")
+            if &guioptions =~ 'm'
+                set guioptions-=gmt
+            else
+                set guioptions+=gmt
+            endif
             call system("wmctrl -ir " . v:windowid . " -b toggle, fullscreen")
         elseif has("mac")
             " reserved
