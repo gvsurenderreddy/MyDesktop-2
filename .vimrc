@@ -298,13 +298,14 @@ if has("gui_running")
         " reserved
     endif
 else
-    if &term == "xterm" || &term == "screen"
+    let g:airline_powerline_fonts=0
+    if &term =~ "xterm" || &term =~ "screen"
         set t_Co=256
         colorscheme landscape
-    elseif &term == "linux"
+    elseif &term =~ "linux"
         " fbterm
         colorscheme slate
-    elseif &term == "win32"
+    elseif &term =~ "win"
         " DOS console
         set nocursorline nocursorcolumn
     endif
