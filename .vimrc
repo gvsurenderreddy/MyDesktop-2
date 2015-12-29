@@ -289,8 +289,7 @@ if has("gui_running")
         set guifont=Source_Code_Pro:h12
         colorscheme solarized
     elseif has("unix")
-        autocmd GUIEnter * winpos 0 0
-        set lines=999 columns=999
+        autocmd GUIEnter * call system("wmctrl -ir " . v:windowid . " -b add,maximized_vert,maximized_horz")
         set guifont=SourceCodePro\ 12
         set guifontwide=SourceHanSans\ 12
         colorscheme molokai
@@ -306,7 +305,7 @@ else
         " fbterm
         colorscheme slate
     elseif &term =~ "win"
-        " DOS console
+        " windows console
         set nocursorline nocursorcolumn
     endif
 endif
@@ -372,7 +371,7 @@ function! FullScreenToggle()
             else
                 set guioptions+=gmt
             endif
-            call system("wmctrl -ir " . v:windowid . " -b toggle, fullscreen")
+            call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
         elseif has("mac")
             " reserved
         endif
