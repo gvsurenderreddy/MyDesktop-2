@@ -306,6 +306,7 @@ else
         colorscheme slate
     elseif &term =~ "win"
         " windows console
+        colorscheme desert
         set nocursorline nocursorcolumn
     endif
 endif
