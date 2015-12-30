@@ -13,6 +13,8 @@ python/__pycache__
 # c/c++:
 cpp/**/*.exe
 cpp/**/*.[oa]
+c/**/*.exe
+c/**/*.[oa]
 tags
 
 
