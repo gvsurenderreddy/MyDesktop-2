@@ -17,6 +17,10 @@ int main (int argc, char *argv[])
         {
             SetDesktopView (m);
         }
+        else
+        {
+            std::cout << "Format:\n DV [x] (x is from 0 to 5)\n" << std::endl;
+        }
     }
     else if (argc == 1)
     {
@@ -24,13 +28,13 @@ int main (int argc, char *argv[])
     }
     else
     {
-        std::cout << "Format: DV [x] x=0~5\n"
-                  << "0=default\n"
-                  << "1=detail\n"
-                  << "2=smallicon\n"
-                  << "3=list\n"
-                  << "4=icon\n"
-                  << "5=tile\n"
+        std::cout << "Format:\n DV [x] (x is from 0 to 5)\n"
+                  << "0 = default\n"
+                  << "1 = detail\n"
+                  << "2 = smallicon\n"
+                  << "3 = list\n"
+                  << "4 = icon\n"
+                  << "5 = tile\n"
                   << std::endl;
     }
 
