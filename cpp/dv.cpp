@@ -24,17 +24,16 @@ int main (int argc, char *argv[])
     }
     else if (argc == 1)
     {
-        SetDesktopView (0);
+        SetDesktopView (2);
     }
     else
     {
         std::cout << "Format:\n DV [x] (x is from 0 to 5)\n"
-                  << "0 = default\n"
-                  << "1 = detail\n"
-                  << "2 = smallicon\n"
-                  << "3 = list\n"
-                  << "4 = icon\n"
-                  << "5 = tile\n"
+                  << "0 = default view\n"
+                  << "1 = detail view\n"
+                  << "2 = smallicon view\n"
+                  << "3 = list view\n"
+                  << "4 = tile view\n"
                   << std::endl;
     }
 
