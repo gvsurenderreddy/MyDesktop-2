@@ -131,7 +131,7 @@ bool isint (string s)
 {
     for (int i = 0; i < s.length(); i++)
     {
-        if (s[i] >= 57 || s[i] <= 48)
+        if (s[i] > 57 || s[i] < 48)
         {
             return false;
         }
