@@ -12,7 +12,6 @@ int main (int argc, char *argv[])
     if (argc == 2 && isint (argv[1]))
     {
         int m = atoi (argv[1]);
-        std::cout << m << std::endl;
 
         if (m >= 0 && m <= 5)
         {
