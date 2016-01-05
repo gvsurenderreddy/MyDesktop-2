@@ -65,7 +65,7 @@ Plug 'kshenoy/vim-signature'
         " dmx                                   Remove mark 'x' where x is a-zA-Z
         " m,                                    Place the next available mark
         " m-                                    Delete all marks from the current line
-        " m<Space>                              Delete all marks from the current buffer
+        " m<space>                              Delete all marks from the current buffer
         " ]` / [`                               Jump to next / prev mark
         " ]' / ['                               Jump to start of next / prev line containing a mark
         " m/                                    Open location list and display marks from current buffer
@@ -180,7 +180,7 @@ Plug 'vim-voom/VOoM'
 Plug 'vimwiki/vimwiki'
     let g:vimwiki_menu = ''
     let g:vimwiki_hl_cb_checked = 1
-    autocmd! BufEnter *.wiki nmap <Leader>x <Plug>VimwikiToggleListItem
+    autocmd! FileType vimwiki nmap <Leader><space> <Plug>VimwikiToggleListItem
         " <Leader>ww                            Open default wiki index file
         " <Leader>wt                            Open default wiki index file in a new tab
         " <Leader>ws                            Select and open wiki index file
