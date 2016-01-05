@@ -119,11 +119,13 @@ Plug 'mhinz/vim-startify'
 Plug 'Mizuchi/STL-Syntax', {'for': 'cpp'}
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
     let g:indent_guides_guide_size = 1
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'pelodelfuego/vim-swoop'
     let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
-" Plug 'reedes/vim-colors-pencil'
-    " let g:pencil_higher_contrast_ui = 1
+Plug 'reedes/vim-colors-pencil'
+    let g:pencil_higher_contrast_ui = 1
+    let g:pencil_gutter_color = 1
 " Plug 'reedes/vim-lexical'
 " Plug 'reedes/vim-litecorrect'
 " Plug 'reedes/vim-pencil'
