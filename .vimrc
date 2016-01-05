@@ -176,7 +176,8 @@ Plug 'vim-scripts/stlrefvim', {'for': 'cpp'}
 Plug 'vim-scripts/utl.vim'
 Plug 'vim-voom/VOoM'
 Plug 'vimwiki/vimwiki'
-    let g:vimwiki_menu=''
+    let g:vimwiki_menu = ''
+    let g:vimwiki_hl_cb_checked = 1
     autocmd! BufEnter *.wiki nmap <Leader>x <Plug>VimwikiToggleListItem
         " <Leader>ww                            Open default wiki index file
         " <Leader>wt                            Open default wiki index file in a new tab
