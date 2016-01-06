@@ -36,7 +36,6 @@ Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = "context"
     let g:SuperTabLongestEnhanced = 1
 Plug 'eshock/vim-matchit'
-" Plug 'godlygeek/csapprox'
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
 Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
@@ -232,11 +231,9 @@ endif
         " let g:neocomplcache_min_syntax_length = 3
 " endif
 if has("gui_running")
-    Plug 'vim-scripts/sunset'
-        let g:sunset_latitude = 30
-        let g:sunset_longitude = 120
-        let g:sunset_utc_offset = 8
     Plug 'yonchu/accelerated-smooth-scroll'
+else
+    Plug 'godlygeek/csapprox'
 endif
 call plug#end()
 
@@ -286,6 +283,11 @@ set fileencodings=ucs-bom,utf-8,euc-cn,euc-tw,euc-jp,euc-kr,latin1
 
 " Interface {{{1
 if has("gui_running")
+    if strftime("%H") > 8 && strftime("%H") < 18
+        set background=light
+    else
+        set background=dark
+    endif
     if has("win16") || has("win32") || has("win64")
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "EnableMaximize", 1)
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 245)
@@ -295,7 +297,7 @@ if has("gui_running")
         autocmd GUIEnter * call system("wmctrl -ir " . v:windowid . " -b add,maximized_vert,maximized_horz")
         set guifont=SourceCodePro\ 12
         set guifontwide=SourceHanSans\ 12
-        colorscheme molokai
+        colorscheme solarized
     elseif has("mac")
         " reserved
     endif
