@@ -161,6 +161,7 @@ Plug 'tpope/vim-surround'
         " cs                                    Change a surrounding
         " ds                                    Delete a surrounding
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
 Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
         " <Leader>cr normal mode:               Get help for word under cursor
         " <Leader>cr visual mode:               Get help for visually selected text
