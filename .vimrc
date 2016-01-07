@@ -283,7 +283,7 @@ set fileencodings=ucs-bom,utf-8,euc-cn,euc-tw,euc-jp,euc-kr,latin1
 
 " Interface {{{1
 if has("gui_running")
-    if strftime("%H") > 8 && strftime("%H") < 18
+    if strftime("%H") > 6 && strftime("%H") < 18
         set background=light
     else
         set background=dark
