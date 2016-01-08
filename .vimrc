@@ -177,7 +177,7 @@ Plug 'vim-scripts/stlrefvim', {'for': 'cpp'}
         " <Leader>te normal mode:               Go to an example that uses this function
 Plug 'vim-scripts/utl.vim'
 Plug 'vim-voom/VOoM'
-Plug 'vimim/vimim'
+" Plug 'vimim/vimim'
 Plug 'vimwiki/vimwiki'
     let g:vimwiki_menu = ''
     let g:vimwiki_hl_cb_checked = 1
