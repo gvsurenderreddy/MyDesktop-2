@@ -214,24 +214,13 @@ if has("python") || has("python3")
         let g:UltiSnipsListSnippets = '<c-tab>'
         let g:UltiSnipsJumpForwardTrigger = '<tab>'
         let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    " Plug 'Valloric/YouCompleteMe' {'do': './install.py'}
+    " Plug 'Valloric/YouCompleteMe'
 else
     Plug 'garbas/vim-snipmate'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
     Plug 'vim-scripts/OmniCppComplete', {'for': ['c', 'cpp']}
 endif
-" if has("lua")
-    " Plug 'Shougo/neocomplete.vim'
-        " let g:neocomplete#enable_at_startup = 1
-        " let g:neocomplete#enable_smart_case = 1
-        " let g:neocomplete#sources#syntax#min_keyword_length = 3
-" else
-    " Plug 'Shougo/neocomplcache.vim'
-        " let g:neocomplcache_enable_at_startup = 1
-        " let g:neocomplcache_enable_smart_case = 1
-        " let g:neocomplcache_min_syntax_length = 3
-" endif
 if has("gui_running")
     Plug 'yonchu/accelerated-smooth-scroll'
 else
