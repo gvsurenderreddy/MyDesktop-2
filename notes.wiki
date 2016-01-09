@@ -77,6 +77,7 @@
 * [X] Jan
    - [X] <2016-01-05 Tue>  晚上HLR2/MGW1/MGW2倒换
    - [X] <2016-01-07 Thu>  晚上HLR3/MGW3/MGW4倒换
+   - [X] <2016-01-10 Sun>  周末值班
 
 
 = NOTES =
