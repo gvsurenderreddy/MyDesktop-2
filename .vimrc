@@ -76,7 +76,7 @@ Plug 'kshenoy/vim-signature'
         " m<BS>                                 Remove all markers
 Plug 'easymotion/vim-easymotion'
     let g:EasyMotion_smartcase = 1
-    map <space> <Plug>(easymotion-overwin-f)
+    map <c-s> <Plug>(easymotion-overwin-f)
 Plug 'luochen1990/rainbow'
     let g:rainbow_active = 1
 Plug 'luochen1990/select-and-search'
