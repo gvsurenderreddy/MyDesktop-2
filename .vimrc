@@ -10,7 +10,6 @@ Plug 'altercation/vim-colors-solarized'
     let g:solarized_contrast = "normal"
     let g:solarized_visibility = "normal"
 Plug 'bling/vim-airline'
-    let g:airline_crypt_symbol = ''
     let g:airline_powerline_fonts = 1
     " let g:airline#extensions#tabline#enabled = 1
 Plug 'chrisbra/Colorizer'
