@@ -258,6 +258,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set guioptions=acgmt
+set formatoptions=tcqmM
 set omnifunc=syntaxcomplete#Complete
 set backspace=indent,eol,start
 set completeopt=longest,menu,preview
@@ -269,7 +270,7 @@ set encoding=utf-8
 set fileformat=unix
 set fileformats=unix,dos,mac
 set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,euc-cn,euc-tw,euc-jp,euc-kr,latin1
+set fileencodings=ucs-bom,utf-8,chinese
 
 
 " Interface {{{1
