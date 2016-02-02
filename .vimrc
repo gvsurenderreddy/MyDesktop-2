@@ -9,9 +9,6 @@ Plug 'altercation/vim-colors-solarized'
     let g:solarized_underline = 1
     let g:solarized_contrast = "normal"
     let g:solarized_visibility = "normal"
-Plug 'bling/vim-airline'
-    let g:airline_powerline_fonts = 1
-    " let g:airline#extensions#tabline#enabled = 1
 Plug 'chrisbra/Colorizer'
     let g:colorizer_auto_color = 1
     let g:colorizer_skip_comments = 1
@@ -159,6 +156,8 @@ Plug 'tpope/vim-surround'
         " ys                                    Add a surrounding
         " cs                                    Change a surrounding
         " ds                                    Delete a surrounding
+Plug 'vim-airline/vim-airline'
+    let g:airline_powerline_fonts = 1
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
 Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
