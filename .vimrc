@@ -293,7 +293,7 @@ if has("gui_running")
         " reserved
     endif
 else
-    let g:airline_powerline_fonts=0
+    let g:airline_powerline_fonts = 0
     if &term =~ "xterm" || &term =~ "screen"
         set t_Co=256
         colorscheme landscape
