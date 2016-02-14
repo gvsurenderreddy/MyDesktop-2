@@ -70,9 +70,9 @@ Plug 'kshenoy/vim-signature'
         " ]= / ]=                               Jump to next / prevline having a marker of any type
         " m?                                    Open location list and display markers from current buffer
         " m<BS>                                 Remove all markers
-Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion', {'on': '<plug>(easymotion-overwin-f)'}
     let g:EasyMotion_smartcase = 1
-    nmap g <Plug>(easymotion-overwin-f)
+    nmap f <Plug>(easymotion-overwin-f)
 Plug 'luochen1990/rainbow'
     let g:rainbow_active = 1
 Plug 'luochen1990/select-and-search'
