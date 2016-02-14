@@ -72,7 +72,7 @@ Plug 'kshenoy/vim-signature'
         " m<BS>                                 Remove all markers
 Plug 'easymotion/vim-easymotion'
     let g:EasyMotion_smartcase = 1
-    map <c-s> <Plug>(easymotion-overwin-f)
+    nmap <c-s> <Plug>(easymotion-overwin-f)
 Plug 'luochen1990/rainbow'
     let g:rainbow_active = 1
 Plug 'luochen1990/select-and-search'
@@ -320,20 +320,20 @@ endif
 
 
 " Keybindings {{{1
-nnoremap <silent> <f2>          :call AutoNERDTreeToggle()<cr>
-nnoremap <silent> <f3>          :Dict<cr>
-nnoremap <silent> <f4>          :UndotreeToggle<cr>
-nnoremap <silent> <f7>          :CalendarVR<cr>
-nnoremap <silent> <f9>          :SCCompileRun<cr>
-nnoremap <silent> <f10>         :TagbarToggle<cr>
-nnoremap <silent> <f11>         :call FullScreenToggle()<cr>
-nnoremap <silent> <f12>         :marks<cr>
-nnoremap <silent> <m-q>         :Commentary<cr>
-vnoremap <silent> <m-q>         :Commentary<cr>
-nnoremap <silent> <m-l>         :ScreenSaver<cr>
-nnoremap <silent> <c-tab>       :ls<cr>:confirm:b!
-nnoremap <silent> <tab><tab>    :IndentLinesToggle<cr>
-nnoremap <silent> <esc><esc>    :nohlsearch<cr>
+nmap <silent> <f2>          :call AutoNERDTreeToggle()<cr>
+nmap <silent> <f3>          :Dict<cr>
+nmap <silent> <f4>          :UndotreeToggle<cr>
+nmap <silent> <f7>          :CalendarVR<cr>
+nmap <silent> <f9>          :SCCompileRun<cr>
+nmap <silent> <f10>         :TagbarToggle<cr>
+nmap <silent> <f11>         :call FullScreenToggle()<cr>
+nmap <silent> <f12>         :marks<cr>
+nmap <silent> <m-q>         :Commentary<cr>
+vmap <silent> <m-q>         :Commentary<cr>
+nmap <silent> <m-l>         :ScreenSaver<cr>
+nmap <silent> <c-tab>       :ls<cr>:confirm:b!
+nmap <silent> <tab><tab>    :IndentLinesToggle<cr>
+nmap <silent> <esc><esc>    :nohlsearch<cr>
 
 
 " Functions {{{1
