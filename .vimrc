@@ -294,6 +294,8 @@ if has("gui_running")
     endif
 else
     let g:airline_powerline_fonts = 0
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
     if &term =~ "xterm" || &term =~ "screen"
         set t_Co=256
         colorscheme landscape
