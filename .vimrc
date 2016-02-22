@@ -71,6 +71,10 @@ Plug 'kshenoy/vim-signature'
         " m?                                    Open location list and display markers from current buffer
         " m<BS>                                 Remove all markers
 Plug 'lilydjwg/colorizer'
+    let g:colorizer_nomap = 1
+        " :ColorHighlight                       Start/Update highlighting
+        " :ColorClear                           Clear all highlights
+        " :ColorToggle                          Toggle highlights
 Plug 'luochen1990/rainbow'
     let g:rainbow_active = 1
 Plug 'luochen1990/select-and-search'
