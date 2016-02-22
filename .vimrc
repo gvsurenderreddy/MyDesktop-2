@@ -9,9 +9,6 @@ Plug 'altercation/vim-colors-solarized'
     let g:solarized_underline = 1
     let g:solarized_contrast = "normal"
     let g:solarized_visibility = "normal"
-Plug 'chrisbra/Colorizer'
-    let g:colorizer_auto_color = 1
-    let g:colorizer_skip_comments = 1
 Plug 'chrisbra/NrrwRgn'
         " <leader>nr                            Open the current visual selection in a new narrowed window
         " :NR                                   Open the selected region in a new narrowed window
@@ -31,6 +28,9 @@ Plug 'dimasg/vim-mark'
 Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = "context"
     let g:SuperTabLongestEnhanced = 1
+Plug 'easymotion/vim-easymotion', {'on': '<plug>(easymotion-overwin-f)'}
+    let g:EasyMotion_smartcase = 1
+    nmap f <Plug>(easymotion-overwin-f)
 Plug 'eshock/vim-matchit'
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
 Plug 'honza/vim-snippets'
@@ -70,9 +70,7 @@ Plug 'kshenoy/vim-signature'
         " ]= / ]=                               Jump to next / prevline having a marker of any type
         " m?                                    Open location list and display markers from current buffer
         " m<BS>                                 Remove all markers
-Plug 'easymotion/vim-easymotion', {'on': '<plug>(easymotion-overwin-f)'}
-    let g:EasyMotion_smartcase = 1
-    nmap f <Plug>(easymotion-overwin-f)
+Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
     let g:rainbow_active = 1
 Plug 'luochen1990/select-and-search'
