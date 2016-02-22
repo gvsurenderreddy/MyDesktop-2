@@ -298,6 +298,7 @@ else
     let g:airline_powerline_fonts = 0
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
+    set nocursorline nocursorcolumn
     if &term =~ "xterm" || &term =~ "screen"
         set t_Co=256
         colorscheme landscape
@@ -307,7 +308,6 @@ else
     elseif &term =~ "win"
         " windows console
         colorscheme desert
-        set nocursorline nocursorcolumn
     endif
 endif
 
