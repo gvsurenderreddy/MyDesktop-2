@@ -314,7 +314,7 @@ endif
 
 " Autocmds {{{1
 if has("autocmd")
-    autocmd FileType startify setlocal nocursorline nocursorcolumn
+    autocmd User Startified setlocal buflisted nocursorline nocursorcolumn
     autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
     autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
