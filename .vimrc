@@ -105,6 +105,7 @@ Plug 'mhinz/vim-signify'
     let g:signify_sign_delete = '-'
     let g:signify_sign_delete_first_line = '-'
 Plug 'mhinz/vim-startify'
+    let g:startify_custom_header = []
     let g:startify_session_autoload = 1
     let g:startify_session_persistence = 1
     let g:startify_skiplist = [
