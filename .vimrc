@@ -105,6 +105,7 @@ Plug 'mhinz/vim-signify'
     let g:signify_sign_delete = '-'
     let g:signify_sign_delete_first_line = '-'
 Plug 'mhinz/vim-startify'
+    let g:plug_window = 'enew'
     let g:startify_custom_header = []
     let g:startify_session_autoload = 1
     let g:startify_session_persistence = 1
@@ -315,7 +316,7 @@ endif
 
 " Autocmds {{{1
 if has("autocmd")
-    autocmd User Startified setlocal buflisted nocursorline nocursorcolumn
+    autocmd User Startified setlocal nocursorline nocursorcolumn
     autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
     autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
