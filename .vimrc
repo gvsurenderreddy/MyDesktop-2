@@ -82,8 +82,9 @@ Plug 'luochen1990/select-and-search'
 Plug 'majutsushi/tagbar'
     let g:tagbar_autofocus = 1
 Plug 'mattn/calendar-vim'
-    let g:calendar_weeknm = 5
+    let g:calendar_weeknm = 1
     let g:calendar_mark = 'right'
+    let g:calendar_datetime='statusline'
         " :Calendar [YYYY MM]                   Bring up a calendar
         " :CalendarH [YYYY MM]                  Bring up a calendar in a horizontally split window
         " :CalendarVR [YYYY MM]                 Bring up a calendar in a right vertically split window
@@ -192,9 +193,9 @@ Plug 'vimwiki/vimwiki'
         " <Leader>w<Leader>w                    Open diary wiki-file for today
         " <Leader>w<Leader>t                    Open diary wiki-file for today in a new tab
         " <Leader>w<Leader>i                    Update diary section
-        " <enter>                               Folow/create wiki link
-        " <s-enter>                             Split and folow/create wiki link
-        " <c-enter>                             Vertical split and folow/create wiki link
+        " <enter>                               Follow/create wiki link
+        " <s-enter>                             Split and follow/create wiki link
+        " <c-enter>                             Vertical split and follow/create wiki link
         " <backspace>                           Go back to parent(previous) wiki link
         " <tab> or <s-tab>                      Find next or previous wiki link
         " :VimwikiAll2HTML                      Convert all your wiki links to HTML
