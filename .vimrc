@@ -136,8 +136,6 @@ Plug 'scrooloose/nerdtree'
     let g:NERDTreeShowHidden = 1
     let g:NERDTreeShowBookmarks = 1
 Plug 'scrooloose/syntastic'
-Plug 'szw/vim-dict', {'on': 'Dict'}
-    let g:dict_hosts = [["dict.org", ["wn"]]]
 Plug 'terryma/vim-expand-region'
     " let g:expand_region_use_select_mode = 1
         " +                                     Expand the visual selection
@@ -148,7 +146,7 @@ Plug 'terryma/vim-multiple-cursors'
         " <c-x>                                 Remove the current virtual cursor and skip to the next
 Plug 'tomasr/molokai'
     let g:molokai_original = 0
-Plug 'tpope/vim-commentary', {'on': 'Commentary'}
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -207,6 +205,7 @@ Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
 Plug 'Yggdroot/indentLine', {'on': 'IndentLinesToggle'}
     let g:indentLine_enabled = 0
 if has("python") || has("python3")
+    Plug 'iamcco/dict.vim'
     Plug 'joedicastro/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
@@ -328,15 +327,16 @@ endif
 
 " Keybindings {{{1
 nmap <silent> <f2>          :call AutoNERDTreeToggle()<cr>
-nmap <silent> <f3>          :Dict<cr>
+nmap <silent> <f3>          <Plug>DictWSearch
+vmap <silent> <f3>          <Plug>DictWVSearch
 nmap <silent> <f4>          :UndotreeToggle<cr>
 nmap <silent> <f7>          :CalendarVR<cr>
 nmap <silent> <f9>          :SCCompileRun<cr>
 nmap <silent> <f10>         :TagbarToggle<cr>
 nmap <silent> <f11>         :call FullScreenToggle()<cr>
 nmap <silent> <f12>         :marks<cr>
-nmap <silent> <m-q>         :Commentary<cr>
-vmap <silent> <m-q>         :Commentary<cr>
+nmap <silent> <m-q>         <Plug>CommentaryLine
+vmap <silent> <m-q>         <Plug>Commentary
 nmap <silent> <m-l>         :ScreenSaver<cr>
 nmap <silent> <c-tab>       :ls<cr>:confirm:b!
 nmap <silent> <tab><tab>    :IndentLinesToggle<cr>
