@@ -182,6 +182,7 @@ Plug 'vim-voom/VOoM'
 " Plug 'vimim/vimim'
 Plug 'vimwiki/vimwiki'
     let g:vimwiki_menu = ''
+    let g:vimwiki_folding = 'expr'
     let g:vimwiki_hl_cb_checked = 1
     autocmd! FileType vimwiki nmap <Leader><space> <Plug>VimwikiToggleListItem
         " <Leader>ww                            Open default wiki index file
