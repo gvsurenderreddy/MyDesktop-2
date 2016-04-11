@@ -120,7 +120,6 @@ Plug 'Mizuchi/STL-Syntax', {'for': 'cpp'}
     " let g:indent_guides_guide_size = 1
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'pelodelfuego/vim-swoop'
-    let g:swoopUseDefaultKeyMap = 0
 Plug 'Raimondi/delimitMate'
 Plug 'reedes/vim-colors-pencil'
     let g:pencil_higher_contrast_ui = 1
@@ -202,7 +201,7 @@ Plug 'vimwiki/vimwiki'
         " <Leader>whh or :Vimwiki2HTMLBrowse    Convert current wiki link to HTML and open it in a webbrowser
 Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
     let g:SingleCompile_menumode = 0
-Plug 'Yggdroot/indentLine', {'on': 'IndentLinesToggle'}
+Plug 'Yggdroot/indentLine'
     let g:indentLine_enabled = 0
 if has("python") || has("python3")
     Plug 'iamcco/dict.vim'
@@ -337,7 +336,7 @@ nmap <silent> <f11>         :call FullScreenToggle()<cr>
 nmap <silent> <f12>         :marks<cr>
 nmap <silent> <c-c>         <Plug>CommentaryLine
 vmap <silent> <c-c>         <Plug>Commentary
-nmap <silent> <c-x>         :ScreenSaver<cr>
+nmap <silent> <c-s>         :ScreenSaver<cr>
 nmap <silent> <c-tab>       :ls<cr>:confirm:b!
 nmap <silent> <tab><tab>    :IndentLinesToggle<cr>
 nmap <silent> <esc><esc>    :nohlsearch<cr>
