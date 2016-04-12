@@ -89,7 +89,7 @@ Plug 'mattn/calendar-vim'
         " :CalendarH [YYYY MM]                  Bring up a calendar in a horizontally split window
         " :CalendarVR [YYYY MM]                 Bring up a calendar in a right vertically split window
         " :CalendarT [YYYY MM]                  Bring up a calendar a full-screen
-Plug 'mattn/gist-vim'
+Plug 'mattn/gist-vim', {'on': 'Gist'}
     let g:gist_post_private = 1
 Plug 'mattn/webapi-vim'
 Plug 'mbbill/echofunc'
@@ -145,7 +145,7 @@ Plug 'terryma/vim-multiple-cursors'
         " <c-x>                                 Remove the current virtual cursor and skip to the next
 Plug 'tomasr/molokai'
     let g:molokai_original = 0
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary', {'on': ['<Plug>Commentary', '<Plug>CommentaryLine']}
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
