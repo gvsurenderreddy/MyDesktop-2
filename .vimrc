@@ -28,9 +28,10 @@ Plug 'dimasg/vim-mark'
 Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = "context"
     let g:SuperTabLongestEnhanced = 1
-Plug 'easymotion/vim-easymotion', {'on': '<plug>(easymotion-overwin-f)'}
+Plug 'easymotion/vim-easymotion', {'on': ['<Plug>(easymotion-overwin-f)', '<Plug>(easymotion-overwin-f2)']}
     let g:EasyMotion_smartcase = 1
     nmap f <Plug>(easymotion-overwin-f)
+    nmap s <Plug>(easymotion-overwin-f2)
 Plug 'eshock/vim-matchit'
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
 Plug 'honza/vim-snippets'
