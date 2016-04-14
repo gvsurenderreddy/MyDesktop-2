@@ -29,5 +29,5 @@ def return_primerR(n):
 
 if __name__ == '__main__':
     number = int(input("Enter a number:\n"))
-    print(return_primerL(number))
-    print(return_primerR(number))
+    print(return_primerL(number - 1))
+    print(return_primerR(number + 1))
