@@ -317,10 +317,11 @@ endif
 " Autocmds {{{1
 if has("autocmd")
     autocmd User Startified setlocal buflisted nocursorline nocursorcolumn
+    autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
     autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
-    autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
     autocmd BufWritePre * call FormatCodeFile()
+    autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
     autocmd BufWritePost .vimrc source $MYVIMRC
 endif
 

@@ -7,8 +7,8 @@
 *.egg*
 dist
 build
-python/.ropeproject
-python/__pycache__
+**/.ropeproject
+**/__pycache__
 
 # c/c++:
 cpp/**/*.exe
