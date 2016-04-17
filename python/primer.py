@@ -26,7 +26,6 @@ def return_primerR(n):
             return n
         n += 1
 
-
 if __name__ == '__main__':
     number = int(input("Enter a number:\n"))
     print(return_primerL(number - 1))

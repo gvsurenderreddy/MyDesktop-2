@@ -394,7 +394,7 @@ function! FormatCodeFile()
         silent! execute "%!astyle -A2fpjk3xdLUSKY"
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     elseif &filetype == 'python'
-        " silent! execute "call pymode#lint#auto()"
+        silent! execute "call pymode#lint#auto() | syntax on"
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     endif
     call setpos('.', curPos)
