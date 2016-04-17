@@ -206,9 +206,6 @@ Plug 'Yggdroot/indentLine'
     let g:indentLine_enabled = 0
 if has("python") || has("python3")
     Plug 'iamcco/dict.vim'
-    Plug 'joedicastro/vim-markdown-extra-preview', {'for': 'markdown'}
-            " :Me                               Preview the current buffer
-            " :Mer                              Refresh the current buffer
     Plug 'klen/python-mode', {'for': 'python'}
     Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
@@ -218,6 +215,9 @@ if has("python") || has("python3")
         let g:UltiSnipsJumpForwardTrigger = '<tab>'
         let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
     " Plug 'Valloric/YouCompleteMe'
+    Plug 'waylan/vim-markdown-extra-preview', {'for': 'markdown'}
+            " :Me                               Preview the current buffer
+            " :Mer                              Refresh the current buffer
 else
     Plug 'garbas/vim-snipmate'
     Plug 'MarcWeber/vim-addon-mw-utils'
