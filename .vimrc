@@ -21,6 +21,14 @@ Plug 'chrisbra/NrrwRgn'
         " :NRS                                  Enable Syncing the buffer content back (default on)
         " :NRN                                  Disable Syncing the buffer content back
         " :NRL                                  Reselect the last selected region and open it again in a narrowed window
+Plug 'ctrlpvim/ctrlp.vim'
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlPMixed'
+    let g:ctrlp_reuse_window  = 'startify'
+    let g:ctrlp_custom_ignore = {
+                              \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+                              \ 'file': '\v\.(exe|so|dll)$',
+                              \ }
 Plug 'dimasg/vim-mark'
         " <Leader>m                             Mark the word under the cursor, or clear the mark
         " <Leader>n                             Clear the mark, or clear all marks if not on a mark
@@ -48,14 +56,6 @@ Plug 'KabbAmine/vCoolor.vim'
         " :VCoolIns r                           Insert an rgb color
         " :VCoolIns h                           Insert an hsl color
         " :VCoolIns ra                          Insert an rgba color
-Plug 'kien/ctrlp.vim'
-    let g:ctrlp_map = '<c-p>'
-    let g:ctrlp_cmd = 'CtrlPMixed'
-    let g:ctrlp_reuse_window  = 'startify'
-    let g:ctrlp_custom_ignore = {
-                              \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-                              \ 'file': '\v\.(exe|so|dll)$',
-                              \ }
 Plug 'kshenoy/vim-signature'
         " mx                                    Toggle mark 'x' where x is a-zA-Z
         " dmx                                   Remove mark 'x' where x is a-zA-Z
@@ -392,6 +392,9 @@ function! FormatCodeFile()
         silent! execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
     elseif &filetype == 'java'
         silent! execute "%!astyle -A2fpjk3xdLUSKY"
+        silent! execute "!ctags -R --fields=+iaS --extra=+q ."
+    elseif &filetype == 'python'
+        " silent! execute "call pymode#lint#auto()"
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     endif
     call setpos('.', curPos)
