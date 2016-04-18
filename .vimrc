@@ -336,8 +336,8 @@ nmap <silent> <f9>          :SCCompileRun<cr>
 nmap <silent> <f10>         :TagbarToggle<cr>
 nmap <silent> <f11>         :call FullScreenToggle()<cr>
 nmap <silent> <f12>         :marks<cr>
-nmap <silent> <c-c>         <Plug>CommentaryLine
-vmap <silent> <c-c>         <Plug>Commentary
+nmap <silent> <c-q>         <Plug>CommentaryLine
+vmap <silent> <c-q>         <Plug>Commentary
 nmap <silent> <c-s>         :ScreenSaver<cr>
 nmap <silent> <c-tab>       :ls<cr>:confirm:b!
 nmap <silent> <tab><tab>    :IndentLinesToggle<cr>
