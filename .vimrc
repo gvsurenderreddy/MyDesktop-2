@@ -41,6 +41,9 @@ Plug 'easymotion/vim-easymotion', {'on': ['<Plug>(easymotion-overwin-f)', '<Plug
     nmap f <Plug>(easymotion-overwin-f)
     nmap s <Plug>(easymotion-overwin-f2)
 Plug 'eshock/vim-matchit'
+Plug 'fatih/vim-go', {'for': 'go'}
+    let g:go_auto_type_info = 1
+    let g:go_fmt_command = "goimports"
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
 Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
