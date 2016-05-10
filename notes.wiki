@@ -96,6 +96,12 @@
     * [X] <2016-04-15 Thu>  SXHLR3 HLRU1-1故障
     * [X] <2016-04-16 Fri>  SXMWG3 ESB24故障
     * [X] <2016-04-17 Sun>  周末值班
+* [X] May
+    * [X] <2016-05-06 Thu>  杭州IMS培训
+    * [X] <2016-05-07 Fri>  杭州IMS培训
+    * [X] <2016-05-06 Thu>  SXMGW3 MXU-2故障
+    * [X] <2016-05-10 Tue>  SXMGW2 MXU-8故障
+    * [X] <2016-05-10 Tue>  IMS接入承载网CE
 
 
 = NOTES =
