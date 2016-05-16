@@ -5,10 +5,12 @@
 *.py[cod]
 *.so
 *.egg*
+*.ipynb
 dist
 build
 **/.ropeproject
 **/__pycache__
+**/.ipynb_checkpoints
 
 # c/c++:
 cpp/**/*.exe
