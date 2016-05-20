@@ -15,10 +15,10 @@ def GetPath():
             pos = x.index(":")
             return x[pos-1:pos+1] + "\\documents\\"
         except ValueError:
-            print("\nNO KINDLE DEVICE FOUND!")
+            print "NO KINDLE DEVICE FOUND!"
             sys.exit()
     else:
-        print("\nNot supported system.")
+        print "Not supported system."
         sys.exit()
 
 
@@ -39,14 +39,13 @@ def main():
                 if i not in [re.sub(r'\.\w+$', '.sdr', j) for j in Files]]
         for i in Dels:
             if i != "dictionaries":
-                print ("Deleting %s" % i)
+                print "Deleting %s" % i
                 shutil.rmtree(KindlePath + i)
-        print (
-            "\n%s directories deleted.\n" %
-            (("dictionaries" in Dels)
-             and str((len(Dels) - 1))
-             or str(len(Dels))))
-        raw_input("Press ENTER key to quit...")
+        sum = (("dictionaries" in Dels)
+               and str((len(Dels) - 1))
+               or str(len(Dels)))
+        print "\n%s directories deleted.\n" % sum
+        os.system("pause")
     except WindowsError as err:
         print err
 
