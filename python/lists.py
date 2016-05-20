@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding:utf-8 -*-
+# -- coding: utf-8 --
 
 times = int(raw_input("enter how many times: "))
 print "enter %d words" % times

@@ -31,12 +31,14 @@ def main():
         encoding = locale.getpreferredencoding()
 
     try:
+        os.path.supports_unicode_filenames = True
         Files = [os.path.normcase(i) for i in os.listdir(KindlePath)
                  if os.path.isfile(os.path.join(KindlePath, i))]
         Dirs = [os.path.normcase(i) for i in os.listdir(KindlePath)
                 if os.path.isdir(os.path.join(KindlePath, i))]
         Dels = [i for i in Dirs
                 if i not in [re.sub(r'\.\w+$', '.sdr', j) for j in Files]]
+        print Dels
         for i in Dels:
             if i != "dictionaries":
                 print "Deleting %s" % i
