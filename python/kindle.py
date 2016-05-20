@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -- coding: utf-8 --
+# Python 3.5
 
 import os
 import re
@@ -46,7 +47,7 @@ def main():
               % (("dictionaries" in Dels)
                   and str((len(Dels) - 1))
                   or str(len(Dels))))
-        input("Press ENTER key to quit...")
+        os.system("pause")
     except WindowsError as err:
         print(str(err))
 
