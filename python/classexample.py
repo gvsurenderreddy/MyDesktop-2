@@ -27,7 +27,7 @@ class BankAccount():
         """
         print "Now %s has $%.2f" % (self.name, self.money)
 
-    def draw(self, money):
+    draw(self, money):
         """TODO: Docstring for draw.
 
         :money: TODO
@@ -63,8 +63,8 @@ class InterestAccount(BankAccount):
 
         self.rate = rate
 
-    def summ(self):
-        """TODO: Docstring for summ.
+    def increase(self):
+        """TODO: Docstring for increase.
 
         :rate: TODO
         :returns: TODO
@@ -88,5 +88,5 @@ if __name__ == "__main__":
 
     rate = float(raw_input("enter rate: "))
     myInterest = InterestAccount(name, acc, money, rate)
-    myInterest.summ()
+    myInterest.increase()
     myInterest.show()
