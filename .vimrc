@@ -291,11 +291,13 @@ if has("gui_running")
         autocmd GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 245)
         set guifont=Source_Code_Pro:h12
         colorscheme PaperColor
+        cd $HOME
     elseif has("unix")
         autocmd GUIEnter * call system("wmctrl -ir " . v:windowid . " -b add,maximized_vert,maximized_horz")
         set guifont=SourceCodePro\ 12
         set guifontwide=SourceHanSans\ 12
         colorscheme PaperColor
+        cd $HOME
     elseif has("mac")
         " reserved
     endif
