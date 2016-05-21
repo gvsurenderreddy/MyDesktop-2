@@ -27,7 +27,7 @@ class BankAccount():
         """
         print "Now %s has $%.2f" % (self.name, self.money)
 
-    draw(self, money):
+    def draw(self, money):
         """TODO: Docstring for draw.
 
         :money: TODO
@@ -70,23 +70,23 @@ class InterestAccount(BankAccount):
         :returns: TODO
 
         """
-        self.money = self.money*(1+self.rate/100)
+        self.money = self.money*(1+self.rate/100.0)
 
 
 if __name__ == "__main__":
     name = raw_input("enter name: ")
-    acc = int(raw_input("enter acc: "))
-    money = float(raw_input("enter money: "))
+    acc = input("enter acc: ")
+    money = input("enter money: ")
     myAcc = BankAccount(name, acc, money)
     myAcc.show()
-    deposit = float(raw_input("enter money to deposit: "))
+    deposit = input("enter money to deposit: ")
     myAcc.deposit(deposit)
     myAcc.show()
-    draw = float(raw_input("enter money to draw: "))
+    draw = input("enter money to draw: ")
     myAcc.draw(draw)
     myAcc.show()
 
-    rate = float(raw_input("enter rate: "))
+    rate = input("enter rate: ")
     myInterest = InterestAccount(name, acc, money, rate)
     myInterest.increase()
     myInterest.show()
