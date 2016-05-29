@@ -33,9 +33,9 @@ Plug 'dimasg/vim-mark'
         " <Leader>m                             Mark the word under the cursor, or clear the mark
         " <Leader>n                             Clear the mark, or clear all marks if not on a mark
         " :Marks                                List all mark highlight groups and the search patterns
-Plug 'ervandew/supertab'
-    let g:SuperTabDefaultCompletionType = "context"
-    let g:SuperTabLongestEnhanced = 1
+" Plug 'ervandew/supertab'
+    " let g:SuperTabDefaultCompletionType = "context"
+    " let g:SuperTabLongestEnhanced = 1
 Plug 'easymotion/vim-easymotion', {'on': ['<Plug>(easymotion-overwin-f)', '<Plug>(easymotion-overwin-f2)']}
     let g:EasyMotion_smartcase = 1
     nmap f <Plug>(easymotion-overwin-f)
@@ -49,6 +49,9 @@ Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
 Plug 'itchyny/landscape.vim'
 Plug 'itchyny/screensaver.vim', {'on': 'ScreenSaver'}
+Plug 'jiangmiao/auto-pairs'
+    let g:AutoPairsFlyMode = 1
+        " <M-p>                                 Toggle Autopairs
 Plug 'junegunn/vim-easy-align', {'on': ['<Plug>(EasyAlign)', 'EasyAlign']}
         " :EasyAlign[!] [OPTIONS]               Interactive mode
         " :LiveEasyAlign[!] [...]               Live interactive mode
@@ -124,7 +127,6 @@ Plug 'Mizuchi/STL-Syntax', {'for': 'cpp'}
     " let g:indent_guides_guide_size = 1
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'pelodelfuego/vim-swoop'
-Plug 'Raimondi/delimitMate'
 Plug 'reedes/vim-colors-pencil'
     let g:pencil_higher_contrast_ui = 1
     let g:pencil_gutter_color = 1
@@ -164,7 +166,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
     let g:airline_powerline_fonts = 1
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
+" Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
 Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
         " <Leader>cr normal mode:               Get help for word under cursor
         " <Leader>cr visual mode:               Get help for visually selected text
@@ -207,17 +209,34 @@ Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
     let g:SingleCompile_menumode = 0
 Plug 'Yggdroot/indentLine'
     let g:indentLine_enabled = 0
+if has("win64")
+    Plug 'snakeleon/YouCompleteMe-x64'
+    let g:ycm_global_ycm_extra_conf = $HOME.'/vimfiles/plugged/YouCompleteMe-x64/python/.ycm_extra_conf.py'
+    nnoremap <c-g> :YcmCompleter GoTo<CR>
+elseif has("win32")
+    Plug 'snakeleon/YouCompleteMe-x86'
+    let g:ycm_global_ycm_extra_conf = $HOME.'/vimfiles/plugged/YouCompleteMe-x86/python/.ycm_extra_conf.py'
+    nnoremap <c-g> :YcmCompleter GoTo<CR>
+else
+    Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+    let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/plugged/YouCompleteMe/python/.ycm_extra_conf.py'
+    nnoremap <c-g> :YcmCompleter GoTo<CR>
+endif
 if has("python") || has("python3")
     Plug 'iamcco/dict.vim'
-    Plug 'klen/python-mode', {'for': 'python'}
-    Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
+            " <leader>d                         Translate and show on command line
+            " <leader>w                         Translate and show on new window
+            " <leader><leader>r                 Translate and replace
+            " :Dict xxx                         Translate xxx and show on command line
+            " :DictW xxx                        Translate xxx and show on new window
+    " Plug 'klen/python-mode', {'for': 'python'}
+    " Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
     Plug 'SirVer/ultisnips'
-        let g:UltiSnipsExpandTrigger = '<tab>'
-        let g:UltiSnipsListSnippets = '<c-tab>'
-        let g:UltiSnipsJumpForwardTrigger = '<tab>'
-        let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    " Plug 'Valloric/YouCompleteMe'
+        let g:UltiSnipsExpandTrigger = ';'
+        let g:UltiSnipsListSnippets = '<c-;>'
+        let g:UltiSnipsJumpForwardTrigger = '<c-n>'
+        let g:UltiSnipsJumpBackwardTrigger = '<c-p>'
     Plug 'waylan/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
@@ -323,7 +342,7 @@ endif
 if has("autocmd")
     autocmd User Startified setlocal buflisted nocursorline nocursorcolumn
     autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
-    autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
+    " autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
     autocmd BufWritePre * call FormatCodeFile()
     autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
@@ -399,7 +418,7 @@ function! FormatCodeFile()
         silent! execute "%!astyle -A2fpjk3xdLUSKY"
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     elseif &filetype == 'python'
-        silent! execute "PymodeLintAuto"
+        silent! execute "%!autopep8 --aggressive -"
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     endif
     call setpos('.', curPos)
