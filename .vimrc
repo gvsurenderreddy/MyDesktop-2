@@ -41,9 +41,9 @@ Plug 'easymotion/vim-easymotion', {'on': ['<Plug>(easymotion-overwin-f)', '<Plug
     nmap f <Plug>(easymotion-overwin-f)
     nmap s <Plug>(easymotion-overwin-f2)
 Plug 'eshock/vim-matchit'
-Plug 'fatih/vim-go', {'for': 'go'}
-    let g:go_auto_type_info = 1
-    let g:go_fmt_command = "goimports"
+" Plug 'fatih/vim-go', {'for': 'go'}
+    " let g:go_auto_type_info = 1
+    " let g:go_fmt_command = "goimports"
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
 Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
@@ -227,8 +227,8 @@ if has("python") || has("python3")
             " <leader>d                         Translate and show on command line
             " <leader>w                         Translate and show on new window
             " <leader><leader>r                 Translate and replace
-            " :Dict xxx                         Translate xxx and show on command line
-            " :DictW xxx                        Translate xxx and show on new window
+            " :Dict WORD                        Translate WORD and show on command line
+            " :DictW WORD                       Translate WORD and show on new window
     " Plug 'klen/python-mode', {'for': 'python'}
     " Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
