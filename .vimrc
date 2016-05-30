@@ -233,10 +233,10 @@ if has("python") || has("python3")
     " Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
     Plug 'SirVer/ultisnips'
-        let g:UltiSnipsExpandTrigger = ';'
-        let g:UltiSnipsListSnippets = '<c-;>'
-        let g:UltiSnipsJumpForwardTrigger = '<c-n>'
-        let g:UltiSnipsJumpBackwardTrigger = '<c-p>'
+        let g:UltiSnipsExpandTrigger = '<c-y>'
+        let g:UltiSnipsListSnippets = '<c-l>'
+        let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+        let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
     Plug 'waylan/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer

@@ -70,7 +70,7 @@ class InterestAccount(BankAccount):
         :returns: TODO
 
         """
-        self.money = self.money*(1+self.rate/100.0)
+        self.money = self.money * (1 + self.rate / 100.0)
 
 
 if __name__ == "__main__":
