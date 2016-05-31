@@ -218,7 +218,7 @@ elseif has("win32")
     let g:ycm_global_ycm_extra_conf = $HOME.'/vimfiles/plugged/YouCompleteMe-x86/python/.ycm_extra_conf.py'
     nnoremap <c-g> :YcmCompleter GoTo<CR>
 else
-    Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+    Plug 'Valloric/YouCompleteMe'
     let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/plugged/YouCompleteMe/python/.ycm_extra_conf.py'
     nnoremap <c-g> :YcmCompleter GoTo<CR>
 endif
@@ -233,7 +233,7 @@ if has("python") || has("python3")
     " Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
     Plug 'SirVer/ultisnips'
-        let g:UltiSnipsExpandTrigger = '<c-y>'
+        let g:UltiSnipsExpandTrigger = '<c-cr>'
         let g:UltiSnipsListSnippets = '<c-l>'
         let g:UltiSnipsJumpForwardTrigger = '<c-j>'
         let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
