@@ -2,25 +2,24 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="p24Main.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8781" topLine="195" />
-		</Cursor>
-	</File>
-	<File name="p24Main.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1759" topLine="33" />
-		</Cursor>
-	</File>
-	<File name="p24App.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="p24App.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="447" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="p24App.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="p24Main.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8781" topLine="206" />
+		</Cursor>
+	</File>
+	<File name="p24App.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="692" topLine="0" />
 		</Cursor>
 	</File>
-	<EditorTabsLayout layout="084635905572ae91000038c400000002=0;p24:p24Main.h,1;p24:p24App.h,2;p24:p24App.cpp,*3;p24:p24Main.cpp@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=491;besth=332;minw=491;minh=332;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=084635905572ae91000038c400000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+	<File name="p24Main.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1759" topLine="33" />
+		</Cursor>
+	</File>
 </CodeBlocks_layout_file>
