@@ -41,9 +41,9 @@ Plug 'easymotion/vim-easymotion', {'on': ['<Plug>(easymotion-overwin-f)', '<Plug
     nmap f <Plug>(easymotion-overwin-f)
     nmap s <Plug>(easymotion-overwin-f2)
 Plug 'eshock/vim-matchit'
-" Plug 'fatih/vim-go', {'for': 'go'}
-    " let g:go_auto_type_info = 1
-    " let g:go_fmt_command = "goimports"
+Plug 'fatih/vim-go', {'for': 'go'}
+    let g:go_auto_type_info = 1
+    let g:go_fmt_command = "goimports"
 Plug 'gregsexton/gitv', {'on': 'Gitv'}
 Plug 'honza/vim-snippets'
 Plug 'idanarye/vim-merginal'
@@ -209,20 +209,17 @@ Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
     let g:SingleCompile_menumode = 0
 Plug 'Yggdroot/indentLine'
     let g:indentLine_enabled = 0
-if has("win64")
-    Plug 'snakeleon/YouCompleteMe-x64'
-    let g:ycm_global_ycm_extra_conf = $HOME.'/vimfiles/plugged/YouCompleteMe-x64/python/.ycm_extra_conf.py'
-    nnoremap <c-g> :YcmCompleter GoTo<CR>
-elseif has("win32")
-    Plug 'snakeleon/YouCompleteMe-x86'
-    let g:ycm_global_ycm_extra_conf = $HOME.'/vimfiles/plugged/YouCompleteMe-x86/python/.ycm_extra_conf.py'
-    nnoremap <c-g> :YcmCompleter GoTo<CR>
-else
-    Plug 'Valloric/YouCompleteMe'
-    let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/plugged/YouCompleteMe/python/.ycm_extra_conf.py'
-    nnoremap <c-g> :YcmCompleter GoTo<CR>
-endif
 if has("python") || has("python3")
+    if has("win64")
+        Plug 'snakeleon/YouCompleteMe-x64'
+    elseif has("win32")
+        Plug 'snakeleon/YouCompleteMe-x86'
+    else
+        Plug 'Valloric/YouCompleteMe'
+    endif
+        let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm_extra_conf.py'
+        let g:ycm_confirm_extra_conf = 0
+        nnoremap <c-g> :YcmCompleter GoTo<cr>
     Plug 'iamcco/dict.vim'
             " <leader>d                         Translate and show on command line
             " <leader>w                         Translate and show on new window
