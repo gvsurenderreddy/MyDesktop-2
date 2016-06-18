@@ -216,15 +216,17 @@ if has("python") || has("python3")
             " <leader><leader>r                 Translate and replace
             " :Dict WORD                        Translate WORD and show on command line
             " :DictW WORD                       Translate WORD and show on new window
-    Plug 'klen/python-mode', {'for': 'python'}
-    Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
+    " Plug 'klen/python-mode', {'for': 'python'}
+    " Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
     Plug 'SirVer/ultisnips'
         let g:UltiSnipsExpandTrigger = '<tab>'
         let g:UltiSnipsListSnippets = '<c-l>'
         let g:UltiSnipsJumpForwardTrigger = '<c-j>'
         let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-    " Plug 'Valloric/YouCompleteMe'
+    Plug 'Valloric/YouCompleteMe'
+        let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm/.ycm_extra_conf.py'
+        nnoremap <c-g> :YcmCompleter GoTo<cr>
     Plug 'waylan/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
