@@ -210,15 +210,6 @@ Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
 Plug 'Yggdroot/indentLine'
     let g:indentLine_enabled = 0
 if has("python") || has("python3")
-    if has("win64")
-        Plug 'snakeleon/YouCompleteMe-x64'
-    elseif has("win32")
-        Plug 'snakeleon/YouCompleteMe-x86'
-    else
-        Plug 'Valloric/YouCompleteMe'
-    endif
-        let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm/.ycm_extra_conf.py'
-        nnoremap <c-g> :YcmCompleter GoTo<cr>
     Plug 'iamcco/dict.vim'
             " <leader>d                         Translate and show on command line
             " <leader>w                         Translate and show on new window
@@ -233,6 +224,9 @@ if has("python") || has("python3")
         let g:UltiSnipsListSnippets = '<c-l>'
         let g:UltiSnipsJumpForwardTrigger = '<c-j>'
         let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+    Plug 'Valloric/YouCompleteMe'
+        let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm/.ycm_extra_conf.py'
+        nnoremap <c-g> :YcmCompleter GoTo<cr>
     Plug 'waylan/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
