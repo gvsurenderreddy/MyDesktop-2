@@ -212,14 +212,12 @@ Plug 'Yggdroot/indentLine'
 if has("python") || has("python3")
     if has("win64")
         Plug 'snakeleon/YouCompleteMe-x64'
-        let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/plugged/YouCompleteMe-x64/python/.ycm_extra_conf.py'
     elseif has("win32")
         Plug 'snakeleon/YouCompleteMe-x86'
-        let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/plugged/YouCompleteMe-x86/python/.ycm_extra_conf.py'
     else
         Plug 'Valloric/YouCompleteMe'
-        let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/plugged/YouCompleteMe/python/.ycm_extra_conf.py'
     endif
+        let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm/.ycm_extra_conf.py'
         nnoremap <c-g> :YcmCompleter GoTo<cr>
     Plug 'iamcco/dict.vim'
             " <leader>d                         Translate and show on command line
