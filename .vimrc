@@ -33,9 +33,9 @@ Plug 'dimasg/vim-mark'
         " <Leader>m                             Mark the word under the cursor, or clear the mark
         " <Leader>n                             Clear the mark, or clear all marks if not on a mark
         " :Marks                                List all mark highlight groups and the search patterns
-" Plug 'ervandew/supertab'
-    " let g:SuperTabDefaultCompletionType = "context"
-    " let g:SuperTabLongestEnhanced = 1
+Plug 'ervandew/supertab'
+    let g:SuperTabDefaultCompletionType = "context"
+    let g:SuperTabLongestEnhanced = 1
 Plug 'easymotion/vim-easymotion', {'on': ['<Plug>(easymotion-overwin-f)', '<Plug>(easymotion-overwin-f2)']}
     let g:EasyMotion_smartcase = 1
     nmap f <Plug>(easymotion-overwin-f)
@@ -166,7 +166,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
     let g:airline_powerline_fonts = 1
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-" Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
+Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
 Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
         " <Leader>cr normal mode:               Get help for word under cursor
         " <Leader>cr visual mode:               Get help for visually selected text
@@ -210,29 +210,21 @@ Plug 'xuhdev/SingleCompile', {'on': 'SCCompileRun'}
 Plug 'Yggdroot/indentLine'
     let g:indentLine_enabled = 0
 if has("python") || has("python3")
-    if has("win64")
-        Plug 'snakeleon/YouCompleteMe-x64'
-    elseif has("win32")
-        Plug 'snakeleon/YouCompleteMe-x86'
-    else
-        Plug 'Valloric/YouCompleteMe'
-    endif
-        let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm/.ycm_extra_conf.py'
-        nnoremap <c-g> :YcmCompleter GoTo<cr>
     Plug 'iamcco/dict.vim'
             " <leader>d                         Translate and show on command line
             " <leader>w                         Translate and show on new window
             " <leader><leader>r                 Translate and replace
             " :Dict WORD                        Translate WORD and show on command line
             " :DictW WORD                       Translate WORD and show on new window
-    " Plug 'klen/python-mode', {'for': 'python'}
-    " Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
+    Plug 'klen/python-mode', {'for': 'python'}
+    Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
     Plug 'SirVer/ultisnips'
-        let g:UltiSnipsExpandTrigger = '<c-y>'
+        let g:UltiSnipsExpandTrigger = '<tab>'
         let g:UltiSnipsListSnippets = '<c-l>'
         let g:UltiSnipsJumpForwardTrigger = '<c-j>'
         let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+    " Plug 'Valloric/YouCompleteMe'
     Plug 'waylan/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
@@ -338,7 +330,7 @@ endif
 if has("autocmd")
     autocmd User Startified setlocal buflisted nocursorline nocursorcolumn
     autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
-    " autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
+    autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
     autocmd BufWritePre * call FormatCodeFile()
     autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
@@ -414,7 +406,7 @@ function! FormatCodeFile()
         silent! execute "%!astyle -A2fpjk3xdLUSKY"
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     elseif &filetype == 'python'
-        silent! execute "%!autopep8 --aggressive -"
+        silent! execute "PymodeLintAuto"
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     endif
     call setpos('.', curPos)
