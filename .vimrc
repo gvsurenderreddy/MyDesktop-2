@@ -33,9 +33,9 @@ Plug 'dimasg/vim-mark'
         " <Leader>m                             Mark the word under the cursor, or clear the mark
         " <Leader>n                             Clear the mark, or clear all marks if not on a mark
         " :Marks                                List all mark highlight groups and the search patterns
-Plug 'ervandew/supertab'
-    let g:SuperTabDefaultCompletionType = "context"
-    let g:SuperTabLongestEnhanced = 1
+" Plug 'ervandew/supertab'
+    " let g:SuperTabDefaultCompletionType = "context"
+    " let g:SuperTabLongestEnhanced = 1
 Plug 'easymotion/vim-easymotion', {'on': ['<Plug>(easymotion-overwin-f)', '<Plug>(easymotion-overwin-f2)']}
     let g:EasyMotion_smartcase = 1
     nmap f <Plug>(easymotion-overwin-f)
@@ -166,7 +166,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
     let g:airline_powerline_fonts = 1
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
+" Plug 'vim-scripts/a.vim', {'for': ['c', 'cpp']}
 Plug 'vim-scripts/CRefVim', {'for': ['c', 'cpp']}
         " <Leader>cr normal mode:               Get help for word under cursor
         " <Leader>cr visual mode:               Get help for visually selected text
@@ -220,7 +220,7 @@ if has("python") || has("python3")
     " Plug 'rip-rip/clang_complete', {'for': ['c', 'cpp']}
     Plug 'Shougo/vinarise.vim', {'on': 'Vinarise'}
     Plug 'SirVer/ultisnips'
-        let g:UltiSnipsExpandTrigger = '<tab>'
+        let g:UltiSnipsExpandTrigger = '<c-y>'
         let g:UltiSnipsListSnippets = '<c-l>'
         let g:UltiSnipsJumpForwardTrigger = '<c-j>'
         let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
@@ -332,7 +332,7 @@ endif
 if has("autocmd")
     autocmd User Startified setlocal buflisted nocursorline nocursorcolumn
     autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
-    autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
+    " autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | endif
     autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | execute "normal g'\"" | endif
     autocmd BufWritePre * call FormatCodeFile()
     autocmd BufNewFile *.sh,*.py,*.rb call SetFileHead()
@@ -408,7 +408,7 @@ function! FormatCodeFile()
         silent! execute "%!astyle -A2fpjk3xdLUSKY"
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     elseif &filetype == 'python'
-        silent! execute "PymodeLintAuto"
+        silent! execute "%!autopep8 --aggressive -"
         silent! execute "!ctags -R --fields=+iaS --extra=+q ."
     endif
     call setpos('.', curPos)
