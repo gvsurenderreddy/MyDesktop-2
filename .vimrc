@@ -226,7 +226,7 @@ if has("python") || has("python3")
         let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
     Plug 'Valloric/YouCompleteMe'
         let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm/.ycm_extra_conf.py'
-        nnoremap <c-g> :YcmCompleter GoTo<cr>
+        nnoremap <c-g> :YcmCompleter GoToDefinitionElseDeclaration<cr>
     Plug 'waylan/vim-markdown-extra-preview', {'for': 'markdown'}
             " :Me                               Preview the current buffer
             " :Mer                              Refresh the current buffer
